@@ -1,0 +1,12 @@
+{
+  "name": "0y640hl-pun676k",
+  "arn": "arn:aws:iam::286136663550:role/0y640hl-pun676k",
+  "service": [
+    "edgelambda.amazonaws.com",
+    "lambda.amazonaws.com"
+  ],
+  "policy": {
+    "arn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+  },
+  "region": "us-east-1"
+}

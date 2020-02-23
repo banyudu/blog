@@ -1,5 +1,5 @@
 service:
-  name: "demo"
+  name: "blog"
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -22,12 +22,12 @@ custom:
   serverless-offline:
     port: 3886
   domains:
-    prod: api.aidemaster.com
-    staging: staging-api.aidemaster.com
-    dev: dev-api.aidemaster.com
+    prod: api.banyudu.com
+    staging: staging-api.banyudu.com
+    dev: dev-api.banyudu.com
   customDomain:
     domainName: ${self:custom.domains.${self:provider.environment.stage}} # Change this to your domain.
-    basePath: 'demo' # This will be prefixed to all routes
+    basePath: 'blog' # This will be prefixed to all routes
     stage: ${self:provider.environment.stage}
     createRoute53Record: true
   sentry:

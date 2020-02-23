@@ -1,4 +1,4 @@
-demo:
+blog:
   component: serverless-next.js
   inputs:
-    domain: ["demo", "aidemaster.com"]
+    domain: ["www", "banyudu.com"]

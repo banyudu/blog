@@ -2,16 +2,20 @@ import React from 'react'
 import Head from 'next/head'
 import './index.less'
 import { NextPage } from 'next'
+import Header from '../components/header'
+import Footer from '../components/footer'
 
 const App: NextPage = () => {
   return (
     <div className='App'>
       <Head>
-        <title>Demo</title>
+        <title>Yudu</title>
       </Head>
+      <Header />
       <article className='App-content'>
         <img src='/logo.svg' className='App-logo' alt='logo' />
       </article>
+      <Footer />
     </div>
   )
 }
