@@ -46,15 +46,17 @@ Post.getInitialProps = async function (ctx): Promise<PostProps> {
   const { id } = ctx.query
   const res = await rest.get(`/post/${id}`)
   // set cachec-control
-  if (ctx.res) {
-    ctx.res.setHeader('Cache-Control', 'max-age=86400, public')
-  }
 
   if (res.data.code) {
     return {} as any
   }
 
-  const { title, content, tags, category } = res.data
+  const { title, content, tags, category } = res.data.data
+
+  if (ctx.res) {
+    ctx.res.setHeader('Cache-Control', 'max-age=86400, public')
+  }
+
   return { title, content, tags, category }
 }
 
