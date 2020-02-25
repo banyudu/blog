@@ -21,7 +21,7 @@ export const getPosts: APIGatewayProxyHandler = run(async (event, _context) => {
   return {
     statusCode: 200,
     body: JSON.stringify({
-      code: 200,
+      code: 0,
       data: {
         posts: [
           {
@@ -53,7 +53,7 @@ export const getPost: APIGatewayProxyHandler = run(async (event, _context) => { 
   return {
     statusCode: 200,
     body: JSON.stringify({
-      code: 200,
+      code: 0,
       data: {
         id: '9cac989b-d145-4da5-8d3a-22cced623133',
         extract: '这是一篇关于Serverless的文章，讲述了如何使用Serverless搭建一个博客系统的过程',
@@ -71,7 +71,7 @@ export const syncPost: APIGatewayProxyHandler = run(async (event, _context) => {
   return {
     statusCode: 200,
     body: JSON.stringify({
-      code: 200,
+      code: 0,
       data: 'success'
     })
   }

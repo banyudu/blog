@@ -5,7 +5,7 @@ export const getComments: APIGatewayProxyHandler = run(async (event, _context) =
   return {
     statusCode: 200,
     body: JSON.stringify({
-      code: 200,
+      code: 0,
       data: [
         {
           id: '1c5b2477-3a9c-46ff-b583-99e32a5c0c3f',
@@ -36,7 +36,7 @@ export const addComment: APIGatewayProxyHandler = run(async (event, _context) =>
   return {
     statusCode: 200,
     body: JSON.stringify({
-      code: 200,
+      code: 0,
       data: 'success'
     })
   }

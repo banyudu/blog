@@ -5,7 +5,7 @@ export const getTags: APIGatewayProxyHandler = run(async (event, _context) => { 
   return {
     statusCode: 200,
     body: JSON.stringify({
-      code: 200,
+      code: 0,
       data: [
         { name: 'Serverless', blogCount: 100 },
         { name: 'Git', blogCount: 50 },
