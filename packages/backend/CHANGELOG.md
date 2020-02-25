@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/banyudu/blog/compare/backend@0.3.0...backend@0.3.1) (2020-02-25)
+
+
+### Bug Fixes
+
+* modify code value and add post page ([42fb141](https://github.com/banyudu/blog/commit/42fb1411898f6d3d8e26d236a124a2f2c512f71a))
+
+
+
+
+
 # [0.3.0](https://github.com/banyudu/blog/compare/backend@0.2.3...backend@0.3.0) (2020-02-25)
 
 
