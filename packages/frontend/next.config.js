@@ -1,9 +1,13 @@
 // next.config.js
 const withLess = require('@zeit/next-less')
 const withCSS = require('@zeit/next-css')
+require('dotenv').config()
 module.exports = withCSS(withLess({
   /* config options here */
   target: 'serverless',
+  env: {
+    API: process.env.API
+  },
   webpack: (config, { isServer }) => {
     if (isServer) {
       const antStyles = /antd\/.*?\/style\/css.*?/
