@@ -1,7 +1,5 @@
 import { APIGatewayProxyHandler } from 'aws-lambda'
 import { run } from '../utils'
-import * as fs from 'fs'
-import * as path from 'path'
 
 const demoMarkdown = `
 # Backend
@@ -26,6 +24,7 @@ export const getPosts: APIGatewayProxyHandler = run(async (event, _context) => {
         posts: [
           {
             id: '9cac989b-d145-4da5-8d3a-22cced623133',
+            title: '使用Serverless搭建博客',
             extract: '这是一篇关于Serverless的文章，讲述了如何使用Serverless搭建一个博客系统的过程',
             category: 'Serverless',
             tags: ['Serverless'],
@@ -34,6 +33,7 @@ export const getPosts: APIGatewayProxyHandler = run(async (event, _context) => {
           },
           {
             id: 'a03ab935-4d25-469c-b9a9-869a292e8e94',
+            title: '浅谈Redis缓存穿透',
             extract: '什么是Redis缓存穿透？有什么危害，我们又应该怎么解决它？',
             category: 'Redis',
             tags: ['Redis'],
@@ -56,6 +56,7 @@ export const getPost: APIGatewayProxyHandler = run(async (event, _context) => { 
       code: 0,
       data: {
         id: '9cac989b-d145-4da5-8d3a-22cced623133',
+        title: '使用Serverless搭建博客',
         extract: '这是一篇关于Serverless的文章，讲述了如何使用Serverless搭建一个博客系统的过程',
         content: demoMarkdown,
         category: 'Serverless',
