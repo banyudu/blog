@@ -56,12 +56,54 @@ provider:
     TABLE: ${self:custom.table}
 
 functions:
-  test:
-    handler: handler.test
+  getCategories:
+    handler: handler.getCategories
     events:
       - http:
           method: get
-          path: test
+          path: categories
+          cors: true
+  getTags:
+    handler: handler.getTags
+    events:
+      - http:
+          method: get
+          path: tags
+          cors: true
+  getPosts:
+    handler: handler.getPosts
+    events:
+      - http:
+          method: get
+          path: posts
+          cors: true
+  getPost:
+    handler: handler.getPost
+    events:
+      - http:
+          method: get
+          path: post/{id}
+          cors: true
+  syncPost:
+    handler: handler.syncPost
+    events:
+      - http:
+          method: put
+          path: post
+          cors: true
+  getComments:
+    handler: handler.getComments
+    events:
+      - http:
+          method: get
+          path: comments
+          cors: true
+  addComment:
+    handler: handler.addComment
+    events:
+      - http:
+          method: post
+          path: comment
           cors: true
 
 resources:

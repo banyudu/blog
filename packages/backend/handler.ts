@@ -1,4 +1,7 @@
 import 'source-map-support/register'
 import './config'
 
-export { test } from './controllers/test'
+export { getCategories } from './controllers/category'
+export { getTags } from './controllers/tag'
+export { getPosts, getPost, syncPost } from './controllers/post'
+export { getComments, addComment } from './controllers/comment'
