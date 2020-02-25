@@ -6,7 +6,11 @@ export const getCategories: APIGatewayProxyHandler = run(async (event, _context)
     statusCode: 200,
     body: JSON.stringify({
       code: 200,
-      data: 'success'
+      data: [
+        { name: 'Serverless', blogCount: 100 },
+        { name: 'Git', blogCount: 50 },
+        { name: 'NodeJS', blogCount: 80 }
+      ]
     })
   }
 })
