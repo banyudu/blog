@@ -5,8 +5,14 @@ import { NextPage } from 'next'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { getPosts } from '../services/post'
+import Link from 'next/link'
 
-const App: NextPage = () => {
+interface AppInterface {
+  posts: Post[]
+}
+
+const App: NextPage<AppInterface> = (props) => {
+  const { posts } = props
   return (
     <div className='App'>
       <Head>
@@ -14,7 +20,15 @@ const App: NextPage = () => {
       </Head>
       <Header />
       <article className='App-content'>
-        <img src='/logo.svg' className='App-logo' alt='logo' />
+        <ul>
+          {posts.map(post =>
+            <li key={post.id}>
+              <Link href={`/posts/${post.id}`}>
+                <a>{post.title}</a>
+              </Link>
+            </li>
+          )}
+        </ul>
       </article>
       <Footer />
     </div>
