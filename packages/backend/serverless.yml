@@ -105,6 +105,13 @@ functions:
           method: post
           path: comment
           cors: true
+  getGists:
+    handler: handler.getGists
+    events:
+      - http:
+          method: get
+          path: gists
+          cors: true
 
 resources:
   Resources:

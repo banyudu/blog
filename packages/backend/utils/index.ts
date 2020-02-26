@@ -50,7 +50,7 @@ const axiosOptions: AxiosRequestConfig = {}
 if (process.env.IS_OFFLINE) {
   const httpsAgent = new SocksProxyAgent({
     host: '127.0.0.1',
-    port: 1086,
+    port: 1080,
     protocol: 'socks5:'
   })
   axiosOptions.httpAgent = httpsAgent
@@ -80,4 +80,5 @@ rest.interceptors.response.use(res => {
   const requestId: string = session.get('requestId')
   console.error(`${requestId}: external req error:`)
   console.error(err)
+  throw err
 })
