@@ -1,7 +1,18 @@
 import axios from 'axios'
 
 const DEFAULT_API = 'https://api.banyudu.com/blog'
-console.log('baseurl: ', process.env.API || DEFAULT_API)
 export const rest = axios.create({
   baseURL: process.env.API || DEFAULT_API
+})
+
+rest.interceptors.response.use(res => {
+  const { code, data, err } = res.data
+  console.log({code, data, err})
+  if (code) { // code不为0即报错
+    throw new Error(`Error(${code}):\n${err}`)
+  }
+  res.data = data
+  return res
+}, err => {
+  throw err
 })

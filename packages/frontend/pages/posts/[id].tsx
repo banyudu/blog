@@ -33,8 +33,9 @@ const Post: NextPage<PostProps> = (props) => {
       <div className='headerbar'>
         <h2 title={title}>{title}</h2>
       </div>
+      <hr />
       <article>
-          <Markdown source={content} />
+        <Markdown source={content} />
       </article>
       <hr />
       <Footer />
