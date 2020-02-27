@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/banyudu/blog/compare/backend@0.4.0...backend@0.4.1) (2020-02-27)
+
+
+### Bug Fixes
+
+* modify cron ([1c8b8e7](https://github.com/banyudu/blog/commit/1c8b8e7bb0a71facb65827a40b77cbca4de0c2c3))
+
+
+
+
+
 # [0.4.0](https://github.com/banyudu/blog/compare/backend@0.3.2...backend@0.4.0) (2020-02-27)
 
 
