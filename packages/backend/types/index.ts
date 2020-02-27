@@ -9,4 +9,5 @@ export interface Gist {
   url: string
   createdAt: Date
   updatedAt: Date
+  content: string
 }
