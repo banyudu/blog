@@ -84,13 +84,6 @@ functions:
           method: get
           path: post/{id}
           cors: true
-  syncPost:
-    handler: handler.syncPost
-    events:
-      - http:
-          method: put
-          path: post
-          cors: true
   getComments:
     handler: handler.getComments
     events:
@@ -112,6 +105,14 @@ functions:
           method: get
           path: gists
           cors: true
+  syncGists:
+    handler: handler.syncGists
+    events:
+      - http:
+          method: post
+          path: sync
+          cors: true
+      - schedule: rate(1 hours)
 
 resources:
   Resources:

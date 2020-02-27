@@ -19,7 +19,7 @@ type ControllerWrapper = (func: APIGatewayProxyHandler) => APIGatewayProxyHandle
 export const run: ControllerWrapper = (func) => {
   return async (event, _context, callback) => {
     return session.runPromise(async () => {
-      const requestId = event.requestContext.requestId
+      const requestId = event.requestContext ? event.requestContext.requestId : ''
       session.set('requestId', requestId)
       console.time(requestId)
       let result: APIGatewayProxyResult

@@ -18,15 +18,13 @@ export const getGists = async (since?: Date): Promise<Gist[]> => {
   for (const gist of res.data || []) {
     const files = gist.files || {}
     for (const filename in files) {
-      const match = filename.match(BLOG_GIST_REGEX)
-      if (match) {
-        const basename = match[1]
-        const id = `${basename}.${gist.id.substr(0, 6)}`
+      if (BLOG_GIST_REGEX.test(filename)) {
+        const id = gist.id
         const url = files[filename].raw_url
         const title = gist.description
         const createdAt = new Date(gist.created_at)
         const updatedAt = new Date(gist.updated_at)
-        result.push({ id, url, title, createdAt, updatedAt, filename, content: '' })
+        result.push({ id, url, title, createdAt, updatedAt, filename })
       }
     }
   }

@@ -1,4 +1,4 @@
-export interface AnyObject<T> { [x: string]: T }
+export interface AnyObject<T = any> { [x: string]: T }
 export type StringObject = AnyObject<string>
 export type NumberObject = AnyObject<number>
 
@@ -9,5 +9,4 @@ export interface Gist {
   url: string
   createdAt: Date
   updatedAt: Date
-  content: string
 }
