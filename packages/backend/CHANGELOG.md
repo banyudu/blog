@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/banyudu/blog/compare/backend@0.3.2...backend@0.4.0) (2020-02-27)
+
+
+### Features
+
+* add getGists service ([8308d53](https://github.com/banyudu/blog/commit/8308d53ce029a24142d9fd2582c5898290dae3e8))
+* implement some apis ([3a3940b](https://github.com/banyudu/blog/commit/3a3940be1beee6ef40c2897cd405ea317d2701a4))
+
+
+
+
+
 ## [0.3.2](https://github.com/banyudu/blog/compare/backend@0.3.1...backend@0.3.2) (2020-02-26)
 
 

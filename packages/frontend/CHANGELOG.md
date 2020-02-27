@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/banyudu/blog/compare/frontend@0.3.2...frontend@0.4.0) (2020-02-27)
+
+
+### Features
+
+* show posts in home page ([f292571](https://github.com/banyudu/blog/commit/f29257187031fbaec332d17a220d478be5322e4b))
+
+
+
+
+
 ## [0.3.2](https://github.com/banyudu/blog/compare/frontend@0.3.1...frontend@0.3.2) (2020-02-26)
 
 
