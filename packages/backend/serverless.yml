@@ -112,7 +112,7 @@ functions:
           method: post
           path: sync
           cors: true
-      - schedule: rate(1 hours)
+      - schedule: rate(1 hour)
 
 resources:
   Resources:
