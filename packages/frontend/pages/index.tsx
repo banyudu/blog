@@ -42,7 +42,7 @@ App.getInitialProps = async ({ res }) => {
   }
   const postsRes = await getPosts()
   return {
-    posts: postsRes.posts
+    posts: postsRes
   }
 }
 

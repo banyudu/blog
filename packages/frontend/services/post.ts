@@ -6,8 +6,8 @@ interface getPostsParams {
   pageSize?: number
 }
 
-export const getPosts = async (options: getPostsParams = {}): Promise<PostsRes> => {
-  const res: AxiosResponse<PostsRes> = await rest.get('/posts', { params: options })
+export const getPosts = async (options: getPostsParams = {}): Promise<Post[]> => {
+  const res: AxiosResponse<Post[]> = await rest.get('/posts', { params: options })
   return res.data
 }
 
