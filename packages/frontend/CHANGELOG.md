@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/banyudu/blog/compare/frontend@0.4.0...frontend@0.4.1) (2020-02-28)
+
+
+### Bug Fixes
+
+* modify default props ([c2e0590](https://github.com/banyudu/blog/commit/c2e05906985ea8cacc55ab1d2636c1acc653328c))
+
+
+
+
+
 # [0.4.0](https://github.com/banyudu/blog/compare/frontend@0.3.2...frontend@0.4.0) (2020-02-27)
 
 
