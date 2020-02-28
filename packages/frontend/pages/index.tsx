@@ -23,7 +23,7 @@ const App: NextPage<AppInterface> = (props) => {
         <ul>
           {posts.map(post =>
             <li key={post.id}>
-              <Link href={`/posts/${post.id}`}>
+              <Link href={`/posts/${post.url}`}>
                 <a>{post.title}</a>
               </Link>
             </li>

@@ -7,7 +7,6 @@ export const rest = axios.create({
 
 rest.interceptors.response.use(res => {
   const { code, data, err } = res.data
-  console.log({code, data, err})
   if (code) { // code不为0即报错
     throw new Error(`Error(${code}):\n${err}`)
   }

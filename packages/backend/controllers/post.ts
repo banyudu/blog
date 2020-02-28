@@ -3,7 +3,7 @@ import { run } from '../utils'
 import Blog from '../models/blog'
 
 export const getPosts: APIGatewayProxyHandler = run(async (event, _context) => { // eslint-disable-line @typescript-eslint/require-await
-  const posts = await Blog.scan().exec()
+  const posts = await Blog.scan().attributes(['filename', 'category', 'id', 'url', 'title', 'tags', 'createdAt', 'updatedAt']).exec()
   return {
     statusCode: 200,
     body: JSON.stringify({

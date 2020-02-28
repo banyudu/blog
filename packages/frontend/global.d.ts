@@ -9,8 +9,9 @@ interface Pagination {
 interface Post {
   id: string
   title: string
+  url: string
   extract: string
-  content: string
+  content?: string
   category: string
   tags: string[]
   createdAt: Date
