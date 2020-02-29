@@ -46,15 +46,13 @@ const Post: NextPage<PostProps> = (props) => {
 Post.getInitialProps = async function (ctx): Promise<PostProps> {
   const { id } = ctx.query
   const res = await rest.get(`/post/${id}`)
+
   // set cachec-control
-
-  const { title, content, tags, category } = res.data
-
   if (ctx.res) {
     ctx.res.setHeader('Cache-Control', 'max-age=86400, public')
   }
 
-  return { title, content, tags, category }
+  return res.data
 }
 
 export default Post

@@ -3,6 +3,7 @@ import { run, rest } from '../utils'
 import { getGists as fetchGists } from '../services/gist'
 import Blog from '../models/blog'
 import { StringObject } from '../types'
+import * as path from 'path'
 
 export const getGists: APIGatewayProxyHandler = run(async (event, _context) => { // eslint-disable-line @typescript-eslint/require-await
   const gists = await fetchGists()
@@ -30,12 +31,13 @@ export const syncGists: APIGatewayProxyHandler = run(async (event, _context) => 
     let record = await Blog.get(id)
     if (!record || record.updatedAt < gist.updatedAt) {
       if (!record) {
+        const basename = path.basename(gist.filename, '.blog.md')
         record = new Blog({
           id,
           title: gist.title,
           content: '',
           extract: '',
-          url: `${gist.filename}.${gist.id.substr(0, 6)}`,
+          url: `${basename}.${gist.id.substr(0, 6)}`,
           filename: gist.filename,
           category: 'other',
           tags: '',

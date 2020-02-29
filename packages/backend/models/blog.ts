@@ -32,7 +32,11 @@ export const Schema = new dynamoose.Schema({
   },
   url: {
     type: String,
-    required: true
+    required: true,
+    index: {
+      name: 'urlGSI',
+      global: true
+    }
   },
   filename: String,
 }, {

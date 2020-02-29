@@ -84,6 +84,10 @@ functions:
           method: get
           path: post/{id}
           cors: true
+          request:
+            parameters:
+              paths:
+                id: true
   getComments:
     handler: handler.getComments
     events:
@@ -127,3 +131,8 @@ resources:
             KeyType: HASH
         BillingMode: PAY_PER_REQUEST
         TableName: ${self:custom.table}
+        GlobalSecondaryIndexes:
+          - IndexName: urlGSI
+            KeySchema:
+            - AttributeName: url
+              KeyType: HASH
