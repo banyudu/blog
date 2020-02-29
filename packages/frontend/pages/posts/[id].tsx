@@ -52,6 +52,9 @@ Post.getInitialProps = async function (ctx): Promise<PostProps> {
     ctx.res.setHeader('Cache-Control', 'max-age=86400, public')
   }
 
+  // 将tags从字符串转成数组
+  res.data.tags = (res.data.tags || '').split('|')
+
   return res.data
 }
 

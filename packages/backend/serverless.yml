@@ -54,6 +54,9 @@ provider:
         - dynamodb:DescribeTable
       Resource:
         - { "Fn::GetAtt": ["Table", "Arn" ] }
+        - { "Fn::Join": [ "/", [
+          { "Fn::GetAtt": ["Table", "Arn" ] }, "index", "urlGSI"
+        ]]}
 
 functions:
   getCategories:
