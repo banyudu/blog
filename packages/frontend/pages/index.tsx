@@ -23,7 +23,7 @@ const App: NextPage<AppInterface> = (props) => {
         <ul>
           {posts.map(post =>
             <li key={post.id}>
-              <Link href={`/posts/${post.url}`}>
+              <Link href={{ pathname: `/posts/${post.url}`, query: { random: process.env.random } }}>
                 <a>{post.title}</a>
               </Link>
             </li>
@@ -38,7 +38,7 @@ const App: NextPage<AppInterface> = (props) => {
 App.getInitialProps = async ({ res }) => {
   // set cachec-control
   if (res) {
-    res.setHeader('Cache-Control', 'max-age=86400, public') // one day
+    res.setHeader('Cache-Control', 'max-age=300, public') // 5 minutes
   }
   const postsRes = await getPosts()
   return {

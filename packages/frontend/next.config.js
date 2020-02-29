@@ -1,12 +1,14 @@
 // next.config.js
 const withLess = require('@zeit/next-less')
 const withCSS = require('@zeit/next-css')
+const nanoid = require('nanoid')
 require('dotenv').config()
 module.exports = withCSS(withLess({
   /* config options here */
   target: 'serverless',
   env: {
-    API: process.env.API
+    API: process.env.API,
+    random: nanoid(6)
   },
   webpack: (config, { isServer }) => {
     if (isServer) {
