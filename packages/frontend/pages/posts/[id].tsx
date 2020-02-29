@@ -8,6 +8,7 @@ import { NextPage } from 'next'
 import Footer from '../../components/footer'
 import Markdown from 'react-markdown'
 import { rest } from '../../utils'
+import CodeBlock from '../../components/codeblock'
 
 interface PostProps {
   title: string
@@ -20,7 +21,7 @@ const Post: NextPage<PostProps> = (props) => {
   // const router = useRouter()
   const { title, tags, content } = props
   return (
-    <div className='wiki'>
+    <div className='post'>
       <Head>
         <title>{title}</title>
         <meta name='description' content={title} />
@@ -31,11 +32,14 @@ const Post: NextPage<PostProps> = (props) => {
       </Head>
       <BackTop />
       <div className='headerbar'>
-        <h2 title={title}>{title}</h2>
+        <h2 className='title' title={title}>{title}</h2>
       </div>
       <hr />
-      <article>
-        <Markdown source={content} />
+      <article className='article'>
+        <Markdown
+          source={content}
+          renderers={{ code: CodeBlock }}
+        />
       </article>
       <hr />
       <Footer />
