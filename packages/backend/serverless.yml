@@ -126,6 +126,8 @@ resources:
         AttributeDefinitions:
           - AttributeName: id
             AttributeType: S
+          - AttributeName: url
+            AttributeType: S
         KeySchema:
           - AttributeName: id
             KeyType: HASH
@@ -134,5 +136,7 @@ resources:
         GlobalSecondaryIndexes:
           - IndexName: urlGSI
             KeySchema:
-            - AttributeName: url
-              KeyType: HASH
+              - AttributeName: url
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
