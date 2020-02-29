@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
+import Error from 'next/error'
 import Head from 'next/head'
 import { BackTop } from 'antd'
 import './index.less'
-// import Link from 'next/link'
 import { NextPage } from 'next'
 import Footer from '../../components/footer'
 import Markdown from 'react-markdown'
@@ -17,9 +17,12 @@ interface PostProps {
   category: string
 }
 
-const Post: NextPage<PostProps> = (props) => {
-  // const router = useRouter()
-  const { title, tags, content } = props
+const Post: NextPage<PostProps | ErrorProps> = (props) => {
+  const { statusCode } = props as ErrorProps
+  if (statusCode) {
+    return <Error statusCode={statusCode} />
+  }
+  const { title, tags, content } = props as PostProps
   return (
     <div className='post'>
       <Head>
@@ -47,19 +50,25 @@ const Post: NextPage<PostProps> = (props) => {
   )
 }
 
-Post.getInitialProps = async function (ctx): Promise<PostProps> {
-  const { id } = ctx.query
-  const res = await rest.get(`/post/${id}`)
+Post.getInitialProps = async function ({ res, query }): Promise<PostProps | ErrorProps> {
+  const { id } = query
+  const postRes = await rest.get(`/post/${id}`)
+  if (!postRes.data) {
+    if (res) {
+      res.statusCode = 404
+    }
+    return { statusCode: 404 }
+  }
 
   // set cachec-control
-  if (ctx.res) {
-    ctx.res.setHeader('Cache-Control', 'max-age=86400, public')
+  if (res) {
+    res.setHeader('Cache-Control', 'max-age=86400, public')
   }
 
   // 将tags从字符串转成数组
-  res.data.tags = (res.data.tags || '').split('|')
+  postRes.data.tags = (postRes.data.tags || '').split('|')
 
-  return res.data
+  return postRes.data
 }
 
 export default Post

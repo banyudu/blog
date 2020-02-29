@@ -21,3 +21,8 @@ interface Post {
 interface PostsRes extends Pagination {
   posts: Post[]
 }
+
+interface ErrorProps {
+  statusCode: number
+  error?: string
+}
