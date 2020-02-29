@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/banyudu/blog/compare/frontend@0.4.4...frontend@0.5.0) (2020-02-29)
+
+
+### Features
+
+* modify post style ([8fecfbc](https://github.com/banyudu/blog/commit/8fecfbc070afa78eb7442b8859f8dea0de06545e))
+
+
+
+
+
 ## [0.4.4](https://github.com/banyudu/blog/compare/frontend@0.4.3...frontend@0.4.4) (2020-02-29)
 
 
