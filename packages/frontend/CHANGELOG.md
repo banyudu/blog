@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/banyudu/blog/compare/frontend@0.8.0...frontend@0.8.1) (2020-03-01)
+
+
+### Bug Fixes
+
+* update .serverless ([96f6f2b](https://github.com/banyudu/blog/commit/96f6f2b1df5f8c08d673c2ac1071d145b1ee432e))
+
+
+
+
+
 # [0.8.0](https://github.com/banyudu/blog/compare/frontend@0.7.0...frontend@0.8.0) (2020-03-01)
 
 

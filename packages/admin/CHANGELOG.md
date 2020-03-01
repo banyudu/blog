@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/banyudu/blog/compare/admin@0.4.0...admin@0.4.1) (2020-03-01)
+
+
+### Bug Fixes
+
+* update .serverless ([96f6f2b](https://github.com/banyudu/blog/commit/96f6f2b1df5f8c08d673c2ac1071d145b1ee432e))
+
+
+
+
+
 # [0.4.0](https://github.com/banyudu/blog/compare/admin@0.3.0...admin@0.4.0) (2020-03-01)
 
 
