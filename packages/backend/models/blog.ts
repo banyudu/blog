@@ -38,9 +38,9 @@ export const Schema = new dynamoose.Schema({
       global: true
     }
   },
-  filename: String,
+  filename: String
 }, {
-  timestamps: true,
+  timestamps: true
 })
 
 export default dynamoose.model<Blog, string>(process.env.TABLE, Schema)

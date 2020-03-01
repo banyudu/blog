@@ -4,6 +4,7 @@ import { getGists as fetchGists } from '../services/gist'
 import Blog from '../models/blog'
 import { StringObject } from '../types'
 import * as path from 'path'
+import * as qs from 'qs'
 
 export const getGists: APIGatewayProxyHandler = run(async (event, _context) => { // eslint-disable-line @typescript-eslint/require-await
   const gists = await fetchGists()
@@ -21,7 +22,8 @@ export const getGists: APIGatewayProxyHandler = run(async (event, _context) => {
  * 规则：凡是Gist中包含 *.blog.md 形式的文件的，均认为是博客文章。根据其最后更新时间，决定是否要同步
  */
 export const syncGists: APIGatewayProxyHandler = run(async (event, _context) => { // eslint-disable-line @typescript-eslint/require-await
-  const gists = await fetchGists()
+  const params = qs.parse(event.body)
+  const gists = await fetchGists(new Date(params.since))
 
   // 因为同步间隔要小于每次同步时获取的时间范围，所以很有可能会重复获取，需要检查 updatedAt 决定是否需要更新
 
@@ -41,8 +43,8 @@ export const syncGists: APIGatewayProxyHandler = run(async (event, _context) => 
           filename: gist.filename,
           category: 'other',
           tags: '',
-          createdAt: new Date(),
-          updatedAt: new Date()
+          createdAt: gist.createdAt,
+          updatedAt: gist.updatedAt
         })
       }
       // 需要更新
@@ -68,7 +70,7 @@ export const syncGists: APIGatewayProxyHandler = run(async (event, _context) => 
 })
 
 // 解析Markdown中的注释
-const MARKDOWN_COMMENT_REGEX = /^\s*\[\/\/\]:\s+#\s+["\(]([^:]+)\s*:\s*(.+)["\)]\s*$/
+const MARKDOWN_COMMENT_REGEX = /^\s*\[\/\/\]:\s+#\s+["(]([^:]+)\s*:\s*(.+)[")]\s*$/
 const parseMarkdownComments = (markdown: string): StringObject => {
   // markdown中的注释，形如以下形式：
   // 1. [//]: # "category: serverless"

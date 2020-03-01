@@ -3,6 +3,7 @@ module.exports = {
   parserOptions: {
     project: [
       './packages/frontend/tsconfig.json',
+      './packages/admin/tsconfig.json',
       './packages/backend/tsconfig.json'
     ]
   },

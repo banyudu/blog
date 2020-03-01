@@ -1,9 +1,11 @@
 import { APIGatewayProxyHandler } from 'aws-lambda'
 import { run } from '../utils'
 import Blog from '../models/blog'
+import * as _ from 'lodash'
 
 export const getPosts: APIGatewayProxyHandler = run(async (event, _context) => { // eslint-disable-line @typescript-eslint/require-await
-  const posts = await Blog.scan().attributes(['filename', 'category', 'id', 'url', 'title', 'tags', 'createdAt', 'updatedAt']).exec()
+  let posts = await Blog.scan().attributes(['filename', 'category', 'id', 'url', 'title', 'tags', 'createdAt', 'updatedAt']).exec()
+  posts = _.orderBy(posts, e => new Date(e.createdAt).getTime(), ['desc'])
   return {
     statusCode: 200,
     body: JSON.stringify({

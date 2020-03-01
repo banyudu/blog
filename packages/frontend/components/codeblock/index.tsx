@@ -1,7 +1,7 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { solarizedlight as codeStyle } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { solarizedlight as codeStyle } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 interface CodeBlockProps {
   language: string
@@ -18,14 +18,14 @@ class CodeBlock extends PureComponent<CodeBlockProps> {
     language: null
   };
 
-  render() {
-    const { language, value } = this.props;
+  render () {
+    const { language, value } = this.props
     return (
       <SyntaxHighlighter language={language} style={codeStyle}>
         {value}
       </SyntaxHighlighter>
-    );
+    )
   }
 }
 
-export default CodeBlock;
+export default CodeBlock

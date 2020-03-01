@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const DEFAULT_API = 'https://api.banyudu.com/blog'
 export const rest = axios.create({
-  baseURL: process.env.API || DEFAULT_API
+  baseURL: process.env.API ?? DEFAULT_API
 })
 
 rest.interceptors.response.use(res => {
