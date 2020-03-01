@@ -7,7 +7,8 @@ import Footer from '../components/footer'
 import { getPosts } from '../services/post'
 import Link from 'next/link'
 import moment from 'moment'
-import { Timeline } from 'antd'
+import { Timeline, Carousel } from 'antd'
+import Slide from '../components/slide'
 
 interface PostWithTimeline extends Post {
   timeline?: string
@@ -17,8 +18,36 @@ interface AppInterface {
   posts: PostWithTimeline[]
 }
 
+interface SlidesProps {
+  posts: Post[]
+  count: number
+}
+
+const Slides: React.FC<SlidesProps> = (props) => {
+  const { posts = [], count } = props
+  const items: React.ReactNode[] = []
+  for (let i = 0; i < count && i < posts.length; i++) {
+    const post = posts[i]
+    items.push(<Slide post={post} />)
+  }
+  return (
+    <Carousel
+      effect='fade'
+      autoplay
+      arrows
+      dotPosition='right'
+      dots={false}
+      accessibility
+      className='slides'
+    >
+      {items}
+    </Carousel>
+  )
+}
+
 const App: NextPage<AppInterface> = (props) => {
-  const { posts } = props
+  const { posts = [] } = props
+  const slidesCount = Math.min(3, posts.length)
   return (
     <div className='App'>
       <Head>
@@ -26,7 +55,8 @@ const App: NextPage<AppInterface> = (props) => {
       </Head>
       <Header />
       <article className='App-content'>
-        <Timeline mode='left'>
+        <Slides posts={posts} count={slidesCount} />
+        <Timeline mode='left' className='timeline'>
           {posts.map(post =>
             <Timeline.Item key={post.id} label={post.timeline ?? undefined}>
               <Link href={{ pathname: `/posts/${post.url}`, query: { random: process.env.random } }}>
