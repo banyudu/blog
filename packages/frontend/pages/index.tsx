@@ -39,6 +39,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
       dots={false}
       accessibility
       className='slides'
+      easing='ease-in-out'
     >
       {items}
     </Carousel>
