@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/banyudu/blog/compare/backend@0.5.0...backend@0.6.0) (2020-03-01)
+
+
+### Features
+
+* support extract ([04694fb](https://github.com/banyudu/blog/commit/04694fb65f8ab1055f241d1a912d01c7c6f2af20))
+
+
+
+
+
 # [0.5.0](https://github.com/banyudu/blog/compare/backend@0.4.5...backend@0.5.0) (2020-03-01)
 
 
