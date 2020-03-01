@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/banyudu/blog/compare/frontend@0.7.0...frontend@0.8.0) (2020-03-01)
+
+
+### Features
+
+* add slides in home page ([59dda8d](https://github.com/banyudu/blog/commit/59dda8daeca16a3649d31277fef99910132dad31))
+
+
+
+
+
 # [0.7.0](https://github.com/banyudu/blog/compare/frontend@0.6.0...frontend@0.7.0) (2020-03-01)
 
 
