@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/banyudu/blog/compare/admin@0.3.0...admin@0.4.0) (2020-03-01)
+
+
+### Features
+
+* add timeline ([9015347](https://github.com/banyudu/blog/commit/9015347366563e3d98ce71f811fef83d69df69aa))
+
+
+
+
+
 # 0.3.0 (2020-02-25)
 
 

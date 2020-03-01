@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/banyudu/blog/compare/backend@0.4.5...backend@0.5.0) (2020-03-01)
+
+
+### Features
+
+* add timeline ([9015347](https://github.com/banyudu/blog/commit/9015347366563e3d98ce71f811fef83d69df69aa))
+
+
+
+
+
 ## [0.4.5](https://github.com/banyudu/blog/compare/backend@0.4.4...backend@0.4.5) (2020-02-29)
 
 
