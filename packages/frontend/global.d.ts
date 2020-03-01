@@ -1,4 +1,5 @@
 declare module 'next-ga'
+declare module '*.svg'
 
 interface Pagination {
   page: number

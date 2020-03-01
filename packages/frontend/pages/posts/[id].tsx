@@ -9,6 +9,7 @@ import Footer from '../../components/footer'
 import Markdown from 'react-markdown'
 import { rest } from '../../utils'
 import CodeBlock from '../../components/codeblock'
+import Logo from '../../components/logo'
 
 interface PostProps {
   title: string
@@ -35,6 +36,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
       </Head>
       <BackTop />
       <div className='headerbar'>
+        <Logo />
         <h1 className='title' title={title}>{title}</h1>
       </div>
       <article className='article'>

@@ -1,10 +1,11 @@
 // next.config.js
 const withLess = require('@zeit/next-less')
 const withCSS = require('@zeit/next-css')
+const withImages = require('next-images')
 const nanoid = require('nanoid')
 require('dotenv').config()
 
-module.exports = withCSS(withLess({
+module.exports = withImages(withCSS(withLess({
   /* config options here */
   target: 'serverless',
   env: {
@@ -38,4 +39,4 @@ module.exports = withCSS(withLess({
     }
     return config
   }
-}))
+})))
