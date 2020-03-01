@@ -4,7 +4,7 @@ import Blog from '../models/blog'
 import * as _ from 'lodash'
 
 export const getPosts: APIGatewayProxyHandler = run(async (event, _context) => { // eslint-disable-line @typescript-eslint/require-await
-  let posts = await Blog.scan().attributes(['filename', 'category', 'id', 'url', 'title', 'tags', 'createdAt', 'updatedAt']).exec()
+  let posts = await Blog.scan().attributes(['filename', 'category', 'extract', 'id', 'url', 'title', 'tags', 'createdAt', 'updatedAt']).exec()
   posts = _.orderBy(posts, e => new Date(e.createdAt).getTime(), ['desc'])
   return {
     statusCode: 200,
