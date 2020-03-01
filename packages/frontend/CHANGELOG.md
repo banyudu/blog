@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.5](https://github.com/banyudu/blog/compare/frontend@0.8.4...frontend@0.8.5) (2020-03-01)
+
+
+### Bug Fixes
+
+* **frontend:** fix logo image broken link ([060f650](https://github.com/banyudu/blog/commit/060f6508d49d134fc841545558bc38918a00a096))
+
+
+
+
+
 ## [0.8.4](https://github.com/banyudu/blog/compare/frontend@0.8.3...frontend@0.8.4) (2020-03-01)
 
 **Note:** Version bump only for package frontend
