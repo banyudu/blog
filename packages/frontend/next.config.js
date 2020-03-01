@@ -3,6 +3,7 @@ const withLess = require('@zeit/next-less')
 const withCSS = require('@zeit/next-css')
 const nanoid = require('nanoid')
 require('dotenv').config()
+
 module.exports = withCSS(withLess({
   /* config options here */
   target: 'serverless',
@@ -10,8 +11,12 @@ module.exports = withCSS(withLess({
     API: process.env.API,
     random: nanoid(6)
   },
+  lessLoaderOptions: {
+    javascriptEnabled: true
+  },
   webpack: (config, { isServer }) => {
     if (isServer) {
+      require('ignore-styles')
       const antStyles = /antd\/.*?\/style\/css.*?/
       const origExternals = [...config.externals]
       config.externals = [

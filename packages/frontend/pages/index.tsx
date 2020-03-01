@@ -1,6 +1,5 @@
 import React from 'react'
 import Head from 'next/head'
-import './index.less'
 import { NextPage } from 'next'
 import Header from '../components/header'
 import Footer from '../components/footer'
@@ -9,6 +8,7 @@ import Link from 'next/link'
 import moment from 'moment'
 import { Timeline, Carousel } from 'antd'
 import Slide from '../components/slide'
+import './index.less'
 
 interface PostWithTimeline extends Post {
   timeline?: string

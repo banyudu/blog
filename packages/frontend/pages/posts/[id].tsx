@@ -35,9 +35,8 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
       </Head>
       <BackTop />
       <div className='headerbar'>
-        <h2 className='title' title={title}>{title}</h2>
+        <h1 className='title' title={title}>{title}</h1>
       </div>
-      <hr />
       <article className='article'>
         <Markdown
           source={content}

@@ -1,5 +1,9 @@
 @import '../variables.less';
 
+h1, h2, h3, h4, h5, h6 {
+  color: darkgreen;
+}
+
 .timeline {
   background-color: white;
   width: 95%;
@@ -8,5 +12,26 @@
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.ant-timeline.ant-timeline-label .ant-timeline-item-left .ant-timeline-item-content {
+  left: calc(30% - 4px);
+  width: calc(30% - 14px);
+  text-align: left;
+}
+
+.ant-timeline.ant-timeline-label .ant-timeline-item-label {
+  position: absolute;
+  top: -7.001px;
+  width: calc(30% - 12px);
+  text-align: right;
+}
+
+.ant-timeline.ant-timeline-label .ant-timeline-item-head {
+  left: 30%;
+}
+
+.ant-timeline.ant-timeline-label .ant-timeline-item-tail {
+  left: 30%;
 }
