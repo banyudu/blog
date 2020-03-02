@@ -37,7 +37,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
       <BackTop />
       <div className='headerbar'>
         <Logo />
-        <h1 className='title' title={title}>{title}</h1>
+        <h2 className='title' title={title}>{title}</h2>
       </div>
       <article className='article'>
         <Markdown
