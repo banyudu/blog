@@ -60,7 +60,7 @@ const App: NextPage<AppInterface> = (props) => {
         <Timeline mode='left' className='timeline'>
           {posts.map(post =>
             <Timeline.Item key={post.id} label={post.timeline ?? undefined}>
-              <Link href={{ pathname: `/posts/${post.url}`, query: { random: process.env.random } }}>
+              <Link prefetch={false} href={{ pathname: `/posts/${post.url}`, query: { random: process.env.random } }}>
                 <a>{post.title}</a>
               </Link>
             </Timeline.Item>
