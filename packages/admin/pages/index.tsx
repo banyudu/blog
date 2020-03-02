@@ -9,7 +9,7 @@ const App: NextPage = () => {
   return (
     <div className='App'>
       <Head>
-        <title>Yudu</title>
+        <title>鱼肚的博客</title>
       </Head>
       <Header />
       <article className='App-content'>
