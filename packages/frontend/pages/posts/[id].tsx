@@ -53,7 +53,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
 
 Post.getInitialProps = async function ({ res, query }): Promise<PostProps | ErrorProps> {
   const { id } = query
-  const postRes = await rest.get(`/post/${id}`)
+  const postRes = await rest.get(`/post/${encodeURIComponent(decodeURIComponent(id as string))}`)
   if (!postRes.data) {
     if (res) {
       res.statusCode = 404
