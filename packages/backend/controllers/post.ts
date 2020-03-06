@@ -17,7 +17,11 @@ export const getPosts: APIGatewayProxyHandler = run(async (event, _context) => {
 
 export const getPost: APIGatewayProxyHandler = run(async (event, _context) => { // eslint-disable-line @typescript-eslint/require-await
   const id = event.pathParameters.id
-  const post = await Blog.queryOne({ url: id }).exec()
+  let post
+  if (id) {
+    const url = decodeURIComponent(id)
+    post = await Blog.queryOne({ url }).exec()
+  }
   return {
     statusCode: 200,
     body: JSON.stringify({
