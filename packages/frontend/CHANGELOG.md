@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/banyudu/blog/compare/frontend@0.9.6...frontend@0.10.0) (2020-03-06)
+
+
+### Features
+
+* **frontend:** support mermaid ([df6b5fc](https://github.com/banyudu/blog/commit/df6b5fc2678426f331b091e62225c53e67142faa))
+
+
+
+
+
 ## [0.9.6](https://github.com/banyudu/blog/compare/frontend@0.9.5...frontend@0.9.6) (2020-03-05)
 
 
