@@ -20,6 +20,9 @@ class CodeBlock extends PureComponent<CodeBlockProps> {
 
   render () {
     const { language, value } = this.props
+    if (language === 'mermaid') {
+      return <div className='mermaid'>{value}</div>
+    }
     return (
       <SyntaxHighlighter language={language} style={codeStyle}>
         {value}
