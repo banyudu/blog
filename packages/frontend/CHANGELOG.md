@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.1](https://github.com/banyudu/blog/compare/frontend@0.10.0...frontend@0.10.1) (2020-03-07)
+
+
+### Bug Fixes
+
+* **frontend:** render react language with javascript style ([7aff676](https://github.com/banyudu/blog/commit/7aff676a69561a0d80b64694b2e44e4bd7391538))
+
+
+
+
+
 # [0.10.0](https://github.com/banyudu/blog/compare/frontend@0.9.6...frontend@0.10.0) (2020-03-06)
 
 
