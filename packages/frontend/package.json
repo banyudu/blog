@@ -3,6 +3,7 @@
   "version": "0.10.2",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.0.2",
     "@fortawesome/fontawesome-free": "^5.12.1",
     "@types/jest": "^25.1.2",
     "@types/node": "^13.7.2",
