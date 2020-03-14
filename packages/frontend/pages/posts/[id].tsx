@@ -13,6 +13,7 @@ import Logo from '../../components/logo'
 import { useCookies } from 'react-cookie'
 import { useProfile, useComments } from '../../hooks'
 import Comments from '../../components/comments'
+import { ErrorProps } from '../../types'
 
 interface PostProps {
   id: string

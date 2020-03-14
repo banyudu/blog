@@ -25,7 +25,7 @@ storiesOf('Comments', module).add('unAuthorized + empty', () => {
   return <Comments
     profileLoading={false}
     commentsLoading={false}
-    comments={[comment1, comment2]}
+    comments={[]}
   />
 })
 
@@ -33,6 +33,6 @@ storiesOf('Comments', module).add('unAuthorized with comments', () => {
   return <Comments
     profileLoading={false}
     commentsLoading={false}
-    comments={[]}
+    comments={[comment1, comment2]}
   />
 })

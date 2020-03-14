@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { rest } from '../utils'
 import { getComments } from '../services/comment'
+import { Profile, Comment } from '../types'
 
 export const useProfile = (token: string): [Profile | undefined, boolean] => {
   const [profile, setProfile] = useState<Profile | undefined>()

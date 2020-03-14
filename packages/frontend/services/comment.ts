@@ -1,5 +1,6 @@
 import { rest } from '../utils'
 import { AxiosResponse } from 'axios'
+import { Comment } from '../types'
 
 const DEFAULT_COMMENTS_API = 'https://api.banyudu.com/comments'
 

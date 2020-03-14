@@ -6,6 +6,7 @@ module.exports = ({ config }) => {
       presets: [require.resolve('babel-preset-react-app')],
     },
   });
+  config.module.rules.push({ test: /\.less$/, loaders: [ 'style-loader', 'css-loader', 'less-loader?javascriptEnabled' ] })
 
   config.resolve.extensions.push('.ts', '.tsx');
   return config;
