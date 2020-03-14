@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { Profile, Comment } from '../../types'
 import './index.less'
 
 interface CommentsProfile {
