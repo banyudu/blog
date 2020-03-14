@@ -15,7 +15,48 @@
     height: 32px;
   }
 
-  .comments-avatar svg {
-    font-size: 40px;
+  .comments-editbox {
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+    justify-content: space-between;
+  }
+
+  .comments-editbox > *:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .comments-editbox-main {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .comments-editbox-preview {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .comments-editbox-toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .comments-avatar {
+    margin-right: 8px;
+    width: 60px;
+    display: block;
+    svg {
+      font-size: 40px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .comments-preview {
+    background-color: #e9e9e9;
+    min-height: 30px;
   }
 }

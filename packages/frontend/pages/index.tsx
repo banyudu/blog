@@ -8,6 +8,7 @@ import Link from 'next/link'
 import moment from 'moment'
 import { Timeline, Carousel } from 'antd'
 import Slide from '../components/slide'
+import { Post } from '../types'
 import './index.less'
 
 interface PostWithTimeline extends Post {

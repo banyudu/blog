@@ -3,17 +3,16 @@ import React from 'react'
 import Error from 'next/error'
 import Head from 'next/head'
 import { BackTop } from 'antd'
-import './index.less'
 import { NextPage } from 'next'
 import Footer from '../../components/footer'
-import Markdown from 'react-markdown'
 import { rest } from '../../utils'
-import CodeBlock from '../../components/codeblock'
 import Logo from '../../components/logo'
 import { useCookies } from 'react-cookie'
 import { useProfile, useComments } from '../../hooks'
 import Comments from '../../components/comments'
 import { ErrorProps } from '../../types'
+import Markdown from '../../components/markdown'
+import './index.less'
 
 interface PostProps {
   id: string
@@ -48,10 +47,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         <h2 className='title' title={title}>{title}</h2>
       </div>
       <article className='article'>
-        <Markdown
-          source={content}
-          renderers={{ code: CodeBlock }}
-        />
+        <Markdown source={content} />
       </article>
       <hr />
       <Comments

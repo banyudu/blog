@@ -1,5 +1,6 @@
 import { rest } from '../utils'
 import { AxiosResponse } from 'axios'
+import { Post } from '../types'
 
 interface getPostsParams {
   page?: number
