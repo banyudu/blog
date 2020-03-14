@@ -10,8 +10,12 @@ import Markdown from 'react-markdown'
 import { rest } from '../../utils'
 import CodeBlock from '../../components/codeblock'
 import Logo from '../../components/logo'
+import { useCookies } from 'react-cookie'
+import { useProfile, useComments } from '../../hooks'
+import Comments from '../../components/comments'
 
 interface PostProps {
+  id: string
   title: string
   content: string
   tags: string[]
@@ -23,7 +27,10 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
   if (statusCode) {
     return <Error statusCode={statusCode} />
   }
-  const { title, tags, content } = props as PostProps
+  const { title, tags, content, id } = props as PostProps
+  const [cookies] = useCookies(['token'])
+  const [profile, profileLoading] = useProfile(cookies.token)
+  const [comments, commentsLoading] = useComments(cookies.token, id)
   return (
     <div className='post'>
       <Head>
@@ -46,6 +53,13 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         />
       </article>
       <hr />
+      <Comments
+        profile={profile}
+        profileLoading={profileLoading}
+        comments={comments}
+        commentsLoading={commentsLoading}
+        style={{ display: 'none' }}
+      />
       <Footer />
     </div>
   )

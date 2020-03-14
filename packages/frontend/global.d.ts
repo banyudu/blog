@@ -27,3 +27,23 @@ interface ErrorProps {
   statusCode: number
   error?: string
 }
+
+interface Profile {
+  name: string
+  avatar: string
+  email: string
+}
+
+interface Comment {
+  author: {
+    id: string
+    name: string
+    avatar: string
+  }
+  id: string
+  entity: string
+  refId?: string
+  content: string
+  createdAt: string
+  updatedAt: string
+}
