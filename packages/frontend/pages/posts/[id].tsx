@@ -55,7 +55,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
           profileLoading={profileLoading}
           comments={comments}
           commentsLoading={commentsLoading}
-          // style={{ display: 'none' }}
+          style={{ display: 'none' }}
           onAddComment={async (content) => addComment(cookies.token, id, content)}
         />
       </article>
