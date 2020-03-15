@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.2](https://github.com/banyudu/blog/compare/frontend@0.11.1...frontend@0.11.2) (2020-03-15)
+
+
+### Bug Fixes
+
+* hide comments ([ecce0fc](https://github.com/banyudu/blog/commit/ecce0fce118afd6203968c9b5e79c27c00f4049e))
+
+
+
+
+
 ## [0.11.1](https://github.com/banyudu/blog/compare/frontend@0.11.0...frontend@0.11.1) (2020-03-15)
 
 **Note:** Version bump only for package frontend
