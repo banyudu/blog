@@ -14,7 +14,7 @@ const Markdown: FC<MarkdownProps> = (props) => {
     <ReactMarkdown
       source={source}
       renderers={{ code: CodeBlock }}
-      className={className}
+      className={`${className} markdown`}
     />
   )
 }

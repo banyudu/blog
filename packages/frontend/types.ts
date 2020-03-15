@@ -43,4 +43,5 @@ export interface Comment {
   content: string
   createdAt: Date
   updatedAt: Date
+  children?: Comment[]
 }

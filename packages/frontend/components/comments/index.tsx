@@ -3,11 +3,12 @@ import { Profile, Comment } from '../../types'
 import { Menu, Dropdown, Input, Button } from 'antd'
 import { DownOutlined, QuestionCircleFilled, UpOutlined } from '@ant-design/icons'
 import Markdown from '../markdown'
+import CommentItem from '../comment-item'
 import './index.less'
 
 const { TextArea } = Input
 
-interface CommentsProfile {
+interface CommentsProps {
   profile?: Profile
   profileLoading: boolean
   comments: Comment[]
@@ -17,7 +18,7 @@ interface CommentsProfile {
   login?: () => void
 }
 
-const Comments: FC<CommentsProfile> = (props) => {
+const Comments: FC<CommentsProps> = (props) => {
   const [draft, setDraft] = useState<string>('')
   const [showPreview, setShowPreview] = useState<boolean>(true)
   const { style, profile, comments, logout, login } = props
@@ -81,10 +82,13 @@ const Comments: FC<CommentsProfile> = (props) => {
         </div>
         <div className='comments-editbox-preview' style={{ display: draft && showPreview ? 'block' : 'none' }}>
           <span>预览: </span>
-          <Markdown source={draft} className='comments-preview' />
+          <Markdown source={draft} className='comment-item-content comments-preview' />
         </div>
       </div>
       <hr />
+      <div className='comments-list'>
+        {comments.map(item => <CommentItem key={item.id} {...item} />)}
+      </div>
     </div>
   )
 }
