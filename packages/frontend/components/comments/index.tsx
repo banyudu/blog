@@ -85,7 +85,6 @@ const Comments: FC<CommentsProps> = (props) => {
           <Markdown source={draft} className='comment-item-content comments-preview' />
         </div>
       </div>
-      <hr />
       <div className='comments-list'>
         {comments.map(item => <CommentItem key={item.id} {...item} />)}
       </div>
