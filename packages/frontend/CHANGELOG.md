@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.3](https://github.com/banyudu/blog/compare/frontend@0.11.2...frontend@0.11.3) (2020-03-15)
+
+
+### Bug Fixes
+
+* fix bug in getProfile ([3321d3c](https://github.com/banyudu/blog/commit/3321d3c03719d979c3d094bcc5881b7db8629821))
+
+
+
+
+
 ## [0.11.2](https://github.com/banyudu/blog/compare/frontend@0.11.1...frontend@0.11.2) (2020-03-15)
 
 
