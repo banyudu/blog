@@ -91,20 +91,6 @@ functions:
             parameters:
               paths:
                 id: true
-  getComments:
-    handler: handler.getComments
-    events:
-      - http:
-          method: get
-          path: comments
-          cors: true
-  addComment:
-    handler: handler.addComment
-    events:
-      - http:
-          method: post
-          path: comment
-          cors: true
   getGists:
     handler: handler.getGists
     events:

@@ -16,6 +16,7 @@ interface CommentsProps {
   style?: React.CSSProperties
   logout?: () => void
   login?: () => void
+  onAddComment?: (x: string) => void
 }
 
 const Comments: FC<CommentsProps> = (props) => {

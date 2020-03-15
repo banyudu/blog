@@ -12,6 +12,7 @@ import { useProfile, useComments } from '../../hooks'
 import Comments from '../../components/comments'
 import { ErrorProps } from '../../types'
 import Markdown from '../../components/markdown'
+import { addComment } from '../../services/comment'
 import './index.less'
 
 interface PostProps {
@@ -48,15 +49,16 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
       </div>
       <article className='article'>
         <Markdown source={content} />
+        <hr />
+        <Comments
+          profile={profile}
+          profileLoading={profileLoading}
+          comments={comments}
+          commentsLoading={commentsLoading}
+          // style={{ display: 'none' }}
+          onAddComment={async (content) => addComment(cookies.token, id, content)}
+        />
       </article>
-      <hr />
-      <Comments
-        profile={profile}
-        profileLoading={profileLoading}
-        comments={comments}
-        commentsLoading={commentsLoading}
-        style={{ display: 'none' }}
-      />
       <Footer />
     </div>
   )
