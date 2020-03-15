@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { rest } from '../utils'
 import { getComments } from '../services/comment'
 import { Profile, Comment } from '../types'
+import { getProfile } from '../services/auth'
 
 export const useProfile = (token: string): [Profile | undefined, boolean] => {
   const [profile, setProfile] = useState<Profile | undefined>()
@@ -10,12 +10,8 @@ export const useProfile = (token: string): [Profile | undefined, boolean] => {
     (async () => {
       try {
         if (token) {
-          const profileRes = await rest.get('/profile', {
-            headers: {
-              Authorization: token
-            }
-          })
-          setProfile(profileRes.data)
+          const profileData = await getProfile(token)
+          setProfile(profileData)
         }
       } catch (error) {
         console.error(error)
