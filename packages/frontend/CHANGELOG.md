@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/banyudu/blog/compare/frontend@0.10.2...frontend@0.11.0) (2020-03-15)
+
+
+### Features
+
+* add comments related files ([e12c21e](https://github.com/banyudu/blog/commit/e12c21e41b96b84eb8720e38cae9da637ed12986))
+* support comment items ([3e50f10](https://github.com/banyudu/blog/commit/3e50f104f60443f3c9e9315ee9f8af5dcce6cf53))
+* support toggle comment preview ([3f74afd](https://github.com/banyudu/blog/commit/3f74afd0ac8e75f0a1062813fe57d21ec3e15c3c))
+* use ant-icons instead of iconfont ([4ef8619](https://github.com/banyudu/blog/commit/4ef861939e2a75cd3cb9908aee1bdf48f3447f98))
+
+
+
+
+
 ## [0.10.2](https://github.com/banyudu/blog/compare/frontend@0.10.1...frontend@0.10.2) (2020-03-07)
 
 **Note:** Version bump only for package frontend
