@@ -43,7 +43,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         <meta name='google' content='index,follow' />
         <meta name='googlebot' content='index,follow' />
       </Head>
-      <BackTop />
+      <BackTop visibilityHeight={800} />
       <div className='headerbar'>
         <Logo />
         <h2 className='title' title={title}>{title}</h2>
