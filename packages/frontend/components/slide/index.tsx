@@ -13,7 +13,7 @@ const Slide: FC<SlideProps> = (props) => {
     <div key={post.id} className='slide'>
       <h1>{post.title}</h1>
       <p>{post.extract}</p>
-      <Link href={{ pathname: `/posts/${post.url}`, query: { random: process.env.random } }}>
+      <Link prefetch={false} href={{ pathname: `/posts/${post.url}`, query: { random: process.env.random } }}>
         <div className='read-more'>
           <a>阅读更多</a>
         </div>
