@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.2](https://github.com/banyudu/blog/compare/frontend@0.12.1...frontend@0.12.2) (2020-03-16)
+
+
+### Bug Fixes
+
+* disable prefetch in slides ([0aee146](https://github.com/banyudu/blog/commit/0aee14653156a3b4af4a27ca7ff964e4df4686d7))
+
+
+
+
+
 ## [0.12.1](https://github.com/banyudu/blog/compare/frontend@0.12.0...frontend@0.12.1) (2020-03-16)
 
 
