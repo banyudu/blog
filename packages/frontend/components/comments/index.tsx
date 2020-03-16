@@ -23,7 +23,6 @@ const Comments: FC<CommentsProps> = (props) => {
   const [draft, setDraft] = useState<string>('')
   const [showPreview, setShowPreview] = useState<boolean>(true)
   const { style, profile, comments, logout, login } = props
-  console.log('profile is: ', profile)
   let username = '未登录'
   let avatar = <QuestionCircleFilled />
   let userMenu = <Menu.Item> <a onClick={login}>使用Github登录</a> </Menu.Item>

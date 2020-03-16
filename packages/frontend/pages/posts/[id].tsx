@@ -13,6 +13,7 @@ import Comments from '../../components/comments'
 import { ErrorProps } from '../../types'
 import Markdown from '../../components/markdown'
 import { addComment } from '../../services/comment'
+import { login, logout } from '../../services/auth'
 import './index.less'
 
 interface PostProps {
@@ -55,8 +56,10 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
           profileLoading={profileLoading}
           comments={comments}
           commentsLoading={commentsLoading}
-          style={{ display: 'none' }}
+          // style={{ display: 'none' }}
           onAddComment={async (content) => addComment(cookies.token, id, content)}
+          login={login}
+          logout={logout}
         />
       </article>
       <Footer />
