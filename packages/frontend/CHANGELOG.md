@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/banyudu/blog/compare/frontend@0.11.3...frontend@0.12.0) (2020-03-16)
+
+
+### Features
+
+* add auth related operations ([3164158](https://github.com/banyudu/blog/commit/31641583ed0c5bd80a1f0f5e31ba0c20fbcf5ad8))
+
+
+
+
+
 ## [0.11.3](https://github.com/banyudu/blog/compare/frontend@0.11.2...frontend@0.11.3) (2020-03-15)
 
 
