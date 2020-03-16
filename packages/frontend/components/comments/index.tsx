@@ -22,7 +22,7 @@ interface CommentsProps {
 const Comments: FC<CommentsProps> = (props) => {
   const [draft, setDraft] = useState<string>('')
   const [showPreview, setShowPreview] = useState<boolean>(true)
-  const { style, profile, comments, logout, login } = props
+  const { style, profile, comments, logout, login, onAddComment } = props
   let username = '未登录'
   let avatar = <QuestionCircleFilled />
   let userMenu = <Menu.Item> <a onClick={login}>使用Github登录</a> </Menu.Item>
@@ -78,7 +78,7 @@ const Comments: FC<CommentsProps> = (props) => {
               {showPreview ? <UpOutlined /> : <DownOutlined />}
             </span>
           </Button>
-          <Button {...disabledProps}>评论</Button>
+          <Button {...disabledProps} onClick={() => onAddComment?.(draft)}>评论</Button>
         </div>
         <div className='comments-editbox-preview' style={{ display: draft && showPreview ? 'block' : 'none' }}>
           <span>预览: </span>
