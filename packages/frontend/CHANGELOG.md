@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/banyudu/blog/compare/frontend@0.12.2...frontend@0.13.0) (2020-03-22)
+
+
+### Bug Fixes
+
+* use cookie in getInitialProps instead of client side ([5653591](https://github.com/banyudu/blog/commit/56535911f32f2c6dea31292906d33f7a92bb417f))
+
+
+### Features
+
+* add callback on login / logout ([7c5234b](https://github.com/banyudu/blog/commit/7c5234b9df06d23b39c291cd9dbd438f72e8291b))
+
+
+
+
+
 ## [0.12.2](https://github.com/banyudu/blog/compare/frontend@0.12.1...frontend@0.12.2) (2020-03-16)
 
 
