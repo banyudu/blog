@@ -6,10 +6,11 @@ const DEFAULT_COMMENTS_API = 'https://api.banyudu.com/comments'
 
 const COMMENTS_API = process.env.COMMENTS_API ?? DEFAULT_COMMENTS_API
 
-export const getComments = async (postId: string): Promise<Comment[]> => {
+export const getComments = async (token: string, postId: string): Promise<Comment[]> => {
   const entity = `blog:${postId}`
   const res: AxiosResponse<Comment[]> = await rest.get(`${COMMENTS_API}/comments`, {
-    params: { entity }
+    params: { entity },
+    headers: { Authorization: token }
   })
   return res.data
 }
