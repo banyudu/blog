@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.3](https://github.com/banyudu/blog/compare/frontend@0.13.2...frontend@0.13.3) (2020-03-22)
+
+
+### Bug Fixes
+
+* add Authorize token in getComments ([eda16ae](https://github.com/banyudu/blog/commit/eda16ae1f433cb860961c4b9855f4b2260fb824d))
+
+
+
+
+
 ## [0.13.2](https://github.com/banyudu/blog/compare/frontend@0.13.1...frontend@0.13.2) (2020-03-22)
 
 
