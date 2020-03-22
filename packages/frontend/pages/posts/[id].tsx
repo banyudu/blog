@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import { useRouter } from 'next/router'
 import Error from 'next/error'
 import Head from 'next/head'
@@ -17,6 +17,10 @@ import cookies from 'next-cookies'
 import * as _ from 'lodash'
 import './index.less'
 
+interface Auth extends Profile {
+  token: string
+}
+
 interface PostProps {
   id: string
   title: string
@@ -24,7 +28,7 @@ interface PostProps {
   tags: string[]
   category: string
   debug?: boolean
-  profile?: Profile
+  profile?: Auth
 }
 
 const Post: NextPage<PostProps | ErrorProps> = (props) => {
@@ -32,8 +36,11 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
   if (statusCode) {
     return <Error statusCode={statusCode} />
   }
-  const { title, tags, content, id, debug, profile = {} as any } = props as PostProps
-  const [comments, commentsLoading] = useComments(profile.token, id)
+  const postProps = props as PostProps
+  const { title, tags, content, id, debug } = postProps
+  const [profile, setProfile] = useState<Auth | undefined>(postProps.profile)
+  const token = profile?.token ?? ''
+  const [comments, commentsLoading] = useComments(token, id)
 
   const commentsStyle = debug ? {} : { display: 'none' }
   console.log('commentsStyle is: ', JSON.stringify(commentsStyle))
@@ -61,9 +68,9 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
           comments={comments}
           commentsLoading={commentsLoading}
           style={commentsStyle}
-          onAddComment={async (content) => addComment(profile.token, id, content)}
-          login={login}
-          logout={logout}
+          onAddComment={async (content) => addComment(token, id, content)}
+          login={() => login((profile) => setProfile(profile))}
+          logout={async () => logout(() => setProfile(undefined))}
         />
       </article>
       <Footer />

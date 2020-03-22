@@ -26,7 +26,7 @@ const Comments: FC<CommentsProps> = (props) => {
   let username = '未登录'
   let avatar = <QuestionCircleFilled />
   let userMenu = <Menu.Item> <a onClick={login}>使用Github登录</a> </Menu.Item>
-  if (profile) {
+  if (profile?.name) {
     username = profile.name
     userMenu = <Menu.Item> <a onClick={logout}>登出</a> </Menu.Item>
     if (profile.avatar) {

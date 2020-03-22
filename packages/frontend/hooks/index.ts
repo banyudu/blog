@@ -28,8 +28,10 @@ export const useComments = (token: string, postId: string): [Comment[], boolean]
   useEffect(() => {
     (async () => {
       try {
-        const comments = await getComments(postId)
-        setComments(comments)
+        if (token && postId) {
+          const comments = await getComments(postId)
+          setComments(comments)
+        }
       } catch (error) {
         console.error(error)
       }
