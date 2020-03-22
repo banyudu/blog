@@ -7,13 +7,14 @@ import { NextPage } from 'next'
 import Footer from '../../components/footer'
 import { rest } from '../../utils'
 import Logo from '../../components/logo'
-import { useCookies } from 'react-cookie'
-import { useProfile, useComments } from '../../hooks'
+import { useComments } from '../../hooks'
 import Comments from '../../components/comments'
-import { ErrorProps } from '../../types'
+import { ErrorProps, Profile } from '../../types'
 import Markdown from '../../components/markdown'
 import { addComment } from '../../services/comment'
 import { login, logout } from '../../services/auth'
+import cookies from 'next-cookies'
+import * as _ from 'lodash'
 import './index.less'
 
 interface PostProps {
@@ -22,6 +23,8 @@ interface PostProps {
   content: string
   tags: string[]
   category: string
+  debug?: boolean
+  profile?: Profile
 }
 
 const Post: NextPage<PostProps | ErrorProps> = (props) => {
@@ -29,10 +32,11 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
   if (statusCode) {
     return <Error statusCode={statusCode} />
   }
-  const { title, tags, content, id } = props as PostProps
-  const [cookies] = useCookies(['token'])
-  const [profile, profileLoading] = useProfile(cookies.token)
-  const [comments, commentsLoading] = useComments(cookies.token, id)
+  const { title, tags, content, id, debug, profile = {} as any } = props as PostProps
+  const [comments, commentsLoading] = useComments(profile.token, id)
+
+  const commentsStyle = debug ? {} : { display: 'none' }
+  console.log('commentsStyle is: ', JSON.stringify(commentsStyle))
   return (
     <div className='post'>
       <Head>
@@ -53,11 +57,11 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         <hr />
         <Comments
           profile={profile}
-          profileLoading={profileLoading}
+          profileLoading={false}
           comments={comments}
           commentsLoading={commentsLoading}
-          // style={{ display: 'none' }}
-          onAddComment={async (content) => addComment(cookies.token, id, content)}
+          style={commentsStyle}
+          onAddComment={async (content) => addComment(profile.token, id, content)}
           login={login}
           logout={logout}
         />
@@ -67,7 +71,8 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
   )
 }
 
-Post.getInitialProps = async function ({ res, query }): Promise<PostProps | ErrorProps> {
+Post.getInitialProps = async function (ctx): Promise<PostProps | ErrorProps> {
+  const { query, res } = ctx
   const { id } = query
   const postRes = await rest.get(`/post/${encodeURIComponent(decodeURIComponent(id as string))}`)
   if (!postRes.data) {
@@ -78,14 +83,22 @@ Post.getInitialProps = async function ({ res, query }): Promise<PostProps | Erro
   }
 
   // set cachec-control
-  if (res) {
+  if (res && process.env.NODE_ENV === 'production') {
     res.setHeader('Cache-Control', 'max-age=86400, public')
   }
 
   // 将tags从字符串转成数组
   postRes.data.tags = (postRes.data.tags || '').split('|')
 
-  return postRes.data
+  const allCookies = cookies(ctx)
+  const profile = allCookies.token ? _.pick(allCookies, ['userId', 'name', 'avatar']) : undefined
+  const debug = !!allCookies.debug
+
+  return {
+    ...postRes.data,
+    profile,
+    debug
+  }
 }
 
 export default Post

@@ -5,7 +5,7 @@ import { Profile } from '../types'
 const DEFAULT_AUTH_API = 'https://api.banyudu.com/auth'
 const AUTH_API = process.env.COMMENTS_API ?? DEFAULT_AUTH_API
 
-const GITHUB_AUTH_PAGE = 'https://auth.banyudu.com/github?autoClose=true'
+const GITHUB_AUTH_PAGE = 'https://auth.banyudu.com/github'
 
 export const getProfile = async (token: string): Promise<Profile> => {
   const res: AxiosResponse<Profile> = await rest.get(`${AUTH_API}/profile`, {
@@ -14,13 +14,18 @@ export const getProfile = async (token: string): Promise<Profile> => {
   return res.data
 }
 
-export const login = () => {
+export const login = (callback?: Function) => {
   const width = 600
   const height = 450
   const x = (window.innerWidth - width) / 2
   const y = (window.innerHeight - height) / 2
-  window.open(GITHUB_AUTH_PAGE, 'winname', `directories=0,titlebar=0,toolbar=0,location=0,
+
+  const newWindow = window.open('about:blank', 'Auth', `directories=0,titlebar=0,toolbar=0,location=0,
     status=0,menubar=0,scrollbars=no,resizable=no,width=${width},height=${height},top=${y},left=${x}`)
+  if (newWindow) {
+    newWindow.addEventListener('authComplete', () => { callback?.() }, { once: true })
+    newWindow.location.href = GITHUB_AUTH_PAGE
+  }
 }
 
 export const logout = async () => {
