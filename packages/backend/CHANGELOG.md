@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/banyudu/blog/compare/backend@0.6.2...backend@0.7.0) (2020-03-22)
+
+
+### Features
+
+* support sitemap ([09410ed](https://github.com/banyudu/blog/commit/09410edd65060ab6b08e4fd3189684f9a40979b9))
+
+
+
+
+
 ## [0.6.2](https://github.com/banyudu/blog/compare/backend@0.6.1...backend@0.6.2) (2020-03-15)
 
 **Note:** Version bump only for package backend
