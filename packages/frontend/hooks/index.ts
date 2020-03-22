@@ -29,7 +29,7 @@ export const useComments = (token: string, postId: string): [Comment[], boolean]
     (async () => {
       try {
         if (token && postId) {
-          const comments = await getComments(token, postId)
+          const comments = await getComments(postId)
           setComments(comments)
         }
       } catch (error) {
