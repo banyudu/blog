@@ -29,7 +29,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
   const items: React.ReactNode[] = []
   for (let i = 0; i < count && i < posts.length; i++) {
     const post = posts[i]
-    items.push(<Slide post={post} />)
+    items.push(<Slide key={post.id} post={post} />)
   }
   return (
     <Carousel
