@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/banyudu/blog/compare/frontend@0.14.0...frontend@0.15.0) (2020-03-22)
+
+
+### Features
+
+* add sitemap page ([06c4246](https://github.com/banyudu/blog/commit/06c42466de49d438abff2835dd5df1d732f92e24))
+
+
+
+
+
 # [0.14.0](https://github.com/banyudu/blog/compare/frontend@0.13.7...frontend@0.14.0) (2020-03-22)
 
 
