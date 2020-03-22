@@ -43,7 +43,6 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
   const [comments, commentsLoading] = useComments(token, id)
 
   const commentsStyle = debug ? {} : { display: 'none' }
-  console.log('commentsStyle is: ', JSON.stringify(commentsStyle))
   return (
     <div className='post'>
       <Head>

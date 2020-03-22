@@ -11,6 +11,7 @@ export const getComments = async (postId: string): Promise<Comment[]> => {
   const res: AxiosResponse<Comment[]> = await rest.get(`${COMMENTS_API}/comments`, {
     params: { entity }
   })
+  console.log('response in getComments: ', res.data)
   return res.data
 }
 

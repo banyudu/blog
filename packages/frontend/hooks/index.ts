@@ -37,6 +37,6 @@ export const useComments = (token: string, postId: string): [Comment[], boolean]
       }
       setLoading(false)
     })().catch(console.error)
-  }, [token])
+  }, [token, postId])
   return [comments, loading]
 }
