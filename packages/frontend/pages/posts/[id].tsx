@@ -15,6 +15,7 @@ import { addComment } from '../../services/comment'
 import { login, logout } from '../../services/auth'
 import cookies from 'next-cookies'
 import * as _ from 'lodash'
+import nanoid from 'nanoid'
 import './index.less'
 
 interface Auth extends Profile {
@@ -38,9 +39,15 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
   }
   const postProps = props as PostProps
   const { title, tags, content, id } = postProps
+  const [commentsRefreshKey, setCommentsRefershKey] = useState<string>(nanoid())
+  const [comments, commentsLoading] = useComments(id, commentsRefreshKey)
   const [profile, setProfile] = useState<Auth | undefined>(postProps.profile)
   const token = profile?.token ?? ''
-  const [comments, commentsLoading] = useComments(id)
+
+  const handleAddComment = async (content) => {
+    await addComment(token, id, content)
+    setCommentsRefershKey(nanoid())
+  }
 
   return (
     <div className='post'>
@@ -65,7 +72,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
           profileLoading={false}
           comments={comments}
           commentsLoading={commentsLoading}
-          onAddComment={async (content) => addComment(token, id, content)}
+          onAddComment={handleAddComment}
           login={() => login((profile) => setProfile(profile))}
           logout={async () => logout(() => setProfile(undefined))}
         />
