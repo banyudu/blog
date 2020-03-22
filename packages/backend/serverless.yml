@@ -106,6 +106,13 @@ functions:
           path: sync
           cors: true
       - schedule: rate(1 hour)
+  getSiteMap:
+    handler: handler.getSiteMap
+    events:
+      - http:
+          method: get
+          path: /sitemap.xml.gz
+          cors: true
 
 resources:
   Resources:

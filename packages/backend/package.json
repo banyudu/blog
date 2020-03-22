@@ -16,8 +16,10 @@
     "lodash": "^4.17.15",
     "qs": "^6.9.1",
     "serverless-sentry": "^1.2.0",
+    "sitemap": "^6.1.0",
     "socks-proxy-agent": "^5.0.0",
-    "source-map-support": "^0.5.10"
+    "source-map-support": "^0.5.10",
+    "zlib": "^1.0.5"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.17",
