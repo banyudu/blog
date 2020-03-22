@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/banyudu/blog/compare/frontend@0.13.7...frontend@0.14.0) (2020-03-22)
+
+
+### Features
+
+* add robots.txt ([9a3d400](https://github.com/banyudu/blog/commit/9a3d400062cf6eb6fa003b66caa8c044a098dd9a))
+
+
+
+
+
 ## [0.13.7](https://github.com/banyudu/blog/compare/frontend@0.13.6...frontend@0.13.7) (2020-03-22)
 
 
