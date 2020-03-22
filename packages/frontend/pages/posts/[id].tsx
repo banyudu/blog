@@ -98,7 +98,7 @@ Post.getInitialProps = async function (ctx): Promise<PostProps | ErrorProps> {
   postRes.data.tags = (postRes.data.tags || '').split('|')
 
   const allCookies = cookies(ctx)
-  const profile = allCookies.token ? _.pick(allCookies, ['userId', 'name', 'avatar']) : undefined
+  const profile = allCookies.token ? _.pick(allCookies, ['userId', 'name', 'avatar', 'token']) : undefined
   const debug = !!allCookies.debug
 
   return {
