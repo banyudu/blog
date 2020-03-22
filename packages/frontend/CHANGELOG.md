@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.2](https://github.com/banyudu/blog/compare/frontend@0.13.1...frontend@0.13.2) (2020-03-22)
+
+
+### Bug Fixes
+
+* fix bug in cookie props ([6703da3](https://github.com/banyudu/blog/commit/6703da391b52b7df52870c886396b4c282b92cc0))
+
+
+
+
+
 ## [0.13.1](https://github.com/banyudu/blog/compare/frontend@0.13.0...frontend@0.13.1) (2020-03-22)
 
 
