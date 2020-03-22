@@ -28,6 +28,7 @@ export interface ErrorProps {
 export interface Profile {
   name: string
   avatar: string
+  email?: string
 }
 
 export interface Comment {
