@@ -22,13 +22,13 @@ export const useProfile = (token: string): [Profile | undefined, boolean] => {
   return [profile, loading]
 }
 
-export const useComments = (token: string, postId: string): [Comment[], boolean] => {
+export const useComments = (postId: string): [Comment[], boolean] => {
   const [comments, setComments] = useState<Comment[]>([])
   const [loading, setLoading] = useState<boolean>(true)
   useEffect(() => {
     (async () => {
       try {
-        if (token && postId) {
+        if (postId) {
           const comments = await getComments(postId)
           setComments(comments)
         }
@@ -37,6 +37,6 @@ export const useComments = (token: string, postId: string): [Comment[], boolean]
       }
       setLoading(false)
     })().catch(console.error)
-  }, [token, postId])
+  }, [postId])
   return [comments, loading]
 }

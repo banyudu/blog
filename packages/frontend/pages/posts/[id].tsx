@@ -37,12 +37,11 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
     return <Error statusCode={statusCode} />
   }
   const postProps = props as PostProps
-  const { title, tags, content, id, debug } = postProps
+  const { title, tags, content, id } = postProps
   const [profile, setProfile] = useState<Auth | undefined>(postProps.profile)
   const token = profile?.token ?? ''
-  const [comments, commentsLoading] = useComments(token, id)
+  const [comments, commentsLoading] = useComments(id)
 
-  const commentsStyle = debug ? {} : { display: 'none' }
   return (
     <div className='post'>
       <Head>
@@ -53,7 +52,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         <meta name='google' content='index,follow' />
         <meta name='googlebot' content='index,follow' />
       </Head>
-      <BackTop visibilityHeight={800} />
+      <BackTop visibilityHeight={1500} />
       <div className='headerbar'>
         <Logo />
         <h2 className='title' title={title}>{title}</h2>
@@ -66,7 +65,6 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
           profileLoading={false}
           comments={comments}
           commentsLoading={commentsLoading}
-          style={commentsStyle}
           onAddComment={async (content) => addComment(token, id, content)}
           login={() => login((profile) => setProfile(profile))}
           logout={async () => logout(() => setProfile(undefined))}
