@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.1](https://github.com/banyudu/blog/compare/frontend@0.13.0...frontend@0.13.1) (2020-03-22)
+
+
+### Bug Fixes
+
+* fix bug in types ([6754693](https://github.com/banyudu/blog/commit/67546934cf6f2760bf9f00c7eb58b359382814f3))
+
+
+
+
+
 # [0.13.0](https://github.com/banyudu/blog/compare/frontend@0.12.2...frontend@0.13.0) (2020-03-22)
 
 
