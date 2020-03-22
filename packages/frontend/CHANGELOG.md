@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.1](https://github.com/banyudu/blog/compare/frontend@0.15.0...frontend@0.15.1) (2020-03-22)
+
+
+### Bug Fixes
+
+* add key props in slides ([cccf578](https://github.com/banyudu/blog/commit/cccf57822665dd6cf00c9c09bb73b3fa9f96fe22))
+
+
+
+
+
 # [0.15.0](https://github.com/banyudu/blog/compare/frontend@0.14.0...frontend@0.15.0) (2020-03-22)
 
 
