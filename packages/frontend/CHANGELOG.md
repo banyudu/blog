@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.2](https://github.com/banyudu/blog/compare/frontend@0.15.1...frontend@0.15.2) (2020-04-04)
+
+
+### Bug Fixes
+
+* **auth:** remove cookie in client side when logout ([6b54351](https://github.com/banyudu/blog/commit/6b543518c0c997a4f492ae53cec27ac6e143ea85))
+
+
+
+
+
 ## [0.15.1](https://github.com/banyudu/blog/compare/frontend@0.15.0...frontend@0.15.1) (2020-03-22)
 
 
