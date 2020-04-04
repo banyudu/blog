@@ -1,6 +1,7 @@
 import { rest } from '../utils'
 import { AxiosResponse } from 'axios'
 import { Profile } from '../types'
+import * as Cookies from 'js-cookie'
 
 const DEFAULT_AUTH_API = 'https://api.banyudu.com/auth'
 const AUTH_API = process.env.COMMENTS_API ?? DEFAULT_AUTH_API
@@ -30,6 +31,7 @@ export const login = (callback?: Function) => {
 
 export const logout = async (callback) => {
   console.log('logging out..')
-  await rest.post(`${AUTH_API}/logout`)
+  // await rest.post(`${AUTH_API}/logout`) // 修改为在客户端删除cookie
+  Cookies.remove('token', { path: '/', domain: 'banyudu.com' })
   callback?.()
 }
