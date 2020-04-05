@@ -24,7 +24,10 @@ export const login = (callback?: Function) => {
   const newWindow = window.open('about:blank', 'Auth', `directories=0,titlebar=0,toolbar=0,location=0,
     status=0,menubar=0,scrollbars=no,resizable=no,width=${width},height=${height},top=${y},left=${x}`)
   if (newWindow) {
-    newWindow.addEventListener('authComplete', (profile) => { callback?.(profile) }, { once: true })
+    window.addEventListener('authComplete', () => {
+      console.debug('recieved message authComplete')
+      callback?.()
+    }, { once: true })
     newWindow.location.href = GITHUB_AUTH_PAGE
   }
 }

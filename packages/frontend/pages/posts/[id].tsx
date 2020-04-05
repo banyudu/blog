@@ -17,6 +17,7 @@ import cookies from 'next-cookies'
 import * as _ from 'lodash'
 import nanoid from 'nanoid'
 import './index.less'
+import * as JSCookies from 'js-cookie'
 
 interface Auth extends Profile {
   token: string
@@ -73,7 +74,18 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
           comments={comments}
           commentsLoading={commentsLoading}
           onAddComment={handleAddComment}
-          login={() => login((profile) => setProfile(profile))}
+          login={() => login(() => {
+            // set profile
+            // 'userId', 'name', 'avatar', 'token'
+            console.debug('login callback')
+            const newProfile: Auth = {
+              token: JSCookies.get('token') ?? '',
+              name: JSCookies.get('name') ?? '',
+              avatar: JSCookies.get('avatar') ?? ''
+            }
+            console.log('newProfile is: ', newProfile)
+            setProfile(newProfile)
+          })}
           logout={async () => logout(() => setProfile(undefined))}
         />
       </article>
