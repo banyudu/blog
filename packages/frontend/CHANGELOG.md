@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.3](https://github.com/banyudu/blog/compare/frontend@0.15.2...frontend@0.15.3) (2020-04-05)
+
+
+### Bug Fixes
+
+* **frontend:** fix bug in auth Complete callback ([025beaf](https://github.com/banyudu/blog/commit/025beaf39c19129ca8b5698407d4a510392af934))
+
+
+
+
+
 ## [0.15.2](https://github.com/banyudu/blog/compare/frontend@0.15.1...frontend@0.15.2) (2020-04-04)
 
 
