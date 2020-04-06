@@ -11,6 +11,7 @@ import { useComments } from '../../hooks'
 import Comments from '../../components/comments'
 import { ErrorProps, Profile } from '../../types'
 import Markdown from '../../components/markdown'
+import Summary from '../../components/summary'
 import { addComment } from '../../services/comment'
 import { login, logout } from '../../services/auth'
 import cookies from 'next-cookies'
@@ -30,6 +31,8 @@ interface PostProps {
   category: string
   debug?: boolean
   profile?: Auth
+  createdAt: Date
+  updatedAt: Date
 }
 
 const Post: NextPage<PostProps | ErrorProps> = (props) => {
@@ -38,7 +41,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
     return <Error statusCode={statusCode} />
   }
   const postProps = props as PostProps
-  const { title, tags, content, id } = postProps
+  const { title, tags, content, id, category, createdAt, updatedAt } = postProps
   const [commentsRefreshKey, setCommentsRefershKey] = useState<string>(nanoid())
   const [comments, commentsLoading] = useComments(id, commentsRefreshKey)
   const [profile, setProfile] = useState<Auth | undefined>(postProps.profile)
@@ -65,6 +68,12 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         <h2 className='title' title={title}>{title}</h2>
       </div>
       <article className='article'>
+        <Summary
+          category={category}
+          tags={tags}
+          createdAt={createdAt}
+          updatedAt={updatedAt}
+        />
         <Markdown source={content} />
         <hr />
         <Comments
@@ -111,6 +120,8 @@ Post.getInitialProps = async function (ctx): Promise<PostProps | ErrorProps> {
 
   return {
     ...postRes.data,
+    createdAt: new Date(postRes.data.createdAt),
+    updatedAt: new Date(postRes.data.updatedAt),
     profile,
     debug
   }
