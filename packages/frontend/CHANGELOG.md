@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.4](https://github.com/banyudu/blog/compare/frontend@0.15.3...frontend@0.15.4) (2020-04-06)
+
+
+### Bug Fixes
+
+* **frontend:** fix bug in login callback ([9a09a0a](https://github.com/banyudu/blog/commit/9a09a0a05206d4a7fbd3387e2983b843ebf5e650))
+
+
+
+
+
 ## [0.15.3](https://github.com/banyudu/blog/compare/frontend@0.15.2...frontend@0.15.3) (2020-04-05)
 
 
