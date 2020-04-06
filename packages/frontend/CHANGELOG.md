@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/banyudu/blog/compare/frontend@0.15.4...frontend@0.16.0) (2020-04-06)
+
+
+### Features
+
+* show summary info area in post page ([f8de633](https://github.com/banyudu/blog/commit/f8de633d6ac6603e67a494ba4605ea0d135689d9))
+
+
+
+
+
 ## [0.15.4](https://github.com/banyudu/blog/compare/frontend@0.15.3...frontend@0.15.4) (2020-04-06)
 
 
