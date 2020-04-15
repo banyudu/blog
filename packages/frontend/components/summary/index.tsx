@@ -11,7 +11,7 @@ interface SummaryProps {
 }
 
 const Summary: FC<SummaryProps> = (props) => {
-  const { category, tags, createdAt } = props
+  const { category, tags, createdAt, updatedAt } = props
   return (
     <div className='summary'>
       <div className='links'>
@@ -25,6 +25,7 @@ const Summary: FC<SummaryProps> = (props) => {
       <div className='info'>
         <span>发布于: {dayjs(createdAt).format('YYYY-MM-DD')}</span>
         <span>作者: 鱼肚</span>
+        <span>最后更新: {dayjs(updatedAt).format('YYYY-MM-DD')}</span>
       </div>
     </div>
   )
