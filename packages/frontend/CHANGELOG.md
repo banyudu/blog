@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/banyudu/blog/compare/frontend@0.16.4...frontend@0.17.0) (2020-04-23)
+
+
+### Features
+
+* add baidu verify file ([dda723d](https://github.com/banyudu/blog/commit/dda723d8575c1d6f951ab576c8a996bbcacb287e))
+
+
+
+
+
 ## [0.16.4](https://github.com/banyudu/blog/compare/frontend@0.16.3...frontend@0.16.4) (2020-04-23)
 
 **Note:** Version bump only for package frontend
