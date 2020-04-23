@@ -25,7 +25,11 @@ class CodeBlock extends PureComponent<CodeBlockProps> {
       return <div className='mermaid'>{value}</div>
     }
     return (
-      <SyntaxHighlighter language={language === 'react' ? 'javascript' : language} style={codeStyle}>
+      <SyntaxHighlighter
+        language={language === 'react' ? 'javascript' : language}
+        style={codeStyle}
+        showLineNumbers
+      >
         {value}
       </SyntaxHighlighter>
     )
