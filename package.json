@@ -2,6 +2,7 @@
   "name": "ip",
   "private": true,
   "scripts": {
+    "audit": "lerna-audit",
     "lint": "eslint . --ext .ts,.tsx,.js,jsx",
     "lint:fix": "npm run lint -- --fix",
     "lint:git": "eslint --ext .ts,.tsx,.js,jsx `git diff-index --diff-filter=ACM --name-only HEAD | grep -E '.(js|jsx|ts|tsx)$'`"
@@ -23,7 +24,8 @@
     "eslint-plugin-react-hooks": "^2.4.0",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.2.3",
-    "lerna": "^3.15.0"
+    "lerna": "^3.15.0",
+    "lerna-audit": "^1.2.0"
   },
   "husky": {
     "hooks": {
