@@ -3,6 +3,9 @@ import { APIGatewayProxyHandler, APIGatewayProxyResult } from 'aws-lambda'
 import axios, { AxiosRequestConfig } from 'axios'
 import { SocksProxyAgent } from 'socks-proxy-agent'
 import session from './session'
+import * as Debug from 'debug'
+
+export const debug = Debug('blog')
 
 export const validate = (data: any, schema: Joi.AnySchema): any => {
   const result = schema.validate(data, {

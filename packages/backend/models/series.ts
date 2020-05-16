@@ -1,15 +1,10 @@
 import * as dynamoose from 'dynamoose'
 
-export interface Blog {
+export interface Series {
   id: string
-  category: string
   title: string
-  extract: string
-  tags: string
-  content: string
   url: string
-  filename: string
-  series?: string
+  posts: string
   updatedAt: Date
   createdAt: Date
 }
@@ -20,14 +15,7 @@ export const Schema = new dynamoose.Schema({
     required: true,
     hashKey: true
   },
-  category: String,
   title: {
-    type: String,
-    required: true
-  },
-  tags: String,
-  extract: String,
-  content: {
     type: String,
     required: true
   },
@@ -39,17 +27,12 @@ export const Schema = new dynamoose.Schema({
       global: true
     }
   },
-  filename: String,
-  series: {
+  posts: {
     type: String,
-    required: false,
-    index: {
-      name: 'seriesGSI',
-      global: true
-    }
+    required: true
   }
 }, {
   timestamps: true
 })
 
-export default dynamoose.model<Blog, string>(process.env.BLOG_TABLE, Schema)
+export default dynamoose.model<Series, string>(process.env.SERIES_TABLE, Schema)
