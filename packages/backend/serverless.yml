@@ -20,7 +20,7 @@ custom:
     createRoute53Record: true
   sentry:
     dsn: ${self:provider.environment.sentryDSN}
-  table: '${self:service.name}-${self:provider.environment.stage}'
+  blog_table: '${self:service.name}-${self:provider.environment.stage}'
 
 
 # Add the serverless-webpack plugin
@@ -41,7 +41,7 @@ provider:
     stage: ${opt:stage, self:provider.stage}
     sentryDSN: ${ssm:/${self:service.name}/sentryDSN}
     AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
-    TABLE: ${self:custom.table}
+    BLOG_TABLE: ${self:custom.blog_table}
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -133,7 +133,7 @@ resources:
           - AttributeName: id
             KeyType: HASH
         BillingMode: PAY_PER_REQUEST
-        TableName: ${self:custom.table}
+        TableName: ${self:custom.blog_table}
         GlobalSecondaryIndexes:
           - IndexName: urlGSI
             KeySchema:

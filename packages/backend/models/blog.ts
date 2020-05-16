@@ -51,4 +51,4 @@ export const Schema = new dynamoose.Schema({
   timestamps: true
 })
 
-export default dynamoose.model<Blog, string>(process.env.TABLE, Schema)
+export default dynamoose.model<Blog, string>(process.env.BLOG_TABLE, Schema)
