@@ -57,6 +57,9 @@ provider:
         - { "Fn::Join": [ "/", [
           { "Fn::GetAtt": ["Table", "Arn" ] }, "index", "urlGSI"
         ]]}
+        - { "Fn::Join": [ "/", [
+          { "Fn::GetAtt": ["Table", "Arn" ] }, "index", "seriesGSI"
+        ]]}
 
 functions:
   getCategories:
@@ -124,6 +127,8 @@ resources:
             AttributeType: S
           - AttributeName: url
             AttributeType: S
+          - AttributeName: series
+            AttributeType: S
         KeySchema:
           - AttributeName: id
             KeyType: HASH
@@ -133,6 +138,12 @@ resources:
           - IndexName: urlGSI
             KeySchema:
               - AttributeName: url
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+          - IndexName: seriesGSI
+            KeySchema:
+              - AttributeName: series
                 KeyType: HASH
             Projection:
               ProjectionType: ALL

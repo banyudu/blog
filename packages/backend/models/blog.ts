@@ -38,7 +38,15 @@ export const Schema = new dynamoose.Schema({
       global: true
     }
   },
-  filename: String
+  filename: String,
+  series: {
+    type: String,
+    required: false,
+    index: {
+      name: 'seriesGSI',
+      global: true
+    }
+  }
 }, {
   timestamps: true
 })
