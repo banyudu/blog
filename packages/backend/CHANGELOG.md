@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/banyudu/blog/compare/backend@0.7.2...backend@0.8.0) (2020-05-16)
+
+
+### Features
+
+* add new column series in table blog ([100b979](https://github.com/banyudu/blog/commit/100b979e9e56f7c2eea636ee6f37e8faa3fcdafc))
+
+
+
+
+
 ## [0.7.2](https://github.com/banyudu/blog/compare/backend@0.7.1...backend@0.7.2) (2020-05-15)
 
 **Note:** Version bump only for package backend
