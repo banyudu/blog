@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/banyudu/blog/compare/frontend@0.17.3...frontend@0.18.0) (2020-06-26)
+
+
+### Features
+
+* modify code block theme ([03dfe52](https://github.com/banyudu/blog/commit/03dfe5280af2472e124e64e96633f8d957cde27d))
+
+
+
+
+
 ## [0.17.3](https://github.com/banyudu/blog/compare/frontend@0.17.2...frontend@0.17.3) (2020-05-16)
 
 **Note:** Version bump only for package frontend
