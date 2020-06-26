@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 // import { useRouter } from 'next/router'
 import Error from 'next/error'
 import Head from 'next/head'
@@ -26,6 +26,7 @@ interface Auth extends Profile {
 interface PostProps {
   id: string
   title: string
+  extract: string
   content: string
   tags: string[]
   category: string
@@ -41,11 +42,17 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
     return <Error statusCode={statusCode} />
   }
   const postProps = props as PostProps
-  const { title, tags, content, id, category, createdAt, updatedAt } = postProps
+  const { title, tags, content, id, category, extract, createdAt, updatedAt } = postProps
   const [commentsRefreshKey, setCommentsRefershKey] = useState<string>(nanoid())
   const [comments, commentsLoading] = useComments(id, commentsRefreshKey)
   const [profile, setProfile] = useState<Auth | undefined>(postProps.profile)
+  // const router = useRouter()
   const token = profile?.token ?? ''
+  const socialShareRef = useRef(null)
+
+  useEffect(() => {
+    // socialShareRef.current
+  })
 
   const handleAddComment = async (content) => {
     await addComment(token, id, content)
@@ -56,11 +63,13 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
     <div className='post'>
       <Head>
         <title>{title}</title>
-        <meta name='description' content={title} />
+        <meta name='description' content={extract} />
         <meta name='keywords' content={tags.join(' ')} />
         <meta name='robots' content='index,follow' />
         <meta name='google' content='index,follow' />
         <meta name='googlebot' content='index,follow' />
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js' integrity='sha256-fGPu+icKh985TLPhO2v68U7i0CW0dE4kiR06RN4O6jo=' crossOrigin='anonymous' />
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css' integrity='sha256-0EDwznjUTDEicOuZhOL03fpflUqzhkByvhwol8YGkp4=' crossOrigin='anonymous' />
       </Head>
       <BackTop visibilityHeight={1500} />
       <div className='headerbar'>
@@ -76,6 +85,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         />
         <Markdown source={content} />
         <hr />
+        <div ref={socialShareRef} className='social-share' />
         <Comments
           profile={profile}
           profileLoading={false}

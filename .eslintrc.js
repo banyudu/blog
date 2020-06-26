@@ -16,6 +16,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/restrict-template-expressions': 'off',
     '@typescript-eslint/require-await': 'off',
+    'react/jsx-closing-tag-location': 'off',
     'react/jsx-closing-bracket-location': 'warn',
     'react/prop-types': 'off'
   }
