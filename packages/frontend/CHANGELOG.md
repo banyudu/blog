@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/banyudu/blog/compare/frontend@0.18.0...frontend@0.19.0) (2020-06-26)
+
+
+### Features
+
+* add social share buttons ([cdf253c](https://github.com/banyudu/blog/commit/cdf253c9dffe0ec5d2a980aa31fe4b509820f1d0))
+
+
+
+
+
 # [0.18.0](https://github.com/banyudu/blog/compare/frontend@0.17.3...frontend@0.18.0) (2020-06-26)
 
 
