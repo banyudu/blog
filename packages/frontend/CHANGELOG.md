@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.2](https://github.com/banyudu/blog/compare/frontend@0.19.1...frontend@0.19.2) (2020-06-27)
+
+
+### Bug Fixes
+
+* social share icon font ([0910906](https://github.com/banyudu/blog/commit/0910906f616f385e00656503cf176ee6de3f1777))
+
+
+
+
+
 ## [0.19.1](https://github.com/banyudu/blog/compare/frontend@0.19.0...frontend@0.19.1) (2020-06-27)
 
 
