@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 // import { useRouter } from 'next/router'
 import Error from 'next/error'
 import Head from 'next/head'
@@ -17,6 +17,8 @@ import { login, logout } from '../../services/auth'
 import cookies from 'next-cookies'
 import * as _ from 'lodash'
 import nanoid from 'nanoid'
+import { useRouter } from 'next/router'
+import ShareButtons from '../../components/share-buttons'
 import './index.less'
 
 interface Auth extends Profile {
@@ -46,9 +48,8 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
   const [commentsRefreshKey, setCommentsRefershKey] = useState<string>(nanoid())
   const [comments, commentsLoading] = useComments(id, commentsRefreshKey)
   const [profile, setProfile] = useState<Auth | undefined>(postProps.profile)
-  // const router = useRouter()
+  const router = useRouter()
   const token = profile?.token ?? ''
-  const socialShareRef = useRef(null)
 
   useEffect(() => {
     // socialShareRef.current
@@ -68,8 +69,6 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         <meta name='robots' content='index,follow' />
         <meta name='google' content='index,follow' />
         <meta name='googlebot' content='index,follow' />
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js' integrity='sha256-fGPu+icKh985TLPhO2v68U7i0CW0dE4kiR06RN4O6jo=' crossOrigin='anonymous' />
-        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css' integrity='sha256-0EDwznjUTDEicOuZhOL03fpflUqzhkByvhwol8YGkp4=' crossOrigin='anonymous' />
       </Head>
       <BackTop visibilityHeight={1500} />
       <div className='headerbar'>
@@ -85,7 +84,14 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         />
         <Markdown source={content} />
         <hr />
-        <div ref={socialShareRef} className='social-share' />
+        <ShareButtons
+          title={title}
+          description={extract}
+          image=''
+          url={router.pathname}
+          origin='https://banyudu.com'
+          site='https://banyudu.com'
+        />
         <Comments
           profile={profile}
           profileLoading={false}
