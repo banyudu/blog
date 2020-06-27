@@ -2,10 +2,11 @@
 const withLess = require('@zeit/next-less')
 const withCSS = require('@zeit/next-css')
 const withImages = require('next-images')
+const withFonts = require('next-fonts')
 const nanoid = require('nanoid')
 require('dotenv').config()
 
-module.exports = withImages(withCSS(withLess({
+module.exports = withFonts(withImages(withCSS(withLess({
   /* config options here */
   target: 'serverless',
   env: {
@@ -15,6 +16,7 @@ module.exports = withImages(withCSS(withLess({
   lessLoaderOptions: {
     javascriptEnabled: true
   },
+  enableSvg: true,
   webpack: (config, { isServer }) => {
     if (isServer) {
       require('ignore-styles')
@@ -39,4 +41,4 @@ module.exports = withImages(withCSS(withLess({
     }
     return config
   }
-})))
+}))))
