@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-// import { useRouter } from 'next/router'
 import Error from 'next/error'
 import Head from 'next/head'
 import { BackTop } from 'antd'
@@ -34,6 +33,7 @@ interface PostProps {
   category: string
   debug?: boolean
   profile?: Auth
+  url: string
   createdAt: Date
   updatedAt: Date
 }
@@ -59,6 +59,8 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
     await addComment(token, id, content)
     setCommentsRefershKey(nanoid())
   }
+
+  const HOST = 'https://banyudu.com'
 
   return (
     <div className='post'>
@@ -88,9 +90,9 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
           title={title}
           description={extract}
           image=''
-          url={router.pathname}
-          origin='https://banyudu.com'
-          site='https://banyudu.com'
+          url={HOST + router.asPath}
+          origin={HOST}
+          site={HOST}
         />
         <Comments
           profile={profile}
