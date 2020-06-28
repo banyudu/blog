@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.20.0](https://github.com/banyudu/blog/compare/frontend@0.19.3...frontend@0.20.0) (2020-06-28)
+
+
+### Features
+
+* remove tencent microblog from share buttons ([5e72235](https://github.com/banyudu/blog/commit/5e72235c2fd77c27a27d238aa755ffa007afa3cb))
+
+
+
+
+
 ## [0.19.3](https://github.com/banyudu/blog/compare/frontend@0.19.2...frontend@0.19.3) (2020-06-27)
 
 
