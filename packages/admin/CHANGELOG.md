@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.12](https://github.com/banyudu/blog/compare/admin@0.4.11...admin@0.4.12) (2020-08-17)
+
+
+### Bug Fixes
+
+* downgrade serverless-next.js to 1.9.5 ([96fbd9f](https://github.com/banyudu/blog/commit/96fbd9fbeca7ff5e3af2247d668aa962db0cd072))
+
+
+
+
+
 ## [0.4.11](https://github.com/banyudu/blog/compare/admin@0.4.10...admin@0.4.11) (2020-08-17)
 
 **Note:** Version bump only for package admin
