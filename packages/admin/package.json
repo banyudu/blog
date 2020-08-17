@@ -17,7 +17,7 @@
     "null-loader": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "serverless-next.js": "^1.7.0",
+    "serverless-next.js": "^1.9.5",
     "typescript": "^3.7.5"
   },
   "scripts": {
