@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.1](https://github.com/banyudu/blog/compare/frontend@0.20.0...frontend@0.20.1) (2020-08-17)
+
+
+### Bug Fixes
+
+* fix right margin in mobile devices ([6d4b843](https://github.com/banyudu/blog/commit/6d4b8431f09e6e6d6b33b2b6414aeb674e256f4a))
+
+
+
+
+
 # [0.20.0](https://github.com/banyudu/blog/compare/frontend@0.19.3...frontend@0.20.0) (2020-06-28)
 
 
