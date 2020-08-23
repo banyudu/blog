@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/banyudu/blog/compare/frontend@0.20.2...frontend@0.21.0) (2020-08-23)
+
+
+### Features
+
+* add gist link in posts ([b813b8f](https://github.com/banyudu/blog/commit/b813b8f50307a952110637c8c3ee89572feb7d5b))
+
+
+
+
+
 ## [0.20.2](https://github.com/banyudu/blog/compare/frontend@0.20.1...frontend@0.20.2) (2020-08-17)
 
 
