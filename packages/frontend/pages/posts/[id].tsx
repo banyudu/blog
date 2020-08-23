@@ -19,6 +19,7 @@ import nanoid from 'nanoid'
 import { useRouter } from 'next/router'
 import ShareButtons from '../../components/share-buttons'
 import './index.less'
+import GithubSvg from '../../components/github-svg'
 
 interface Auth extends Profile {
   token: string
@@ -62,6 +63,11 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
 
   const HOST = 'https://banyudu.com'
 
+  let gistId = ''
+  if (/^gist:.+$/.test(id)) {
+    gistId = id.substr('gist:'.length)
+  }
+
   return (
     <div className='post'>
       <Head>
@@ -76,6 +82,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
       <div className='headerbar'>
         <Logo />
         <h2 className='title' title={title}>{title}</h2>
+        <a target='_blank' rel='noopener noreferrer' href={`https://gist.github.com/banyudu/${gistId}`}><GithubSvg /></a>
       </div>
       <article className='article'>
         <Summary
