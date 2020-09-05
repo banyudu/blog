@@ -29,6 +29,12 @@ const Comments: FC<CommentsProps> = (props) => {
     setDraft('')
   }
 
+  const loginIfNoProfile = () => {
+    if (!profile) {
+      login?.()
+    }
+  }
+
   let username = '未登录'
   let avatar = <QuestionCircleFilled />
   let userMenu = <Menu.Item> <a onClick={login}>使用Github登录</a> </Menu.Item>
@@ -65,8 +71,9 @@ const Comments: FC<CommentsProps> = (props) => {
         <div className='comments-editbox-main'>
           <div className='comments-avatar'>{avatar}</div>
           <TextArea
-            {...disabledProps}
+            // {...disabledProps}
             rows={2}
+            onClick={loginIfNoProfile}
             autoSize={{ minRows: 2, maxRows: 6 }}
             placeholder='留下您的宝贵意见吧!'
             value={draft}
