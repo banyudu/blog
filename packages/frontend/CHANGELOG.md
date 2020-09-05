@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/banyudu/blog/compare/frontend@0.21.0...frontend@0.22.0) (2020-09-05)
+
+
+### Features
+
+* open login dialog on comment textview click ([bf7076b](https://github.com/banyudu/blog/commit/bf7076b79d257ae5081d5471cf36902bbfc94847))
+
+
+
+
+
 # [0.21.0](https://github.com/banyudu/blog/compare/frontend@0.20.2...frontend@0.21.0) (2020-08-23)
 
 
