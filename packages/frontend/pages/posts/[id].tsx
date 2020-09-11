@@ -20,6 +20,7 @@ import { useRouter } from 'next/router'
 import ShareButtons from '../../components/share-buttons'
 import './index.less'
 import GithubSvg from '../../components/github-svg'
+import FollowMe from '../../components/follow-me'
 
 interface Auth extends Profile {
   token: string
@@ -77,6 +78,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         <meta name='robots' content='index,follow' />
         <meta name='google' content='index,follow' />
         <meta name='googlebot' content='index,follow' />
+        <script async src='https://platform.twitter.com/widgets.js' />
       </Head>
       <BackTop visibilityHeight={1500} />
       <div className='headerbar'>
@@ -92,6 +94,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
           updatedAt={updatedAt}
         />
         <Markdown source={content} />
+        关注我： <FollowMe /> <br />
         分享文章：<br />
         <ShareButtons
           title={title}

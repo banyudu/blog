@@ -4,9 +4,10 @@ const withCSS = require('@zeit/next-css')
 const withImages = require('next-images')
 const withFonts = require('next-fonts')
 const nanoid = require('nanoid')
+const withTM = require('next-transpile-modules')(['react-github-btn'])
 require('dotenv').config()
 
-module.exports = withFonts(withImages(withCSS(withLess({
+module.exports = withTM(withFonts(withImages(withCSS(withLess({
   /* config options here */
   target: 'serverless',
   env: {
@@ -41,4 +42,4 @@ module.exports = withFonts(withImages(withCSS(withLess({
     }
     return config
   }
-}))))
+})))))
