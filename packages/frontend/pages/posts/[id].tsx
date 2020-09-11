@@ -136,8 +136,9 @@ Post.getInitialProps = async function (ctx): Promise<PostProps | ErrorProps> {
   }
 
   // set cachec-control
+  const oneMonth = 60 * 60 * 24 * 30
   if (res && process.env.NODE_ENV === 'production') {
-    res.setHeader('Cache-Control', 'max-age=86400, public')
+    res.setHeader('Cache-Control', `max-age=${oneMonth}, public`)
   }
 
   // 将tags从字符串转成数组
