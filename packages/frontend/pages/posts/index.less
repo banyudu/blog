@@ -1,5 +1,7 @@
+@header-padding: 5%;
+
 .article,.title {
-  max-width: 90%;
+  max-width: calc(100% - 2 * @header-padding);
   margin: auto;
 }
 
@@ -16,7 +18,7 @@ img {
   align-items: center;
   justify-content: center;
   margin-bottom: 8px;
-  padding: 0 5%;
+  padding: 0 @header-padding;
 
   h1, h2 {
     color: white;
@@ -28,5 +30,15 @@ img {
     height: 60px;
     max-height: 60%;
     margin-right: 8px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .article,.title {
+    max-width: calc(100% - 2 * 1.5 * @header-padding);
+  }
+
+  .headerbar {
+    padding: 0 calc(1.5 * @header-padding);
   }
 }

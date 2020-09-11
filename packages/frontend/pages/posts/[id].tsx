@@ -92,7 +92,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
           updatedAt={updatedAt}
         />
         <Markdown source={content} />
-        <hr />
+        分享文章：<br />
         <ShareButtons
           title={title}
           description={extract}
@@ -101,6 +101,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
           origin={HOST}
           site={HOST}
         />
+        <hr />
         <Comments
           profile={profile}
           profileLoading={false}
