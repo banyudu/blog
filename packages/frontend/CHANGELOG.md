@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.23.0](https://github.com/banyudu/blog/compare/frontend@0.22.1...frontend@0.23.0) (2020-09-11)
+
+
+### Features
+
+* add follow-me buttons ([23baa06](https://github.com/banyudu/blog/commit/23baa06544ad7f41ed7c0f2c0d08bd94feb9971a))
+
+
+
+
+
 ## [0.22.1](https://github.com/banyudu/blog/compare/frontend@0.22.0...frontend@0.22.1) (2020-09-11)
 
 **Note:** Version bump only for package frontend
