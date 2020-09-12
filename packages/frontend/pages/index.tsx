@@ -76,7 +76,7 @@ const App: NextPage<AppInterface> = (props) => {
 App.getInitialProps = async ({ res }) => {
   // set cachec-control
   if (res) {
-    res.setHeader('Cache-Control', 'max-age=300, public') // 5 minutes
+    res.setHeader('Cache-Control', 'max-age=1800, public') // 5 minutes
   }
   const postsRes: PostWithTimeline[] = await getPosts()
   let lastTimeline = ''
