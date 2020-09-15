@@ -1,6 +1,6 @@
 {
   "name": "admin",
-  "version": "0.4.16",
+  "version": "0.4.17",
   "private": true,
   "dependencies": {
     "@types/jest": "^25.1.2",
