@@ -17,9 +17,9 @@ interface ShareButtonsProps {
 
 class ShareButtons extends Component<ShareButtonsProps> {
   static defaultProps = {
-    sites: ['weibo', 'google', 'twitter', 'qq', 'wechat', 'douban', 'linkedin', 'facebook'],
-    wechatQrcodeTitle: '微信扫一扫：分享',
-    wechatQrcodeHelper: '微信里点“发现”，扫一下,二维码便可将本文分享至朋友圈。'
+    sites: ['weibo', 'google', 'twitter', 'qq', 'douban', 'linkedin', 'facebook']
+    // wechatQrcodeTitle: '微信扫一扫：分享',
+    // wechatQrcodeHelper: '微信里点“发现”，扫一下,二维码便可将本文分享至朋友圈。'
   };
 
   render () {
