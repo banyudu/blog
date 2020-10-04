@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.23.6](https://github.com/banyudu/blog/compare/frontend@0.23.5...frontend@0.23.6) (2020-10-04)
+
+
+### Bug Fixes
+
+* remove wechat in share buttons ([8f36ef8](https://github.com/banyudu/blog/commit/8f36ef8fae33b81b36c7b494a2581bb40af373e7))
+
+
+
+
+
 ## [0.23.5](https://github.com/banyudu/blog/compare/frontend@0.23.4...frontend@0.23.5) (2020-10-04)
 
 **Note:** Version bump only for package frontend
