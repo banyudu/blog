@@ -2,7 +2,10 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 // import { solarizedlight as codeStyle } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import loadable from '@loadable/component'
 import './index.less'
+
+const Mermaid = loadable(async () => import('react-mermaid2'))
 
 interface CodeBlockProps {
   language: string
@@ -22,7 +25,8 @@ class CodeBlock extends PureComponent<CodeBlockProps> {
   render () {
     const { language, value } = this.props
     if (language === 'mermaid') {
-      return <div className='mermaid'>{value}</div>
+      // return <div className='mermaid'>{value}</div>
+      return <Mermaid chart={value} />
     }
     return (
       <SyntaxHighlighter

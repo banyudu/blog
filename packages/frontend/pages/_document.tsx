@@ -29,8 +29,8 @@ export default class extends Document {
         <body>
           <Main />
           <NextScript />
-          <script src='//unpkg.com/mermaid@8.4.8/dist/mermaid.min.js' />
-          <script>mermaid.initialize({'{startOnLoad: true}'});</script>
+          {/* <script src='//unpkg.com/mermaid@8.4.8/dist/mermaid.min.js' /> */}
+          {/* <script>mermaid.initialize({'{startOnLoad: true}'});</script> */}
         </body>
       </html>
     )
