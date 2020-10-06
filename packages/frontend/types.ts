@@ -45,3 +45,21 @@ export interface Comment {
   updatedAt: Date
   children?: Comment[]
 }
+
+export interface PostWithTimeline extends Post {
+  timeline?: string
+}
+
+export interface CategoryOrTag {
+  name: string
+  blogCount: number
+}
+
+export type Category = CategoryOrTag
+export type Tag = CategoryOrTag
+
+export interface ButtonAttributes {
+  name: string
+  badge: string
+  link?: string
+}
