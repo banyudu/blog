@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/banyudu/blog/compare/frontend@0.23.6...frontend@0.24.0) (2020-10-06)
+
+
+### Features
+
+* add categories page ([63809bf](https://github.com/banyudu/blog/commit/63809bf170b64c5ce38e53111098879f7dfe46a8))
+
+
+
+
+
 ## [0.23.6](https://github.com/banyudu/blog/compare/frontend@0.23.5...frontend@0.23.6) (2020-10-04)
 
 

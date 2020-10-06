@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/banyudu/blog/compare/admin@0.4.19...admin@0.5.0) (2020-10-06)
+
+
+### Features
+
+* add categories page ([63809bf](https://github.com/banyudu/blog/commit/63809bf170b64c5ce38e53111098879f7dfe46a8))
+
+
+
+
+
 ## [0.4.19](https://github.com/banyudu/blog/compare/admin@0.4.18...admin@0.4.19) (2020-10-04)
 
 **Note:** Version bump only for package admin
