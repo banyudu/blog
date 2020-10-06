@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.24.1](https://github.com/banyudu/blog/compare/frontend@0.24.0...frontend@0.24.1) (2020-10-06)
+
+
+### Bug Fixes
+
+* rename static to assets ([a225d10](https://github.com/banyudu/blog/commit/a225d1088f2666fffac186caa5dbed6c3b0d9d6e))
+
+
+
+
+
 # [0.24.0](https://github.com/banyudu/blog/compare/frontend@0.23.6...frontend@0.24.0) (2020-10-06)
 
 
