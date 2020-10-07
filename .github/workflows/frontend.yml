@@ -13,7 +13,7 @@ jobs:
       with:
         node-version: 12.x
     - run: npm i -g serverless
-    - run: npm i
+    - run: npm ci
       working-directory: ./packages/frontend
     - run: |
         echo AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID >> .env
@@ -22,5 +22,5 @@ jobs:
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key_id }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_access_key }}
-    - run: sls
+    - run: sls --debug
       working-directory: ./packages/frontend

@@ -13,7 +13,7 @@ jobs:
       with:
         node-version: 12.x
     - run: npm i -g serverless
-    - run: npm i
+    - run: npm ci
       working-directory: ./packages/backend
     - run: sls deploy --stage prod
       working-directory: ./packages/backend
