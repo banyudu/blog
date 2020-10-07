@@ -12,6 +12,7 @@ import { ErrorProps, Profile } from '../../types'
 import Markdown from '../../components/markdown'
 import Summary from '../../components/summary'
 import { addComment } from '../../services/comment'
+// import { getPosts } from '../../services/post'
 import { login, logout } from '../../services/auth'
 import cookies from 'next-cookies'
 import * as _ from 'lodash'
@@ -156,5 +157,20 @@ Post.getInitialProps = async function (ctx): Promise<PostProps | ErrorProps> {
     debug
   }
 }
+
+// export async function getStaticPaths () {
+//   const posts = await getPosts()
+//   const result = {
+//     // paths: [ { params: { } } ],
+//     paths: posts.map(post => {
+//       return {
+//         params: { id: post.url }
+//       }
+//     }),
+//     fallback: true
+//   }
+//   console.log('getStaticPaths, result is: ', result)
+//   return result
+// }
 
 export default Post

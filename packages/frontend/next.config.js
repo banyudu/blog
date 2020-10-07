@@ -39,6 +39,9 @@ module.exports = withSourceMaps(withTM(withFonts(withImages(withCSS(withLess({
   lessLoaderOptions: {
     javascriptEnabled: true
   },
+  serverRuntimeConfig: {
+    rootDir: __dirname
+  },
   enableSvg: true,
   webpack: (config, { isServer }) => {
     if (isServer) {
