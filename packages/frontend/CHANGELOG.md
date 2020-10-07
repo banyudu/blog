@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.25.0](https://github.com/banyudu/blog/compare/frontend@0.24.5...frontend@0.25.0) (2020-10-07)
+
+
+### Features
+
+* add sentry ([1b03dbc](https://github.com/banyudu/blog/commit/1b03dbcbf98613acd935610e05f7316549076352))
+
+
+
+
+
 ## [0.24.5](https://github.com/banyudu/blog/compare/frontend@0.24.4...frontend@0.24.5) (2020-10-07)
 
 **Note:** Version bump only for package frontend
