@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.25.1](https://github.com/banyudu/blog/compare/frontend@0.25.0...frontend@0.25.1) (2020-10-07)
+
+
+### Bug Fixes
+
+* fix bug in next.config ([cb75ad5](https://github.com/banyudu/blog/commit/cb75ad50482a1c647ce71eec26b12433298edb5a))
+
+
+
+
+
 # [0.25.0](https://github.com/banyudu/blog/compare/frontend@0.24.5...frontend@0.25.0) (2020-10-07)
 
 
