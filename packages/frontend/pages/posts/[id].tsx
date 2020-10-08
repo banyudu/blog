@@ -190,11 +190,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const postRes = await rest.get(`/post/${encodeURIComponent(decodeURIComponent(id as string))}`)
 
   // 将tags从字符串转成数组
-  postRes.data.tags = (postRes.data.tags || '').split('|')
+  const props = postRes.data || {}
+  props.tags = (props.tags || '').split(/[\s|,]+/)
 
   // Pass post data to the page via props
   return {
-    props: postRes.data,
+    props,
     // Re-generate the post at most once per second
     // if a request comes in
     revalidate: 60 * 30
