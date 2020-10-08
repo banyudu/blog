@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.25.3](https://github.com/banyudu/blog/compare/frontend@0.25.2...frontend@0.25.3) (2020-10-08)
+
+
+### Bug Fixes
+
+* fix bug in posts getStaticProps ([79fe16b](https://github.com/banyudu/blog/commit/79fe16b1f4ae425efed17ec2956d91a700e583ff))
+
+
+
+
+
 ## [0.25.2](https://github.com/banyudu/blog/compare/frontend@0.25.1...frontend@0.25.2) (2020-10-08)
 
 **Note:** Version bump only for package frontend
