@@ -14,6 +14,9 @@ const MyError = ({ statusCode, hasGetInitialPropsRun, err }) => {
 }
 
 MyError.getInitialProps = async ({ res, err, asPath }) => {
+  console.log('MyError.getInitialProps')
+  console.log('err is: ', err)
+  console.log('res.statusCode is: ', res?.statusCode)
   const errorInitialProps = await NextErrorComponent.getInitialProps({ res, err } as any)
 
   // Workaround for https://github.com/vercel/next.js/issues/8592, mark when
@@ -47,7 +50,7 @@ MyError.getInitialProps = async ({ res, err, asPath }) => {
   // information about what the error might be. This is unexpected and may
   // indicate a bug introduced in Next.js, so record it in Sentry
   Sentry.captureException(
-    new Error(`_error.js getInitialProps missing data at path: ${asPath}`)
+    new Error(`_error.tsx getInitialProps missing data at path: ${asPath}`)
   )
   await Sentry.flush(2000)
 
