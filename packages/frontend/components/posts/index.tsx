@@ -10,6 +10,9 @@ interface PostsProps{
 
 const Posts: FC<PostsProps> = (props) => {
   const { posts } = props
+  if (!posts?.length) {
+    return <></>
+  }
   return (
     <Timeline mode='left' className='timeline'>
       {posts.map(post =>
