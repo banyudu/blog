@@ -45,7 +45,7 @@ module.exports = withSourceMaps(withTM(withFonts(withImages(withCSS(withLess({
   enableSvg: true,
   webpack: (config, { isServer }) => {
     if (isServer) {
-      require('ignore-styles')
+      // require('ignore-styles')
       const antStyles = /antd\/.*?\/style\/css.*?/
       const origExternals = [...config.externals]
       config.externals = [

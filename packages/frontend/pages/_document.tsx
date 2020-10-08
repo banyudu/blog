@@ -1,12 +1,12 @@
 import React from 'react'
-import Document, { Head, Main, NextScript } from 'next/document'
+import Document, { Head, Main, NextScript, Html } from 'next/document'
 
 import { GA_TRACKING_ID } from '../package.json'
 
-export default class extends Document {
+class MyDocument extends Document {
   render () {
     return (
-      <html>
+      <Html>
         <Head>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
@@ -32,7 +32,9 @@ export default class extends Document {
           {/* <script src='//unpkg.com/mermaid@8.4.8/dist/mermaid.min.js' /> */}
           {/* <script>mermaid.initialize({'{startOnLoad: true}'});</script> */}
         </body>
-      </html>
+      </Html>
     )
   }
 }
+
+export default MyDocument

@@ -2,7 +2,7 @@ import React from 'react'
 import GitHubButton from 'react-github-btn'
 import './index.less'
 
-export default () => (
+const FollowMe = () => (
   <div className='follow-me'>
     <GitHubButton
       href='https://github.com/banyudu'
@@ -21,3 +21,5 @@ export default () => (
     </a>
   </div>
 )
+
+export default FollowMe

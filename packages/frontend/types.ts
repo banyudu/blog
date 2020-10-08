@@ -29,6 +29,7 @@ export interface Profile {
   name: string
   avatar: string
   email?: string
+  userId?: string
 }
 
 export interface Comment {

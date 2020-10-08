@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Error from 'next/error'
 import Head from 'next/head'
 import { BackTop } from 'antd'
-import { NextPage } from 'next'
+import { NextPage, GetStaticPaths, GetStaticProps } from 'next'
 import Footer from '../../components/footer'
 import { rest } from '../../utils'
 import Logo from '../../components/logo'
@@ -12,10 +12,11 @@ import { ErrorProps, Profile } from '../../types'
 import Markdown from '../../components/markdown'
 import Summary from '../../components/summary'
 import { addComment } from '../../services/comment'
-// import { getPosts } from '../../services/post'
+import { getPosts } from '../../services/post'
 import { login, logout } from '../../services/auth'
-import cookies from 'next-cookies'
-import * as _ from 'lodash'
+import Cookies from 'js-cookie'
+// import cookies from 'next-cookies'
+// import * as _ from 'lodash'
 import nanoid from 'nanoid'
 import { useRouter } from 'next/router'
 import ShareButtons from '../../components/share-buttons'
@@ -34,29 +35,37 @@ interface PostProps {
   content: string
   tags: string[]
   category: string
-  debug?: boolean
-  profile?: Auth
+  // debug?: boolean
+  // profile?: Auth
   url: string
-  createdAt: Date
-  updatedAt: Date
+  createdAt: string
+  updatedAt: string
 }
 
 const Post: NextPage<PostProps | ErrorProps> = (props) => {
   const { statusCode } = props as ErrorProps
+  const { title, tags, content, id, category, extract, createdAt, updatedAt } = props as PostProps
   if (statusCode) {
     return <Error statusCode={statusCode} />
   }
-  const postProps = props as PostProps
-  const { title, tags, content, id, category, extract, createdAt, updatedAt } = postProps
+  if (!id) {
+    return <div>loading</div>
+  }
   const [commentsRefreshKey, setCommentsRefershKey] = useState<string>(nanoid())
   const [comments, commentsLoading] = useComments(id, commentsRefreshKey)
-  const [profile, setProfile] = useState<Auth | undefined>(postProps.profile)
+  const [profile, setProfile] = useState<Auth | undefined>(undefined)
   const router = useRouter()
   const token = profile?.token ?? ''
 
   useEffect(() => {
     // socialShareRef.current
-  })
+    setProfile({
+      userId: Cookies.get('userId'),
+      name: Cookies.get('name') ?? '',
+      avatar: Cookies.get('avatar') ?? '',
+      token: Cookies.get('token') ?? ''
+    })
+  }, [])
 
   const handleAddComment = async (content) => {
     await addComment(token, id, content)
@@ -91,8 +100,8 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         <Summary
           category={category}
           tags={tags}
-          createdAt={createdAt}
-          updatedAt={updatedAt}
+          createdAt={new Date(createdAt)}
+          updatedAt={new Date(updatedAt)}
         />
         <Markdown source={content} />
         关注我： <FollowMe /> <br />
@@ -125,52 +134,71 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
   )
 }
 
-Post.getInitialProps = async function (ctx): Promise<PostProps | ErrorProps> {
-  const { query, res } = ctx
-  const { id } = query
-  const postRes = await rest.get(`/post/${encodeURIComponent(decodeURIComponent(id as string))}`)
-  if (!postRes.data) {
-    if (res) {
-      res.statusCode = 404
-    }
-    return { statusCode: 404 }
-  }
+// Post.getInitialProps = async function (ctx): Promise<PostProps | ErrorProps> {
+//   const { query, res } = ctx
+//   const { id } = query
+//   const postRes = await rest.get(`/post/${encodeURIComponent(decodeURIComponent(id as string))}`)
+//   if (!postRes.data) {
+//     if (res) {
+//       res.statusCode = 404
+//     }
+//     return { statusCode: 404 }
+//   }
 
-  // set cachec-control
-  const oneMonth = 60 * 60 * 24 * 30
-  if (res && process.env.NODE_ENV === 'production') {
-    res.setHeader('Cache-Control', `max-age=${oneMonth}, public`)
+//   // set cachec-control
+//   const oneMonth = 60 * 60 * 24 * 30
+//   if (res && process.env.NODE_ENV === 'production') {
+//     res.setHeader('Cache-Control', `max-age=${oneMonth}, public`)
+//   }
+
+//   // 将tags从字符串转成数组
+//   postRes.data.tags = (postRes.data.tags || '').split('|')
+
+//   const allCookies = cookies(ctx)
+//   const profile = allCookies.token ? _.pick(allCookies, ['userId', 'name', 'avatar', 'token']) : undefined
+//   const debug = !!allCookies.debug
+
+//   return {
+//     ...postRes.data,
+//     createdAt: new Date(postRes.data.createdAt),
+//     updatedAt: new Date(postRes.data.updatedAt),
+//     profile,
+//     debug
+//   }
+// }
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getPosts()
+  const result = {
+    // paths: [ { params: { } } ],
+    paths: posts.map(post => {
+      return {
+        params: { id: post.url }
+      }
+    }),
+    fallback: true
   }
+  return result
+}
+
+// This also gets called at build time
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  // params contains the post `id`.
+  // If the route is like /posts/1, then params.id is 1
+
+  const { id } = params as any
+  const postRes = await rest.get(`/post/${encodeURIComponent(decodeURIComponent(id as string))}`)
 
   // 将tags从字符串转成数组
   postRes.data.tags = (postRes.data.tags || '').split('|')
 
-  const allCookies = cookies(ctx)
-  const profile = allCookies.token ? _.pick(allCookies, ['userId', 'name', 'avatar', 'token']) : undefined
-  const debug = !!allCookies.debug
-
+  // Pass post data to the page via props
   return {
-    ...postRes.data,
-    createdAt: new Date(postRes.data.createdAt),
-    updatedAt: new Date(postRes.data.updatedAt),
-    profile,
-    debug
+    props: postRes.data,
+    // Re-generate the post at most once per second
+    // if a request comes in
+    revalidate: 60 * 30
   }
 }
-
-// export async function getStaticPaths () {
-//   const posts = await getPosts()
-//   const result = {
-//     // paths: [ { params: { } } ],
-//     paths: posts.map(post => {
-//       return {
-//         params: { id: post.url }
-//       }
-//     }),
-//     fallback: true
-//   }
-//   console.log('getStaticPaths, result is: ', result)
-//   return result
-// }
 
 export default Post
