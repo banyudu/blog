@@ -11,7 +11,7 @@ export const getGists = async (since?: Date): Promise<[GistSeries[], GistFile[]]
     since = new Date(new Date().getTime() - ONE_DAY)
   }
   const res = await rest.get('https://api.github.com/users/banyudu/gists', {
-    params: { since }
+    params: { since: since.toISOString() }
   })
 
   const files: GistFile[] = []
