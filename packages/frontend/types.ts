@@ -53,7 +53,7 @@ export interface PostWithTimeline extends Post {
 
 export interface CategoryOrTag {
   name: string
-  blogCount: number
+  postCount: number
 }
 
 export type Category = CategoryOrTag

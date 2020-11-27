@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { NextPage } from 'next'
-import Header from '../components/header'
+// import Header from '../components/header'
 import Footer from '../components/footer'
 import { getPosts } from '../services/post'
 import moment from 'moment'
@@ -52,7 +52,10 @@ const App: NextPage = (props) => {
       <Head>
         <title>鱼肚的博客</title>
       </Head>
-      <Header />
+      {/* <Header
+        title='鱼肚的博客'
+        gitUrl='https://github.com/banyudu'
+      /> */}
       <article className='App-content'>
         <Slides posts={posts} />
         <Posts posts={posts} />

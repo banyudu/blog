@@ -1,29 +1,29 @@
 import React from 'react'
 // import Head from 'next/head'
 import { NextPage } from 'next'
-import { getCategories } from '../services/post'
+import { getTags } from '../services/post'
 // import Link from 'next/link'
-import { Category } from '../types'
+import { Tag } from '../types'
 import './index.less'
 import ButtonBox from '../components/button-box'
 import Header from '../components/header'
 
-interface CategoriesInterface {
-  categories: Category[]
+interface TagsInterface {
+  Tags: Tag[]
 }
 
-const Categories: NextPage<CategoriesInterface> = (props) => {
-  const { categories = [] } = props
-  console.log('categories are: ', categories)
+const Tags: NextPage<TagsInterface> = (props) => {
+  const { Tags = [] } = props
+  console.log('Tags are: ', Tags)
   return (
     <>
       <Header
         title='鱼肚的博客'
         gitUrl='https://github.com/banyudu'
       />
-      <div className='categories article'>
+      <div className='Tags article'>
         <ButtonBox
-          buttons={categories.map(item => ({
+          buttons={Tags.map(item => ({
             name: item.name,
             badge: String(item.postCount)
           }))}
@@ -33,15 +33,15 @@ const Categories: NextPage<CategoriesInterface> = (props) => {
   )
 }
 
-Categories.getInitialProps = async ({ res }) => {
+Tags.getInitialProps = async ({ res }) => {
   // set cachec-control
   if (res) {
     res.setHeader('Cache-Control', 'max-age=1800, public') // 5 minutes
   }
-  const categories: Category[] = await getCategories()
+  const Tags: Tag[] = await getTags()
   return {
-    categories
+    Tags
   }
 }
 
-export default Categories
+export default Tags
