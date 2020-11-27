@@ -5,7 +5,6 @@ import { BackTop } from 'antd'
 import { NextPage, GetStaticPaths, GetStaticProps } from 'next'
 import Footer from '../../components/footer'
 import { rest } from '../../utils'
-import Logo from '../../components/logo'
 import { useComments } from '../../hooks'
 import Comments from '../../components/comments'
 import { ErrorProps, Profile } from '../../types'
@@ -21,8 +20,8 @@ import nanoid from 'nanoid'
 import { useRouter } from 'next/router'
 import ShareButtons from '../../components/share-buttons'
 import './index.less'
-import GithubSvg from '../../components/github-svg'
 import FollowMe from '../../components/follow-me'
+import Header from '../../components/header'
 
 interface Auth extends Profile {
   token: string
@@ -91,11 +90,10 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         <script async src='https://platform.twitter.com/widgets.js' />
       </Head>
       <BackTop visibilityHeight={1500} />
-      <div className='headerbar'>
-        <Logo />
-        <h2 className='title' title={title}>{title}</h2>
-        <a target='_blank' rel='noopener noreferrer' href={`https://gist.github.com/banyudu/${gistId}`}><GithubSvg /></a>
-      </div>
+      <Header
+        title={title}
+        gitUrl={`https://gist.github.com/banyudu/${gistId}`}
+      />
       <article className='article'>
         <Summary
           category={category}
