@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/banyudu/blog/compare/backend@0.9.16...backend@0.10.0) (2020-11-27)
+
+
+### Features
+
+* add categories/tags api ([7bdb9d8](https://github.com/banyudu/blog/commit/7bdb9d88c0bd239e12953fe0b3c2ceae5a31d145))
+
+
+
+
+
 ## [0.9.16](https://github.com/banyudu/blog/compare/backend@0.9.15...backend@0.9.16) (2020-11-25)
 
 **Note:** Version bump only for package backend
