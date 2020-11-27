@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.25.9](https://github.com/banyudu/blog/compare/frontend@0.25.8...frontend@0.25.9) (2020-11-27)
+
+**Note:** Version bump only for package frontend
+
+
+
+
+
 ## [0.25.8](https://github.com/banyudu/blog/compare/frontend@0.25.7...frontend@0.25.8) (2020-11-25)
 
 **Note:** Version bump only for package frontend
