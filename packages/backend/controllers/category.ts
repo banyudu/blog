@@ -1,16 +1,23 @@
 import { APIGatewayProxyHandler } from 'aws-lambda'
 import { run } from '../utils'
+import Blog from '../models/blog'
+import * as _ from 'lodash'
 
 export const getCategories: APIGatewayProxyHandler = run(async (event, _context) => { // eslint-disable-line @typescript-eslint/require-await
+  const posts = await Blog.scan().attributes(['category']).exec()
+  const tagMap = posts.reduce((res: {[x: string]: number}, post) => {
+    if (post.category) {
+      res[post.category] = (res[post.category] ?? 0) + 1
+    }
+    return res
+  }, {})
+  let categories = Object.keys(tagMap).map(tag => ({ name: tag, postCount: tagMap[tag] }))
+  categories = _.sortBy(categories, 'postCount').reverse()
   return {
     statusCode: 200,
     body: JSON.stringify({
       code: 0,
-      data: [
-        { name: 'Serverless', blogCount: 100 },
-        { name: 'Git', blogCount: 50 },
-        { name: 'NodeJS', blogCount: 80 }
-      ]
+      data: categories
     })
   }
 })
