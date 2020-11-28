@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.27.0](https://github.com/banyudu/blog/compare/frontend@0.26.0...frontend@0.27.0) (2020-11-28)
+
+
+### Features
+
+* **frontend:** add loading bar ([acb53bd](https://github.com/banyudu/blog/commit/acb53bdd4a133529a0dff7b8061c52241089aba8))
+
+
+
+
+
 # [0.26.0](https://github.com/banyudu/blog/compare/frontend@0.25.10...frontend@0.26.0) (2020-11-28)
 
 
