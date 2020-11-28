@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/banyudu/blog/compare/backend@0.10.0...backend@0.11.0) (2020-11-28)
+
+
+### Features
+
+* support categories and tags in frontend ([109f935](https://github.com/banyudu/blog/commit/109f93584fed32f9f294401eab45ccf0ba16887b))
+
+
+
+
+
 # [0.10.0](https://github.com/banyudu/blog/compare/backend@0.9.16...backend@0.10.0) (2020-11-27)
 
 
