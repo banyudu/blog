@@ -23,7 +23,8 @@ class CodeBlock extends PureComponent<CodeBlockProps> {
   };
 
   render () {
-    const { language, value } = this.props
+    const { language, value = '' } = this.props
+    const showLineNumbers = value.includes('\n')
     if (language === 'mermaid') {
       // return <div className='mermaid'>{value}</div>
       return <Mermaid chart={value} />
@@ -32,7 +33,7 @@ class CodeBlock extends PureComponent<CodeBlockProps> {
       <SyntaxHighlighter
         language={language === 'react' ? 'javascript' : language}
         // style={codeStyle}
-        showLineNumbers
+        showLineNumbers={showLineNumbers}
       >
         {value}
       </SyntaxHighlighter>
