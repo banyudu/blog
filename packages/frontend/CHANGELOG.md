@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.25.10](https://github.com/banyudu/blog/compare/frontend@0.25.9...frontend@0.25.10) (2020-11-28)
+
+
+### Bug Fixes
+
+* show header in category page ([7afce71](https://github.com/banyudu/blog/commit/7afce71e2c9a77300d1c3c0387eeb472a2a59b11))
+* show line numbers only when have multiple lines ([cdd8cb4](https://github.com/banyudu/blog/commit/cdd8cb449b104b71f5141435dae42decd3f115d7))
+* support array tags ([c716b89](https://github.com/banyudu/blog/commit/c716b89e4ef9f7285291b7e4ffcb2bd27cae8b5b))
+
+
+
+
+
 ## [0.25.9](https://github.com/banyudu/blog/compare/frontend@0.25.8...frontend@0.25.9) (2020-11-27)
 
 **Note:** Version bump only for package frontend
