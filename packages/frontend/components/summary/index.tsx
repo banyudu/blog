@@ -18,13 +18,13 @@ const Summary: FC<SummaryProps> = (props) => {
       <div className='links'>
         <div className='tags'>
           {tags.map(tag => (
-            <Link href={`/tag/${tag}`} key={tag}>
+            <Link href={`/tag/${encodeURIComponent(tag)}`} key={tag}>
               <Tag color='green'>{tag}</Tag>
             </Link>
           ))}
         </div>
         <div className='category'>
-          <Link href={`/category/${category}`}>
+          <Link href={`/category/${decodeURIComponent(category)}`}>
             <Tag color='gold'>{category}</Tag>
           </Link>
         </div>

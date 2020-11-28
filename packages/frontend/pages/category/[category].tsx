@@ -33,7 +33,7 @@ const Categories: NextPage<CategoriesInterface> = (props) => {
           buttons={categories.map(item => ({
             name: item.name,
             badge: String(item.postCount),
-            link: `/category/${item.name}`
+            link: `/category/${decodeURIComponent(item.name)}`
           }))}
           activeKey={category}
         />

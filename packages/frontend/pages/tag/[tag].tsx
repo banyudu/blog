@@ -33,7 +33,7 @@ const Tags: NextPage<TagsInterface> = (props) => {
           buttons={tags.map(item => ({
             name: item.name,
             badge: String(item.postCount),
-            link: `/tag/${item.name}`
+            link: `/tag/${encodeURIComponent(item.name)}`
           }))}
           activeKey={tag}
         />

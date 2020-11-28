@@ -12,7 +12,7 @@ export const getTags: APIGatewayProxyHandler = run(async (event, _context) => { 
     })
     return res
   }, {})
-  let tags = Object.keys(tagMap).map(tag => ({ name: tag, postCount: tagMap[tag] }))
+  let tags = Object.keys(tagMap).filter(tag => tag?.trim()).map(tag => ({ name: tag, postCount: tagMap[tag] }))
   tags = _.sortBy(tags, 'postCount').reverse()
   return {
     statusCode: 200,
