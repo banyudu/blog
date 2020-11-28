@@ -8,6 +8,7 @@ import { Category, Post } from '../../types'
 import './index.less'
 import Posts from '../../components/posts'
 import ButtonBox from '../../components/button-box'
+import Header from '../../components/header'
 
 interface PostWithTimeline extends Post {
   timeline?: string
@@ -16,24 +17,33 @@ interface PostWithTimeline extends Post {
 interface CategoriesInterface {
   posts: PostWithTimeline[]
   categories: Category[]
+  category: string
 }
 
 const Categories: NextPage<CategoriesInterface> = (props) => {
-  const { posts = [], categories = [] } = props
+  const { posts = [], categories = [], category } = props
   return (
-    <div className='categories'>
-      <ButtonBox
-        buttons={categories.map(item => ({
-          name: item.name,
-          badge: String(item.blogCount)
-        }))}
+    <>
+      <Header
+        title='鱼肚的博客'
+        gitUrl='https://github.com/banyudu'
       />
-      <Posts posts={posts} />
-    </div>
+      <div className='categories article'>
+        <ButtonBox
+          buttons={categories.map(item => ({
+            name: item.name,
+            badge: String(item.postCount),
+            link: `/category/${item.name}`
+          }))}
+          activeKey={category}
+        />
+        <Posts posts={posts} />
+      </div>
+    </>
   )
 }
 
-Categories.getInitialProps = async ({ res }) => {
+Categories.getInitialProps = async ({ res, query }) => {
   // set cachec-control
   if (res) {
     res.setHeader('Cache-Control', 'max-age=1800, public') // 5 minutes
@@ -50,7 +60,8 @@ Categories.getInitialProps = async ({ res }) => {
   }
   return {
     posts: postsRes,
-    categories
+    categories,
+    category: query.category
   }
 }
 

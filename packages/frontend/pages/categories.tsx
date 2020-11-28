@@ -25,7 +25,8 @@ const Categories: NextPage<CategoriesInterface> = (props) => {
         <ButtonBox
           buttons={categories.map(item => ({
             name: item.name,
-            badge: String(item.postCount)
+            badge: String(item.postCount),
+            link: `/category/${item.name}`
           }))}
         />
       </div>
