@@ -189,7 +189,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   // 将tags从字符串转成数组
   const props = postRes.data || {}
-  props.tags = (props.tags || '').split(/[\s|,]+/)
+  if (!Array.isArray(props.tags)) {
+    props.tags = (props.tags || '').split(/[\s|,]+/)
+  }
 
   // Pass post data to the page via props
   return {
