@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.1](https://github.com/banyudu/blog/compare/backend@0.11.0...backend@0.11.1) (2020-11-28)
+
+
+### Bug Fixes
+
+* fix bug in category/tag ([0c24e97](https://github.com/banyudu/blog/commit/0c24e978794ed7ee520bd6adfbfeeb160a72241c))
+
+
+
+
+
 # [0.11.0](https://github.com/banyudu/blog/compare/backend@0.10.0...backend@0.11.0) (2020-11-28)
 
 

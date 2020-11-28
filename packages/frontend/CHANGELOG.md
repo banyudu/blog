@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.27.1](https://github.com/banyudu/blog/compare/frontend@0.27.0...frontend@0.27.1) (2020-11-28)
+
+
+### Bug Fixes
+
+* fix bug in category/tag ([0c24e97](https://github.com/banyudu/blog/commit/0c24e978794ed7ee520bd6adfbfeeb160a72241c))
+
+
+
+
+
 # [0.27.0](https://github.com/banyudu/blog/compare/frontend@0.26.0...frontend@0.27.0) (2020-11-28)
 
 
