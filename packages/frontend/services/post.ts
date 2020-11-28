@@ -3,6 +3,8 @@ import { AxiosResponse } from 'axios'
 import { Category, Post, Tag } from '../types'
 
 interface getPostsParams {
+  category?: string
+  tag?: string
   page?: number
   pageSize?: number
 }

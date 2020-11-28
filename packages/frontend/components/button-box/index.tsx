@@ -11,13 +11,13 @@ interface ButtonBoxProps {
 }
 
 const ButtonBox: FC<ButtonBoxProps> = (props) => {
-  const { buttons = [] } = props
+  const { buttons = [], activeKey } = props
 
   return (
     <Card className='button-box'>
       {buttons.map(btn => (
         <Link key={btn.name} href={btn.link ?? ''}>
-          <Tag closable={false}>{btn.name}</Tag>
+          <Tag className={`button-box-btn ${btn.name === activeKey ? 'active' : ''}`} closable={false}>{btn.name}</Tag>
         </Link>
       ))}
     </Card>

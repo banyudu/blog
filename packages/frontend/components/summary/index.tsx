@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import dayjs from 'dayjs'
 import { Tag } from 'antd'
 import './index.less'
+import Link from 'next/link'
 
 interface SummaryProps {
   category: string
@@ -16,10 +17,16 @@ const Summary: FC<SummaryProps> = (props) => {
     <div className='summary'>
       <div className='links'>
         <div className='tags'>
-          {tags.map(tag => <Tag key={tag} color='green'>{tag}</Tag>)}
+          {tags.map(tag => (
+            <Link href={`/tag/${tag}`} key={tag}>
+              <Tag color='green'>{tag}</Tag>
+            </Link>
+          ))}
         </div>
         <div className='category'>
-          <Tag color='gold'>{category}</Tag>
+          <Link href={`/category/${category}`}>
+            <Tag color='gold'>{category}</Tag>
+          </Link>
         </div>
       </div>
       <div className='info'>

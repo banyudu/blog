@@ -1,7 +1,7 @@
 import React from 'react'
 // import Head from 'next/head'
 import { NextPage } from 'next'
-import { getCategories, getPosts } from '../../services/post'
+import { getTags, getPosts } from '../../services/post'
 // import Link from 'next/link'
 import moment from 'moment'
 import { Category, Post } from '../../types'
@@ -14,28 +14,28 @@ interface PostWithTimeline extends Post {
   timeline?: string
 }
 
-interface CategoriesInterface {
+interface TagsInterface {
   posts: PostWithTimeline[]
-  categories: Category[]
-  category: string
+  tags: Category[]
+  tag: string
 }
 
-const Categories: NextPage<CategoriesInterface> = (props) => {
-  const { posts = [], categories = [], category } = props
+const Tags: NextPage<TagsInterface> = (props) => {
+  const { posts = [], tags = [], tag } = props
   return (
     <>
       <Header
         title='鱼肚的博客'
         gitUrl='https://github.com/banyudu'
       />
-      <div className='categories article'>
+      <div className='tags article'>
         <ButtonBox
-          buttons={categories.map(item => ({
+          buttons={tags.map(item => ({
             name: item.name,
             badge: String(item.postCount),
-            link: `/category/${item.name}`
+            link: `/tag/${item.name}`
           }))}
-          activeKey={category}
+          activeKey={tag}
         />
         <Posts posts={posts} />
       </div>
@@ -43,14 +43,14 @@ const Categories: NextPage<CategoriesInterface> = (props) => {
   )
 }
 
-Categories.getInitialProps = async ({ res, query }) => {
+Tags.getInitialProps = async ({ res, query }) => {
   // set cachec-control
   if (res) {
     res.setHeader('Cache-Control', 'max-age=1800, public') // 5 minutes
   }
-  const category = query.category as string
-  const postsRes: PostWithTimeline[] = await getPosts({ category })
-  const categories: Category[] = await getCategories()
+  const tag = query.tag as string
+  const postsRes: PostWithTimeline[] = await getPosts({ tag })
+  const tags: Category[] = await getTags()
   let lastTimeline = ''
   for (const post of postsRes) {
     const timeline = moment(post.createdAt).format('YYYY-MM')
@@ -61,9 +61,9 @@ Categories.getInitialProps = async ({ res, query }) => {
   }
   return {
     posts: postsRes,
-    categories,
-    category
+    tags,
+    tag
   }
 }
 
-export default Categories
+export default Tags
