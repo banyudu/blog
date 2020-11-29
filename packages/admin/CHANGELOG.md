@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.28.0 (2020-11-29)
+
+
+### Bug Fixes
+
+* downgrade serverless-next.js to 1.9.5 ([96fbd9f](https://github.com/banyudu/blog/commit/96fbd9fbeca7ff5e3af2247d668aa962db0cd072))
+* rename static to assets ([a225d10](https://github.com/banyudu/blog/commit/a225d1088f2666fffac186caa5dbed6c3b0d9d6e))
+* update .serverless ([96f6f2b](https://github.com/banyudu/blog/commit/96f6f2b1df5f8c08d673c2ac1071d145b1ee432e))
+
+
+### Features
+
+* add admin site ([1ef9e3c](https://github.com/banyudu/blog/commit/1ef9e3cde60ff4dc842ff598b8fd4dd909c5de6a))
+* add categories page ([63809bf](https://github.com/banyudu/blog/commit/63809bf170b64c5ce38e53111098879f7dfe46a8))
+* add timeline ([9015347](https://github.com/banyudu/blog/commit/9015347366563e3d98ce71f811fef83d69df69aa))
+
+
+
+
+
 ## [0.5.6](https://github.com/banyudu/blog/compare/admin@0.5.5...admin@0.5.6) (2020-11-25)
 
 **Note:** Version bump only for package admin

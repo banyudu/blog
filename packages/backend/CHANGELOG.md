@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.28.0 (2020-11-29)
+
+
+### Bug Fixes
+
+* add title field in getPost ([c0cb2e2](https://github.com/banyudu/blog/commit/c0cb2e2847c0bef60112cd38aa80264f84c4d4b1))
+* fix bug in category/tag ([0c24e97](https://github.com/banyudu/blog/commit/0c24e978794ed7ee520bd6adfbfeeb160a72241c))
+* fix bug in tags ([9a46d05](https://github.com/banyudu/blog/commit/9a46d050b70753307daeda5f7af05407b9c6271c))
+* fix url ([fd698ed](https://github.com/banyudu/blog/commit/fd698ed395eea56bbf9f2e324e8f2a5a0d624d78))
+* modify code value and add post page ([42fb141](https://github.com/banyudu/blog/commit/42fb1411898f6d3d8e26d236a124a2f2c512f71a))
+* modify cron ([1c8b8e7](https://github.com/banyudu/blog/commit/1c8b8e7bb0a71facb65827a40b77cbca4de0c2c3))
+
+
+### Features
+
+* add categories/tags api ([7bdb9d8](https://github.com/banyudu/blog/commit/7bdb9d88c0bd239e12953fe0b3c2ceae5a31d145))
+* add demo apis ([d3bebbc](https://github.com/banyudu/blog/commit/d3bebbca478e26d9a45dcb605b87a50cccd534f6))
+* add getGists service ([8308d53](https://github.com/banyudu/blog/commit/8308d53ce029a24142d9fd2582c5898290dae3e8))
+* add new column series in table blog ([100b979](https://github.com/banyudu/blog/commit/100b979e9e56f7c2eea636ee6f37e8faa3fcdafc))
+* add series support ([79bc64f](https://github.com/banyudu/blog/commit/79bc64f01e2e87764ee5e084b108d0cd79ff4b82))
+* add timeline ([9015347](https://github.com/banyudu/blog/commit/9015347366563e3d98ce71f811fef83d69df69aa))
+* implement some apis ([3a3940b](https://github.com/banyudu/blog/commit/3a3940be1beee6ef40c2897cd405ea317d2701a4))
+* support categories and tags in frontend ([109f935](https://github.com/banyudu/blog/commit/109f93584fed32f9f294401eab45ccf0ba16887b))
+* support extract ([04694fb](https://github.com/banyudu/blog/commit/04694fb65f8ab1055f241d1a912d01c7c6f2af20))
+* support sitemap ([09410ed](https://github.com/banyudu/blog/commit/09410edd65060ab6b08e4fd3189684f9a40979b9))
+
+
+
+
+
 ## [0.11.1](https://github.com/banyudu/blog/compare/backend@0.11.0...backend@0.11.1) (2020-11-28)
 
 
