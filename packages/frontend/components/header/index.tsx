@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import Logo from '../logo'
 import GithubSvg from '../github-svg'
+import './index.less'
 
 interface HeaderProps {
   gitUrl: string

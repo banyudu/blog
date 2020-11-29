@@ -1,20 +1,34 @@
+.timeline {
+  --timeline-left-width: 30%;
+  background-color: white;
+  width: 95%;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+@media screen and (max-width: 600px) {
+  .timeline {
+    --timeline-left-width: 20%;
+  }
+}
+
 .ant-timeline.ant-timeline-label .ant-timeline-item-left .ant-timeline-item-content {
-  left: calc(30% - 4px);
-  width: calc(70% - 14px);
+  left: calc(var(--timeline-left-width) - 4px);
+  width: calc(100% - var(--timeline-left-width) - 14px);
   text-align: left;
 }
 
 .ant-timeline.ant-timeline-label .ant-timeline-item-label {
   position: absolute;
   top: -7.001px;
-  width: calc(30% - 12px);
+  width: calc(var(--timeline-left-width) - 12px);
   text-align: right;
 }
 
 .ant-timeline.ant-timeline-label .ant-timeline-item-head {
-  left: 30%;
+  left: var(--timeline-left-width);
 }
 
 .ant-timeline.ant-timeline-label .ant-timeline-item-tail {
-  left: 30%;
+  left: var(--timeline-left-width);
 }

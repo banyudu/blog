@@ -4,17 +4,23 @@ h1, h2, h3, h4, h5, h6 {
   color: darkgreen;
 }
 
-.timeline {
-  background-color: white;
-  width: 95%;
-  max-width: 900px;
-  margin: 20px auto;
-}
-
 html, body {
   overflow-x: hidden;
 }
 
 .ant-carousel .slick-vertical .slick-slide {
   border: none;
+  // background: linear-gradient(to right, pink, lightgreen, lightblue, rgb(190, 126, 190));
+  background: linear-gradient(45deg, darkgreen, pink, purple);
+  animation: hueRotate 10s infinite alternate;
+  // border-radius: 30px;
+}
+
+@keyframes hueRotate {
+  0 {
+      filter: hue-rotate(0);
+  }
+  100% {
+      filter: hue-rotate(360deg);
+  }
 }
