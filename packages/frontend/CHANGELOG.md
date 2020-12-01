@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.2](https://github.com/banyudu/blog/compare/frontend@0.28.1...frontend@0.28.2) (2020-12-01)
+
+
+### Bug Fixes
+
+* remove some share buttons ([1e0827b](https://github.com/banyudu/blog/commit/1e0827b47442d559a97d7f533c34e4c7fcdb7db4))
+
+
+
+
+
 ## [0.28.1](https://github.com/banyudu/blog/compare/frontend@0.27.1...frontend@0.28.1) (2020-11-29)
 
 
