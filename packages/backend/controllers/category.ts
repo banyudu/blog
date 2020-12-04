@@ -18,6 +18,7 @@ export const getCategories: APIGatewayProxyHandler = run(async (event, _context)
     body: JSON.stringify({
       code: 0,
       data: categories
-    })
+    }),
+    headers: { 'cache-control': 'max-age=1800, public' }
   }
 })
