@@ -101,7 +101,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
           createdAt={new Date(createdAt)}
           updatedAt={new Date(updatedAt)}
         />
-        <Markdown source={content} />
+        <Markdown source={content} className='post' />
         关注我： <FollowMe /> <br />
         分享文章：<br />
         <ShareButtons
