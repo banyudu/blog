@@ -132,39 +132,6 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
   )
 }
 
-// Post.getInitialProps = async function (ctx): Promise<PostProps | ErrorProps> {
-//   const { query, res } = ctx
-//   const { id } = query
-//   const postRes = await rest.get(`/post/${encodeURIComponent(decodeURIComponent(id as string))}`)
-//   if (!postRes.data) {
-//     if (res) {
-//       res.statusCode = 404
-//     }
-//     return { statusCode: 404 }
-//   }
-
-//   // set cachec-control
-//   const oneMonth = 60 * 60 * 24 * 30
-//   if (res && process.env.NODE_ENV === 'production') {
-//     res.setHeader('Cache-Control', `max-age=${oneMonth}, public`)
-//   }
-
-//   // 将tags从字符串转成数组
-//   postRes.data.tags = (postRes.data.tags || '').split('|')
-
-//   const allCookies = cookies(ctx)
-//   const profile = allCookies.token ? _.pick(allCookies, ['userId', 'name', 'avatar', 'token']) : undefined
-//   const debug = !!allCookies.debug
-
-//   return {
-//     ...postRes.data,
-//     createdAt: new Date(postRes.data.createdAt),
-//     updatedAt: new Date(postRes.data.updatedAt),
-//     profile,
-//     debug
-//   }
-// }
-
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getPosts()
   const result = {
