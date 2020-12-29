@@ -1,4 +1,4 @@
 blog:
-  component: "@sls-next/serverless-component@1.19.0-alpha.21"
+  component: "@sls-next/serverless-component@1.18.0"
   inputs:
     domain: ["www", "banyudu.com"]
