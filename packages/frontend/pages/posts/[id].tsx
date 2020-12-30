@@ -78,6 +78,9 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
     gistId = id.substr('gist:'.length)
   }
 
+  // 解决series中url错误的问题
+  gistId = (gistId ?? '').split(':')[0]
+
   return (
     <div className='post'>
       <Head>
