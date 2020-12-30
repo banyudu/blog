@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.3](https://github.com/banyudu/blog/compare/backend@0.28.2...backend@0.28.3) (2020-12-30)
+
+
+### Bug Fixes
+
+* fix a bug in series update ([e96122f](https://github.com/banyudu/blog/commit/e96122f4258e7eefb52341c460f4a5cd6700c219))
+
+
+
+
+
 ## [0.28.2](https://github.com/banyudu/blog/compare/backend@0.28.1...backend@0.28.2) (2020-12-04)
 
 **Note:** Version bump only for package backend
