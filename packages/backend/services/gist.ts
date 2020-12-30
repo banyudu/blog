@@ -41,7 +41,7 @@ export const getGists = async (since?: Date): Promise<[GistSeries[], GistFile[]]
         const match = filename.match(SERIES_GIST_REGEX)
         const basename = match[1]
         const id = [gist.id, basename].join(':') // One gist, multiple files. Add filename to id
-        const newFile: GistFile = { id, url, series: `gist:${gist.id}`, title: [gistTitle, basename].join(' - '), filename }
+        const newFile: GistFile = { id, url, series: `gist:${gist.id}`, title: [gistTitle, basename].join(' - '), filename, updatedAt }
         files.push(newFile)
         seriesItem.files.push(newFile)
       }
