@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.4](https://github.com/banyudu/blog/compare/frontend@0.29.3...frontend@0.29.4) (2020-12-31)
+
+
+### Bug Fixes
+
+* github svg size ([ca95502](https://github.com/banyudu/blog/commit/ca95502f6982a0f40ff31be22b9019563be9eedc))
+
+
+
+
+
 ## [0.29.3](https://github.com/banyudu/blog/compare/frontend@0.29.2...frontend@0.29.3) (2020-12-31)
 
 
