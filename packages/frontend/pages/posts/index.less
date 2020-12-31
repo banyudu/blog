@@ -35,6 +35,11 @@ img {
     max-height: 60%;
     margin-right: 8px;
   }
+
+  svg {
+    height: 60px;
+    max-height: 60%;
+  }
 }
 
 .post {
@@ -53,6 +58,16 @@ img {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .headerbar {
+    height: 60px;
+    svg {
+      width: 32px;
+    }
+  }
+}
+
+
 @keyframes hueRotate {
   0 {
       filter: hue-rotate(0);
@@ -64,7 +79,6 @@ img {
 
 .app-loading {
   text-align: center;
-  // background: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   margin-bottom: 20px;
   padding: 30px 50px;
@@ -75,4 +89,9 @@ img {
 
 .ant-spin-dot-item {
   background-color: darkgreen;
+}
+
+.content-and-share {
+  display: flex;
+  flex-direction: row;
 }

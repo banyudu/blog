@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import _ from 'lodash'
 import './index.less'
-import QRCode from 'qrcode.react'
+// import QRCode from 'qrcode.react'
 
 interface ShareButtonsProps {
   sites?: string[]
@@ -17,7 +17,7 @@ interface ShareButtonsProps {
 
 class ShareButtons extends Component<ShareButtonsProps> {
   static defaultProps = {
-    sites: ['weibo', 'twitter', 'douban', 'linkedin', 'facebook']
+    sites: ['weibo', 'twitter', 'douban', 'linkedin']
     // wechatQrcodeTitle: '微信扫一扫：分享',
     // wechatQrcodeHelper: '微信里点“发现”，扫一下,二维码便可将本文分享至朋友圈。'
   };
@@ -56,7 +56,7 @@ class ShareButtons extends Component<ShareButtonsProps> {
         const doc = <div key={i} className='wechat-qrcode'>
           <h4>{wechatQrcodeTitle}</h4>
           <div className='qrcode'>
-            <QRCode value={url} size={100} />
+            {/* <QRCode value={url} size={100} /> */}
           </div>
           <div className='help'>
             <p>{wechatQrcodeHelper}</p>
@@ -76,6 +76,7 @@ class ShareButtons extends Component<ShareButtonsProps> {
     })
     return (
       <div className='social-share'>
+        <p>分享</p>
         {html}
       </div>
     )

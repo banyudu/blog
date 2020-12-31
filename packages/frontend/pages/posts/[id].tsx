@@ -104,17 +104,18 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
           createdAt={new Date(createdAt)}
           updatedAt={new Date(updatedAt)}
         />
-        <Markdown source={content} className='post' />
+        <div className='content-and-share'>
+          <Markdown source={content} className='post' />
+          <ShareButtons
+            title={title}
+            description={extract}
+            image=''
+            url={HOST + router.asPath}
+            origin={HOST}
+            site={HOST}
+          />
+        </div>
         <FollowMe /> <br />
-        分享文章：<br />
-        <ShareButtons
-          title={title}
-          description={extract}
-          image=''
-          url={HOST + router.asPath}
-          origin={HOST}
-          site={HOST}
-        />
         <hr />
         <Comments
           profile={profile}

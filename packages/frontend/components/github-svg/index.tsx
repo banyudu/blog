@@ -5,10 +5,8 @@ const Header: FC<any> = (props) => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       className='octicon octicon-mark-github v-align-middle'
-      height='32'
       viewBox='0 0 16 16'
       version='1.1'
-      width='32'
       aria-hidden='true'
     >
       <path
