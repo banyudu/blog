@@ -5,7 +5,7 @@ import { NextPage } from 'next'
 import Footer from '../components/footer'
 import { getPosts } from '../services/post'
 import moment from 'moment'
-import { Carousel } from 'antd'
+import { Carousel, Spin } from 'antd'
 import Slide from '../components/slide'
 import { Post, PostWithTimeline } from '../types'
 import Posts from '../components/posts'
@@ -44,21 +44,25 @@ const Slides: React.FC<SlidesProps> = (props) => {
 
 const App: NextPage = (props) => {
   const [posts, setPosts] = useState<PostWithTimeline[]>([])
+  const [loading, setLoading] = useState<boolean>(true)
   useEffect(() => {
-    getPostsWithTimeline().then(data => setPosts(data)).catch(console.error)
+    getPostsWithTimeline().then(data => {
+      setPosts(data)
+      setLoading(false)
+    }).catch(console.error)
   }, [])
   return (
     <div className='App'>
       <Head>
         <title>鱼肚的博客</title>
       </Head>
-      {/* <Header
-        title='鱼肚的博客'
-        gitUrl='https://github.com/banyudu'
-      /> */}
       <article className='App-content'>
-        <Slides posts={posts} />
-        <Posts posts={posts} />
+        {loading
+          ? <div className='app-loading'><Spin /></div>
+          : <>
+            <Slides posts={posts} />
+            <Posts posts={posts} />
+          </>}
       </article>
       <Footer />
     </div>
