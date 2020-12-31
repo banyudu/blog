@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/banyudu/blog/compare/frontend@0.28.8...frontend@0.29.0) (2020-12-31)
+
+
+### Bug Fixes
+
+* modify follow-me button style ([334aff6](https://github.com/banyudu/blog/commit/334aff6ebf907ad780276d2d780dbc3aedc382cf))
+
+
+### Features
+
+* show loading spin on index page when loading posts ([a916610](https://github.com/banyudu/blog/commit/a916610abc26b9d0523f594d22b054d83de97384))
+
+
+
+
+
 ## [0.28.8](https://github.com/banyudu/blog/compare/frontend@0.28.7...frontend@0.28.8) (2020-12-30)
 
 
