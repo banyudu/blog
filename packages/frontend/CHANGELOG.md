@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.1](https://github.com/banyudu/blog/compare/frontend@0.29.0...frontend@0.29.1) (2020-12-31)
+
+
+### Bug Fixes
+
+* update typescript and babel versions ([960b9f8](https://github.com/banyudu/blog/commit/960b9f8dc99bb7e1dd520cb6c83e58e998bda647))
+
+
+
+
+
 # [0.29.0](https://github.com/banyudu/blog/compare/frontend@0.28.8...frontend@0.29.0) (2020-12-31)
 
 
