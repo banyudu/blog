@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Error from 'next/error'
 import Head from 'next/head'
-import { BackTop } from 'antd'
+import { BackTop, Spin } from 'antd'
 import { NextPage, GetStaticPaths, GetStaticProps } from 'next'
 import Footer from '../../components/footer'
 import { rest } from '../../utils'
@@ -48,7 +48,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
     return <Error statusCode={statusCode} />
   }
   if (!id) {
-    return <div>loading</div>
+    return <div className='app-loading'><Spin /></div>
   }
   const [commentsRefreshKey, setCommentsRefershKey] = useState<string>(nanoid())
   const [comments, commentsLoading] = useComments(id, commentsRefreshKey)
@@ -105,7 +105,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
           updatedAt={new Date(updatedAt)}
         />
         <Markdown source={content} className='post' />
-        关注我： <FollowMe /> <br />
+        <FollowMe /> <br />
         分享文章：<br />
         <ShareButtons
           title={title}

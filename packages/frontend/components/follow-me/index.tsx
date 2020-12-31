@@ -1,24 +1,11 @@
 import React from 'react'
-import GitHubButton from 'react-github-btn'
 import './index.less'
 
 const FollowMe = () => (
   <div className='follow-me'>
-    <GitHubButton
-      href='https://github.com/banyudu'
-      data-show-count
-      aria-label='Follow @banyudu on GitHub'
-    >
-      Follow
-    </GitHubButton>
-    <a
-      href='https://twitter.com/yuduban?ref_src=twsrc%5Etfw'
-      className='twitter-follow-button'
-      data-show-screen-name='false'
-      data-show-count='false'
-    >
-      Follow
-    </a>
+    <h3>关注我</h3>
+    <a target='_blank' rel='noopener noreferrer' href='https://github.com/banyudu'><img src='https://banyudu.github.io/images/github.png' alt='github' width='64' /></a>
+    <a target='_blank' rel='noopener noreferrer' href='https://twitter.com/yuduban'><img src='https://banyudu.github.io/images/twitter-logo.png' alt='twitter' width='64' /></a>
   </div>
 )
 
