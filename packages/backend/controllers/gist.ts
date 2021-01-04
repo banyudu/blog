@@ -52,7 +52,7 @@ export const syncGists: APIGatewayProxyHandler = run(async (event, _context) => 
   for (const gist of gists) {
     const id = `gist:${gist.id}`
     let record = await Blog.get(id)
-    if (!record || record.updatedAt < gist.updatedAt) {
+    if (!record || record.updatedAt < gist.updatedAt || record.rawUrl !== gist.url) {
       if (!record) {
         const arr = gist.filename.split('.')
         arr.pop()

@@ -8,6 +8,7 @@ export interface Blog {
   tags: string
   content: string
   url: string
+  rawUrl?: string
   filename: string
   series?: string
   updatedAt: Date
@@ -40,6 +41,7 @@ export const Schema = new dynamoose.Schema({
     }
   },
   filename: String,
+  rawUrl: String,
   series: {
     type: String,
     required: false,
