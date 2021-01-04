@@ -64,6 +64,7 @@ export const syncGists: APIGatewayProxyHandler = run(async (event, _context) => 
           content: '',
           extract: '',
           url: `${basename}.${gist.id.substr(0, 6)}`,
+          rawUrl: gist.url,
           filename: gist.filename,
           category: 'other',
           series: gist.series,
