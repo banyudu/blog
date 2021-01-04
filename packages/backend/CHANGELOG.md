@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.5](https://github.com/banyudu/blog/compare/backend@0.28.4...backend@0.28.5) (2021-01-04)
+
+
+### Bug Fixes
+
+* fix bug in syncGists ([2cf3979](https://github.com/banyudu/blog/commit/2cf397945003755a2004360a421f8dc024dd11d9))
+
+
+
+
+
 ## [0.28.4](https://github.com/banyudu/blog/compare/backend@0.28.3...backend@0.28.4) (2021-01-04)
 
 
