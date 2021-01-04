@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.4](https://github.com/banyudu/blog/compare/backend@0.28.3...backend@0.28.4) (2021-01-04)
+
+
+### Bug Fixes
+
+* fix update time by add rawUrl prop into blog schema ([7609404](https://github.com/banyudu/blog/commit/7609404ca809b216a1a23288bf0da8d23296fbd6))
+
+
+
+
+
 ## [0.28.3](https://github.com/banyudu/blog/compare/backend@0.28.2...backend@0.28.3) (2020-12-30)
 
 
