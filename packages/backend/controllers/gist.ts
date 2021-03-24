@@ -5,6 +5,7 @@ import Blog from '../models/blog'
 import Series from '../models/series'
 import { StringObject, SeriesPost } from '../types'
 import * as qs from 'qs'
+import axios from 'axios'
 
 export const getGists: APIGatewayProxyHandler = run(async (event, _context) => { // eslint-disable-line @typescript-eslint/require-await
   const [, gists] = await fetchGists()
@@ -16,6 +17,23 @@ export const getGists: APIGatewayProxyHandler = run(async (event, _context) => {
     })
   }
 })
+
+/**
+ * 触发前端构建
+ */
+const triggerFrontendBuild = async () => {
+  const owner = 'banyudu'
+  const repo = 'blog'
+  const workflowId = 'frontend'
+  const branchName = 'master'
+  await axios.post(`/repos/${owner}/${repo}/actions/workflows/${workflowId}/dispatches`, {
+    ref: branchName
+  }, {
+    headers: {
+      accept: 'application/vnd.github.v3+json'
+    }
+  })
+}
 
 /**
  * 从Gist中同步博客。
@@ -85,7 +103,10 @@ export const syncGists: APIGatewayProxyHandler = run(async (event, _context) => 
     }
     await record.save()
   }
-  // TODO: filter by database
+  if (gists.length) {
+    // 如果有新的gist,触发前端重新构建
+    triggerFrontendBuild().catch(console.error)
+  }
   return {
     statusCode: 200,
     body: JSON.stringify({
