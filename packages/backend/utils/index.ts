@@ -85,3 +85,8 @@ rest.interceptors.response.use(res => {
   console.error(err)
   throw err
 })
+
+// 无用代码，为了使lambda发生变化而加的，后面可去掉 https://www.serverless.com/framework/docs/deprecations#default-providerlambdahashingversion
+if (process.env.DEBUG) {
+  console.log('debug')
+}
