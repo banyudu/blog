@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/banyudu/blog/compare/frontend@0.29.11...frontend@0.30.0) (2021-03-24)
+
+
+### Features
+
+* add open graph meta data ([53b301a](https://github.com/banyudu/blog/commit/53b301a6b31bd7dd08e5edbf458c31a8e46e6874))
+
+
+
+
+
 ## [0.29.11](https://github.com/banyudu/blog/compare/frontend@0.29.10...frontend@0.29.11) (2021-03-24)
 
 
