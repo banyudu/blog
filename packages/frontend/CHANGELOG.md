@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.11](https://github.com/banyudu/blog/compare/frontend@0.29.10...frontend@0.29.11) (2021-03-24)
+
+
+### Bug Fixes
+
+* fix bug in code indent ([26d3996](https://github.com/banyudu/blog/commit/26d3996be6811fd66bf6913a059eef85d5dc63c4))
+
+
+
+
+
 ## [0.29.10](https://github.com/banyudu/blog/compare/frontend@0.29.9...frontend@0.29.10) (2021-03-17)
 
 **Note:** Version bump only for package frontend
