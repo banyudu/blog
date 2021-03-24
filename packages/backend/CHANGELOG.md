@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/banyudu/blog/compare/backend@0.28.8...backend@0.29.0) (2021-03-24)
+
+
+### Features
+
+* trigger frontend build after sync gists ([d536740](https://github.com/banyudu/blog/commit/d5367404be3e6d994f1db2382d5737ec8c03c53f))
+
+
+
+
+
 ## [0.28.8](https://github.com/banyudu/blog/compare/backend@0.28.7...backend@0.28.8) (2021-03-24)
 
 **Note:** Version bump only for package backend
