@@ -24,7 +24,7 @@ class CodeBlock extends PureComponent<CodeBlockProps> {
 
   render () {
     const { language, value = '' } = this.props
-    const showLineNumbers = value.includes('\n')
+    const showLineNumbers = value.split('\n').length > 3
     if (language === 'mermaid') {
       // return <div className='mermaid'>{value}</div>
       return <Mermaid chart={value} />
