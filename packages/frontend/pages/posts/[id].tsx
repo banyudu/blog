@@ -90,7 +90,13 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         <meta name='robots' content='index,follow' />
         <meta name='google' content='index,follow' />
         <meta name='googlebot' content='index,follow' />
-        <script async src='https://platform.twitter.com/widgets.js' />
+        <meta property='og:title' content={title} />
+        <meta property='og:type' content='article' />
+        <meta property='og:description' content={extract} />
+        <meta property='og:locale' content='zh_CN' />
+        <meta property='og:site_name' content='鱼肚的博客' />
+        <meta property='og:image' content='https://banyudu.com/assets/images/logo.png' />
+        <meta property='og:url' content={HOST + router.asPath} />
       </Head>
       <BackTop visibilityHeight={1500} />
       <Header
