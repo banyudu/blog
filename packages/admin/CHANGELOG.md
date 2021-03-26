@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.3](https://github.com/banyudu/blog/compare/admin@0.28.2...admin@0.28.3) (2021-03-26)
+
+
+### Bug Fixes
+
+* admin serverless.yml ([8ca605f](https://github.com/banyudu/blog/commit/8ca605f3ccd9d7f75b345480f522e740c23eaf9e))
+
+
+
+
+
 ## [0.28.2](https://github.com/banyudu/blog/compare/admin@0.28.1...admin@0.28.2) (2021-03-24)
 
 **Note:** Version bump only for package admin
