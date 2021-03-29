@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Head from 'next/head'
-import { NextPage } from 'next'
+import { NextPage, GetStaticProps } from 'next'
 // import Header from '../components/header'
 import Footer from '../components/footer'
 import { getPosts } from '../services/post'
 import moment from 'moment'
-import { Carousel, Spin } from 'antd'
+import { Carousel } from 'antd'
 import Slide from '../components/slide'
 import { Post, PostWithTimeline } from '../types'
 import Posts from '../components/posts'
 import './index.less'
 
-// interface AppInterface {
-//   posts: PostWithTimeline[]
-// }
+interface AppInterface {
+  posts: PostWithTimeline[]
+}
 
 interface SlidesProps {
   posts: Post[]
@@ -42,27 +42,31 @@ const Slides: React.FC<SlidesProps> = (props) => {
   )
 }
 
-const App: NextPage = (props) => {
-  const [posts, setPosts] = useState<PostWithTimeline[]>([])
-  const [loading, setLoading] = useState<boolean>(true)
-  useEffect(() => {
-    getPostsWithTimeline().then(data => {
-      setPosts(data)
-      setLoading(false)
-    }).catch(console.error)
-  }, [])
+const App: NextPage<AppInterface> = ({ posts }) => {
+  // const [posts, setPosts] = useState<PostWithTimeline[]>([])
+  // const [loading, setLoading] = useState<boolean>(true)
+  // useEffect(() => {
+  //   getPostsWithTimeline().then(data => {
+  //     setPosts(data)
+  //     setLoading(false)
+  //   }).catch(console.error)
+  // }, [])
   return (
     <div className='App'>
       <Head>
         <title>鱼肚的博客</title>
       </Head>
       <article className='App-content'>
-        {loading
+        {/* {loading
           ? <div className='app-loading'><Spin /></div>
           : <>
             <Slides posts={posts} />
             <Posts posts={posts} />
-          </>}
+          </>} */}
+        <>
+          <Slides posts={posts} />
+          <Posts posts={posts} />
+        </>
       </article>
       <Footer />
     </div>
@@ -81,6 +85,20 @@ async function getPostsWithTimeline (): Promise<PostWithTimeline[]> {
     }
   }
   return postsRes
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  // params contains the post `id`.
+  // If the route is like /posts/1, then params.id is 1
+
+  // Pass post data to the page via props
+  const posts = await getPostsWithTimeline()
+  return {
+    props: { posts },
+    // Re-generate the post at most once per second
+    // if a request comes in
+    revalidate: 60 * 60
+  }
 }
 
 export default App
