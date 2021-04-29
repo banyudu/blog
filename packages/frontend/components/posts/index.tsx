@@ -17,7 +17,7 @@ const Posts: FC<PostsProps> = (props) => {
     <Timeline mode='left' className='timeline'>
       {posts.map(post =>
         <Timeline.Item key={post.id} label={post.timeline ?? undefined}>
-          <Link href={{ pathname: `/posts/${post.url}`, query: { random: process.env.random } }}>
+          <Link href={{ pathname: `/posts/${post.url}`, query: { v: process.env.random } }}>
             <a>{post.title}</a>
           </Link>
         </Timeline.Item>
