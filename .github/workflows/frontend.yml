@@ -1,8 +1,11 @@
 on:
   workflow_dispatch:
   push:
-    tags:
-      - 'frontend@*'
+    branches:
+      - master
+    paths:
+      - 'packages/frontend/**'
+      - '.github/workflows/frontend.yml'
 name: Deploy Frontend
 jobs:
   deploy:
