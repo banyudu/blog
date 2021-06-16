@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.3](https://github.com/banyudu/blog/compare/backend@0.29.2...backend@0.29.3) (2021-06-16)
+
+
+### Bug Fixes
+
+* **backend:** fix triggerFrontendBuild ([8a7f9ab](https://github.com/banyudu/blog/commit/8a7f9ab1c4ea6552398de369fddaf2e5c7eb61c4))
+
+
+
+
+
 ## [0.29.2](https://github.com/banyudu/blog/compare/backend@0.29.1...backend@0.29.2) (2021-03-24)
 
 **Note:** Version bump only for package backend
