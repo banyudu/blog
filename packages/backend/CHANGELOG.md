@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.4](https://github.com/banyudu/blog/compare/backend@0.29.3...backend@0.29.4) (2021-06-16)
+
+
+### Bug Fixes
+
+* **backend:** fix triggerFrontendBuild ([423f9ae](https://github.com/banyudu/blog/commit/423f9aec8bd87045ecdee3eaa5572b891376a0f0))
+
+
+
+
+
 ## [0.29.3](https://github.com/banyudu/blog/compare/backend@0.29.2...backend@0.29.3) (2021-06-16)
 
 
