@@ -26,13 +26,15 @@ const triggerFrontendBuild = async () => {
   const repo = 'blog'
   const workflowId = 'frontend'
   const branchName = 'master'
-  await axios.post(`/repos/${owner}/${repo}/actions/workflows/${workflowId}/dispatches`, {
+  console.log('url is: ', `https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflowId}/dispatches`)
+  const res = await axios.post(`https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflowId}/dispatches`, {
     ref: branchName
   }, {
     headers: {
       accept: 'application/vnd.github.v3+json'
     }
   })
+  console.log('res.data is: ', res.data)
 }
 
 /**
