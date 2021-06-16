@@ -27,14 +27,18 @@ const triggerFrontendBuild = async () => {
   const workflowId = 'frontend'
   const branchName = 'master'
   console.log('url is: ', `https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflowId}/dispatches`)
-  const res = await axios.post(`https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflowId}/dispatches`, {
-    ref: branchName
-  }, {
-    headers: {
-      accept: 'application/vnd.github.v3+json'
-    }
-  })
-  console.log('res.data is: ', res.data)
+  try {
+    const res = await axios.post(`https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflowId}/dispatches`, {
+      ref: branchName
+    }, {
+      headers: {
+        accept: 'application/vnd.github.v3+json'
+      }
+    })
+    console.log('res.data is: ', res.data)
+  } catch (error) {
+    console.error('triggerFrontendBuild failed: ', error)
+  }
 }
 
 /**
@@ -107,7 +111,7 @@ export const syncGists: APIGatewayProxyHandler = run(async (event, _context) => 
   }
   if (gists.length) {
     // 如果有新的gist,触发前端重新构建
-    triggerFrontendBuild().catch(console.error)
+    await triggerFrontendBuild()
   }
   return {
     statusCode: 200,
