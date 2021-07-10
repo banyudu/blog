@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.30.5](https://github.com/banyudu/blog/compare/frontend@0.30.4...frontend@0.30.5) (2021-07-10)
+
+
+### Bug Fixes
+
+* style ([b75ea2e](https://github.com/banyudu/blog/commit/b75ea2ea51983995aec1978bda2f8503ec426293))
+
+
+
+
+
 ## [0.30.4](https://github.com/banyudu/blog/compare/frontend@0.30.3...frontend@0.30.4) (2021-04-29)
 
 **Note:** Version bump only for package frontend
