@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import ReactMarkdown from 'react-markdown'
 import CodeBlock from '../codeblock'
 import './index.less'
+import { Image } from 'antd'
 
 interface MarkdownProps {
   source: string
@@ -19,7 +20,8 @@ const Markdown: FC<MarkdownProps> = (props) => {
       source={source}
       renderers={{
         code: CodeBlock,
-        link: LinkRenderer
+        link: LinkRenderer,
+        image: Image
       }}
       className={`${className} markdown`}
     />
