@@ -18,7 +18,7 @@ import Cookies from 'js-cookie'
 // import * as _ from 'lodash'
 import nanoid from 'nanoid'
 import { useRouter } from 'next/router'
-import ShareButtons from '../../components/share-buttons'
+// import ShareButtons from '../../components/share-buttons'
 import './index.less'
 import FollowMe from '../../components/follow-me'
 import Header from '../../components/header'
@@ -112,14 +112,14 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         />
         <div className='content-and-share'>
           <Markdown source={content} className='post' />
-          <ShareButtons
+          {/* <ShareButtons
             title={title}
             description={extract}
             image=''
             url={HOST + router.asPath}
             origin={HOST}
             site={HOST}
-          />
+          /> */}
         </div>
         <FollowMe /> <br />
         <hr />
