@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/banyudu/blog/compare/frontend@0.30.5...frontend@0.31.0) (2021-07-14)
+
+
+### Bug Fixes
+
+* cache-control ([4ede4c8](https://github.com/banyudu/blog/commit/4ede4c8dddcbec396394e6650b54d604a427e513))
+
+
+### Features
+
+* use antd image component and next.js 11 ([de2e293](https://github.com/banyudu/blog/commit/de2e29392f3d2ef86374fd50fb08d59d650861e3))
+
+
+
+
+
 ## [0.30.5](https://github.com/banyudu/blog/compare/frontend@0.30.4...frontend@0.30.5) (2021-07-10)
 
 
