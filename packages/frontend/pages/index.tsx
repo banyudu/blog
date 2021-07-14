@@ -94,10 +94,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // Pass post data to the page via props
   const posts = await getPostsWithTimeline()
   return {
-    props: { posts },
-    // Re-generate the post at most once per second
-    // if a request comes in
-    revalidate: 60 * 60
+    props: { posts }
   }
 }
 
