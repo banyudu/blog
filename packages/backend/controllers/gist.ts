@@ -24,18 +24,17 @@ export const getGists: APIGatewayProxyHandler = run(async (event, _context) => {
 const triggerFrontendBuild = async () => {
   const owner = 'banyudu'
   const repo = 'blog'
-  const workflowId = 'frontend'
+  const workflowId = '620361'
   const branchName = 'master'
-  console.log('url is: ', `https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflowId}/dispatches`)
   try {
-    const res = await axios.post(`https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflowId}/dispatches`, {
+    await axios.post(`https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflowId}/dispatches`, {
       ref: branchName
     }, {
       headers: {
-        accept: 'application/vnd.github.v3+json'
+        accept: 'application/vnd.github.v3+json',
+        Authorization: `token ${process.env.githubToken}`
       }
     })
-    console.log('res.data is: ', res.data)
   } catch (error) {
     console.error('triggerFrontendBuild failed: ', error)
   }

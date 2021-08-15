@@ -53,7 +53,7 @@ const axiosOptions: AxiosRequestConfig = {}
 if (process.env.IS_OFFLINE) {
   const httpsAgent = new SocksProxyAgent({
     host: '127.0.0.1',
-    port: 7891,
+    port: 7890,
     protocol: 'socks5:'
   })
   axiosOptions.httpAgent = httpsAgent

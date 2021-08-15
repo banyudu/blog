@@ -42,6 +42,7 @@ provider:
   environment:
     stage: ${opt:stage, self:provider.stage}
     sentryDSN: ${ssm:/${self:service.name}/sentryDSN}
+    githubToken: ${ssm:/${self:service.name}/githubToken}
     AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
     BLOG_TABLE: ${self:custom.blog_table}
     SERIES_TABLE: ${self:custom.series_table}
