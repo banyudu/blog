@@ -3,32 +3,72 @@
   "arn": "arn:aws:cloudfront::286136663550:distribution/ERVNMAUXGW31H",
   "url": "https://d3l6sgxb1432nq.cloudfront.net",
   "region": "us-east-1",
+  "enabled": true,
+  "comment": "",
+  "priceClass": "PriceClass_All",
   "origins": [
     {
-      "url": "http://0y640hl-bfoab9.s3.amazonaws.com",
+      "url": "http://0y640hl-bfoab9.s3.us-east-1.amazonaws.com",
       "private": true,
       "pathPatterns": {
-        "_next/*": {
-          "ttl": 86400
+        "_next/static/*": {
+          "minTTL": 0,
+          "defaultTTL": 86400,
+          "maxTTL": 31536000,
+          "forward": {
+            "headers": "none",
+            "cookies": "none",
+            "queryString": false
+          }
         },
         "static/*": {
-          "ttl": 86400
+          "minTTL": 0,
+          "defaultTTL": 86400,
+          "maxTTL": 31536000,
+          "forward": {
+            "headers": "none",
+            "cookies": "none",
+            "queryString": false
+          }
+        },
+        "_next/data/*": {
+          "minTTL": 0,
+          "defaultTTL": 0,
+          "maxTTL": 31536000,
+          "allowedHttpMethods": [
+            "HEAD",
+            "GET"
+          ],
+          "lambda@edge": {
+            "origin-response": "arn:aws:lambda:us-east-1:286136663550:function:0y640hl-fkmuh6q:342",
+            "origin-request": "arn:aws:lambda:us-east-1:286136663550:function:0y640hl-fkmuh6q:342"
+          }
         }
       }
     }
   ],
+  "errorPages": [],
   "defaults": {
-    "ttl": 0,
-    "allowedHttpMethods": [
-      "HEAD",
-      "GET"
-    ],
+    "minTTL": 0,
+    "defaultTTL": 0,
+    "maxTTL": 31536000,
     "forward": {
       "cookies": "all",
       "queryString": true
     },
+    "allowedHttpMethods": [
+      "HEAD",
+      "DELETE",
+      "POST",
+      "GET",
+      "OPTIONS",
+      "PUT",
+      "PATCH"
+    ],
     "lambda@edge": {
-      "origin-request": "arn:aws:lambda:us-east-1:286136663550:function:0y640hl-fkmuh6q:58"
-    }
+      "origin-request": "arn:aws:lambda:us-east-1:286136663550:function:0y640hl-fkmuh6q:342",
+      "origin-response": "arn:aws:lambda:us-east-1:286136663550:function:0y640hl-fkmuh6q:342"
+    },
+    "compress": true
   }
 }
