@@ -1,31 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Error from 'next/error'
 import Head from 'next/head'
-import { BackTop, Spin } from 'antd'
 import { NextPage, GetStaticPaths, GetStaticProps } from 'next'
-import Footer from '../../components/footer'
-import { rest } from '../../utils'
-import { useComments } from '../../hooks'
-import Comments from '../../components/comments'
-import { ErrorProps, Profile } from '../../types'
-import Markdown from '../../components/markdown'
-import Summary from '../../components/summary'
-import { addComment } from '../../services/comment'
-import { getPosts } from '../../services/post'
-import { login, logout } from '../../services/auth'
-import Cookies from 'js-cookie'
-// import cookies from 'next-cookies'
-// import * as _ from 'lodash'
-import nanoid from 'nanoid'
+import { rest } from 'utils'
+import { ErrorProps } from 'types'
+import Markdown from 'components/markdown'
+import Summary from 'components/summary'
+import { getPosts } from 'services/post'
 import { useRouter } from 'next/router'
-// import ShareButtons from '../../components/share-buttons'
-import './index.less'
-import FollowMe from '../../components/follow-me'
-import Header from '../../components/header'
-
-interface Auth extends Profile {
-  token: string
-}
+import Layout from 'components/layout'
 
 interface PostProps {
   id: string
@@ -34,8 +17,6 @@ interface PostProps {
   content: string
   tags: string[]
   category: string
-  // debug?: boolean
-  // profile?: Auth
   url: string
   createdAt: string
   updatedAt: string
@@ -48,41 +29,14 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
     return <Error statusCode={statusCode} />
   }
   if (!id) {
-    return <div className='app-loading'><Spin /></div>
+    return <div className='app-loading'><svg className='animate-spin h-5 w-5 mr-3' viewBox='0 0 24 24' /></div>
   }
-  const [commentsRefreshKey, setCommentsRefershKey] = useState<string>(nanoid())
-  const [comments, commentsLoading] = useComments(id, commentsRefreshKey)
-  const [profile, setProfile] = useState<Auth | undefined>(undefined)
   const router = useRouter()
-  const token = profile?.token ?? ''
-
-  useEffect(() => {
-    // socialShareRef.current
-    setProfile({
-      userId: Cookies.get('userId'),
-      name: Cookies.get('name') ?? '',
-      avatar: Cookies.get('avatar') ?? '',
-      token: Cookies.get('token') ?? ''
-    })
-  }, [])
-
-  const handleAddComment = async (content) => {
-    await addComment(token, id, content)
-    setCommentsRefershKey(nanoid())
-  }
 
   const HOST = 'https://banyudu.com'
 
-  let gistId = ''
-  if (/^gist:.+$/.test(id)) {
-    gistId = id.substr('gist:'.length)
-  }
-
-  // 解决series中url错误的问题
-  gistId = (gistId ?? '').split(':')[0]
-
   return (
-    <div className='post'>
+    <Layout>
       <Head>
         <title>{title}</title>
         <meta name='description' content={extract} />
@@ -98,47 +52,20 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         <meta property='og:image' content='https://banyudu.com/assets/images/logo.png' />
         <meta property='og:url' content={HOST + router.asPath} />
       </Head>
-      <BackTop visibilityHeight={1500} />
-      <Header
-        title={title}
-        gitUrl={`https://gist.github.com/banyudu/${gistId}`}
-      />
-      <article className='article'>
+      <aside className='mb-8'>
         <Summary
           category={category}
           tags={tags}
           createdAt={new Date(createdAt)}
           updatedAt={new Date(updatedAt)}
         />
-        <div className='content-and-share'>
-          <Markdown source={content} className='post' />
-          {/* <ShareButtons
-            title={title}
-            description={extract}
-            image=''
-            url={HOST + router.asPath}
-            origin={HOST}
-            site={HOST}
-          /> */}
+      </aside>
+      <article>
+        <div>
+          <Markdown source={content} />
         </div>
-        <FollowMe /> <br />
-        <hr />
-        <Comments
-          profile={profile}
-          profileLoading={false}
-          comments={comments}
-          commentsLoading={commentsLoading}
-          onAddComment={handleAddComment}
-          login={() => login((profile) => {
-            console.debug('login callback')
-            console.debug('newProfile is: ', profile)
-            setProfile(profile)
-          })}
-          logout={async () => logout(() => setProfile(undefined))}
-        />
       </article>
-      <Footer />
-    </div>
+    </Layout>
   )
 }
 

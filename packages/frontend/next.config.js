@@ -1,6 +1,4 @@
 // next.config.js
-const withLess = require('@zeit/next-less')
-const withCSS = require('@zeit/next-css')
 const withImages = require('next-images')
 const withFonts = require('next-fonts')
 const nanoid = require('nanoid')
@@ -29,7 +27,7 @@ process.env.SENTRY_DSN = SENTRY_DSN
 
 const basePath = ''
 
-module.exports = withSourceMaps(withTM(withFonts(withImages(withCSS(withLess({
+module.exports = withSourceMaps(withTM(withFonts(withImages((({
   /* config options here */
   target: 'serverless',
   env: {

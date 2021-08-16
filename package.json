@@ -1,11 +1,11 @@
 {
-  "name": "ip",
+  "name": "@banyudu/blog",
   "private": true,
   "scripts": {
     "audit": "lerna-audit",
     "lint": "eslint . --ext .ts,.tsx,.js,jsx",
     "lint:fix": "npm run lint -- --fix",
-    "lint:git": "eslint --ext .ts,.tsx,.js,jsx `git diff-index --diff-filter=ACM --name-only HEAD | grep -E '.(js|jsx|ts|tsx)$'`"
+    "lint:git": "eslint --fix --ext .ts,.tsx,.js,jsx `git diff-index --diff-filter=ACM --name-only HEAD | grep -E '.(js|jsx|ts|tsx)$'`"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",

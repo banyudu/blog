@@ -1,12 +1,9 @@
 import React, { FC } from 'react'
 import ReactMarkdown from 'react-markdown'
 import CodeBlock from '../codeblock'
-import './index.less'
-import { Image } from 'antd'
 
 interface MarkdownProps {
   source: string
-  className?: string
 }
 
 function LinkRenderer (props) {
@@ -14,16 +11,15 @@ function LinkRenderer (props) {
 }
 
 const Markdown: FC<MarkdownProps> = (props) => {
-  const { source, className } = props
+  const { source } = props
   return (
     <ReactMarkdown
       source={source}
       renderers={{
         code: CodeBlock,
-        link: LinkRenderer,
-        image: Image
+        link: LinkRenderer
       }}
-      className={`${className} markdown`}
+      className='w-full'
     />
   )
 }

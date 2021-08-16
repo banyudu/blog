@@ -1,7 +1,5 @@
 import React, { FC } from 'react'
 import { ButtonAttributes } from '../../types'
-import { Tag, Card } from 'antd'
-import './index.less'
 import Link from 'next/link'
 
 interface ButtonBoxProps {
@@ -12,15 +10,16 @@ interface ButtonBoxProps {
 
 const ButtonBox: FC<ButtonBoxProps> = (props) => {
   const { buttons = [], activeKey } = props
+  console.log('activeKey is: ', activeKey)
 
   return (
-    <Card className='button-box'>
+    <div className='button-box'>
       {buttons.map(btn => (
         <Link key={btn.name} href={btn.link ?? ''}>
-          <Tag className={`button-box-btn ${btn.name === activeKey ? 'active' : ''}`} closable={false}>{btn.name}</Tag>
+          <div className='text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-blue-200 text-blue-700 rounded-full'>{btn.name}</div>
         </Link>
       ))}
-    </Card>
+    </div>
   )
 }
 
