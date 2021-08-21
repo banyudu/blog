@@ -4,18 +4,27 @@
 
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    @apply text-green-700 my-2;
+    @apply text-green-700 font-bold my-2;
   }
 
   h1 {
-    @apply text-2xl leading-10;
+    @apply text-3xl leading-10 my-4;
   }
   h2 {
-    @apply text-xl leading-9;
+    @apply text-xl leading-9 my-2;
+  }
+
+  h3, h4, h5, h6 {
+    @apply mt-1;
   }
 
   code {
     @apply bg-gray-200;
+  }
+
+  ul, ol {
+    list-style-type: auto;
+    @apply mx-8 my-4;
   }
 }
 

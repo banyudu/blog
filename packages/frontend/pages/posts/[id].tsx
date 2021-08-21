@@ -52,7 +52,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         <meta property='og:image' content='https://banyudu.com/assets/images/logo.png' />
         <meta property='og:url' content={HOST + router.asPath} />
       </Head>
-      <aside className='mb-8'>
+      <aside className='mb-2 text-sm'>
         <Summary
           category={category}
           tags={tags}
