@@ -11,11 +11,11 @@ class CodeBlock extends PureComponent<CodeBlockProps> {
   static propTypes = {
     value: PropTypes.string.isRequired,
     language: PropTypes.string
-  };
+  }
 
   static defaultProps = {
     language: null
-  };
+  }
 
   render () {
     const { language, value = '' } = this.props
