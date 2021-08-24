@@ -26,5 +26,9 @@
     list-style-type: auto;
     @apply mx-8 my-4;
   }
+
+  a {
+    @apply text-green-700;
+  }
 }
 
