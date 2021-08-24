@@ -2,30 +2,29 @@
   "name": "@banyudu/blog",
   "private": true,
   "scripts": {
-    "audit": "lerna-audit",
+    "prepare": "husky install",
     "lint": "eslint . --ext .ts,.tsx,.js,jsx",
     "lint:fix": "npm run lint -- --fix",
     "lint:git": "eslint --fix --ext .ts,.tsx,.js,jsx `git diff-index --diff-filter=ACM --name-only HEAD | grep -E '.(js|jsx|ts|tsx)$'`"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-conventional": "^8.1.0",
-    "@typescript-eslint/eslint-plugin": "^2.11.0",
-    "@typescript-eslint/parser": "^2.20.0",
-    "eslint": "^6.7.2",
-    "eslint-config-standard-react": "^9.2.0",
-    "eslint-config-standard-with-typescript": "^14.0.0",
-    "eslint-plugin-i18n": "^1.2.2",
-    "eslint-plugin-import": "^2.19.1",
-    "eslint-plugin-jest": "^23.7.0",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-react-hooks": "^2.4.0",
-    "eslint-plugin-standard": "^4.0.1",
-    "husky": "^4.2.3",
-    "lerna": "^3.15.0",
-    "lerna-audit": "^1.2.0"
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "eslint": "^7.32.0",
+    "eslint-config-standard-react": "^11.0.1",
+    "eslint-config-standard-with-typescript": "^20.0.0",
+    "eslint-plugin-i18n": "^2.1.0",
+    "eslint-plugin-import": "^2.24.1",
+    "eslint-plugin-jest": "^24.4.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "husky": "^7.0.1",
+    "lerna": "^4.0.0"
   },
   "husky": {
     "hooks": {
@@ -34,6 +33,6 @@
     }
   },
   "dependencies": {
-    "typescript": "^3.5.3"
+    "typescript": "^4.3.5"
   }
 }
