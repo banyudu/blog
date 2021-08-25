@@ -1,10 +1,9 @@
 // next.config.js
 const withImages = require('next-images')
 const withFonts = require('next-fonts')
-const nanoid = require('nanoid')
+const { nanoid } = require('nanoid')
 const withSourceMaps = require('@zeit/next-source-maps')()
 const SentryWebpackPlugin = require('@sentry/webpack-plugin')
-const withTM = require('next-transpile-modules')(['react-github-btn'])
 require('dotenv').config()
 
 const {
@@ -27,15 +26,12 @@ process.env.SENTRY_DSN = SENTRY_DSN
 
 const basePath = ''
 
-module.exports = withSourceMaps(withTM(withFonts(withImages((({
+module.exports = withSourceMaps((withFonts(withImages((({
   /* config options here */
   target: 'serverless',
   env: {
     API: process.env.API,
     random: nanoid(6)
-  },
-  lessLoaderOptions: {
-    javascriptEnabled: true
   },
   serverRuntimeConfig: {
     rootDir: __dirname
@@ -43,26 +39,6 @@ module.exports = withSourceMaps(withTM(withFonts(withImages((({
   enableSvg: true,
   webpack: (config, { isServer }) => {
     if (isServer) {
-      // require('ignore-styles')
-      const antStyles = /antd\/.*?\/style\/css.*?/
-      const origExternals = [...config.externals]
-      config.externals = [
-        (context, request, callback) => {
-          if (request.match(antStyles)) return callback()
-          if (typeof origExternals[0] === 'function') {
-            origExternals[0](context, request, callback)
-          } else {
-            callback()
-          }
-        },
-        ...(typeof origExternals[0] === 'function' ? [] : origExternals)
-      ]
-
-      config.module.rules.unshift({
-        test: antStyles,
-        use: 'null-loader'
-      })
-
       if (
         SENTRY_DSN &&
         SENTRY_ORG &&

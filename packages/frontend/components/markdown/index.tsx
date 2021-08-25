@@ -14,13 +14,15 @@ const Markdown: FC<MarkdownProps> = (props) => {
   const { source } = props
   return (
     <ReactMarkdown
-      source={source}
-      renderers={{
+      // source={source}
+      components={{
         code: CodeBlock,
         link: LinkRenderer
       }}
       className='w-full'
-    />
+    >
+      {source}
+    </ReactMarkdown>
   )
 }
 
