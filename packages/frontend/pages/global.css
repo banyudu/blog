@@ -4,7 +4,17 @@
 
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    @apply text-green-700 font-bold my-2;
+    @apply my-2;
+  }
+
+  h1, h2, h3, h4, h5, h6, a {
+    @apply text-green-700;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    h1, h2, h3, h4, h5, h6, a {
+      @apply text-green-600;
+    }
   }
 
   h1 {
@@ -19,7 +29,13 @@
   }
 
   code {
-    @apply bg-gray-200;
+    @apply bg-gray-200 mx-1;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    code {
+      @apply bg-gray-700;
+    }
   }
 
   ul, ol {
@@ -27,8 +43,8 @@
     @apply mx-8 my-4;
   }
 
-  a {
-    @apply text-green-700;
+  p {
+    @apply my-4;
   }
 }
 
