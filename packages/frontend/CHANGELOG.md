@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.3](https://github.com/banyudu/blog/compare/frontend@0.31.2...frontend@0.31.3) (2021-08-28)
+
+
+### Features
+
+* support cover metadata ([eefeada](https://github.com/banyudu/blog/commit/eefeada84e3a1f02057a4838bfc30eda86c16817))
+
+
+
+
+
 ## [0.31.2](https://github.com/banyudu/blog/compare/frontend@0.31.1...frontend@0.31.2) (2021-08-24)
 
 **Note:** Version bump only for package frontend
