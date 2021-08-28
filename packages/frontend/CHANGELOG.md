@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/banyudu/blog/compare/frontend@0.31.3...frontend@0.32.0) (2021-08-28)
+
+
+### Features
+
+* support darkmode ([baf6770](https://github.com/banyudu/blog/commit/baf677002ae13bfa43af500eaaa4ca6b5f328feb))
+
+
+
+
+
 ## [0.31.3](https://github.com/banyudu/blog/compare/frontend@0.31.2...frontend@0.31.3) (2021-08-28)
 
 
