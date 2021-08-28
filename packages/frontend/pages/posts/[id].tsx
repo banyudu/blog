@@ -14,6 +14,7 @@ interface PostProps {
   id: string
   title: string
   extract: string
+  cover?: string
   content: string
   tags: string[]
   category: string
@@ -24,7 +25,7 @@ interface PostProps {
 
 const Post: NextPage<PostProps | ErrorProps> = (props) => {
   const { statusCode } = props as ErrorProps
-  const { title, tags, content, id, category, extract, createdAt, updatedAt } = props as PostProps
+  const { title, tags, content, id, category, extract, cover, createdAt, updatedAt } = props as PostProps
   if (statusCode) {
     return <Error statusCode={statusCode} />
   }
@@ -49,7 +50,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         <meta property='og:description' content={extract} />
         <meta property='og:locale' content='zh_CN' />
         <meta property='og:site_name' content='鱼肚的博客' />
-        <meta property='og:image' content='https://banyudu.com/assets/images/logo.png' />
+        <meta property='og:image' content={ cover || 'https://banyudu.com/assets/images/logo.png' } />
         <meta property='og:url' content={HOST + router.asPath} />
       </Head>
       <aside className='mb-2 text-sm'>

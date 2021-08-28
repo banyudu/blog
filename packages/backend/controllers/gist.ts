@@ -105,10 +105,11 @@ export const syncGists: APIGatewayProxyHandler = run(async (event, _context) => 
       record.category = meta.category || ''
       record.extract = meta.extract || ''
       record.tags = (meta.tags || '').split(/[, ]/).join('|')
+      record.cover = meta.cover
     }
     await record.save()
   }
-  if (gists.length) {
+  if (gists.length && !process.env.IS_OFFLINE) {
     // 如果有新的gist,触发前端重新构建
     await triggerFrontendBuild()
   }

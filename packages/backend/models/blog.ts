@@ -9,6 +9,7 @@ export interface Blog {
   content: string
   url: string
   rawUrl?: string
+  cover?: string
   filename: string
   series?: string
   updatedAt: Date
@@ -28,6 +29,7 @@ export const Schema = new dynamoose.Schema({
   },
   tags: String,
   extract: String,
+  cover: String,
   content: {
     type: String,
     required: true

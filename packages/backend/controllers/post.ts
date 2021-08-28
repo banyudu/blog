@@ -5,7 +5,7 @@ import * as _ from 'lodash'
 import { AnyObject } from '../types'
 
 export const getPosts: APIGatewayProxyHandler = run(async (event, _context) => { // eslint-disable-line @typescript-eslint/require-await
-  let posts = await Blog.scan().attributes(['filename', 'category', 'extract', 'id', 'url', 'title', 'tags', 'createdAt', 'updatedAt']).exec()
+  let posts = await Blog.scan().attributes(['filename', 'category', 'extract', 'cover', 'id', 'url', 'title', 'tags', 'createdAt', 'updatedAt']).exec()
   const query: AnyObject<string> = event.queryStringParameters ?? {}
   posts = posts.filter(post => {
     if (query.category && query.category !== post.category) {
