@@ -36,6 +36,16 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
 
   const HOST = 'https://banyudu.com'
 
+  let realCover = cover
+  if (!realCover) {
+    // 尝试从文章中找到第一张图片
+    const match = content?.match(/!\[[^\]]*\]\((?<filename>.*?)(?=\"|\))(?<optionalpart>\".*\")?\)/)
+    if (match?.groups?.filename) {
+      realCover = match.groups.filename
+    }
+  }
+  realCover = realCover || 'https://banyudu.com/assets/images/logo.png'
+
   return (
     <Layout>
       <Head>
@@ -50,8 +60,16 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         <meta property='og:description' content={extract} />
         <meta property='og:locale' content='zh_CN' />
         <meta property='og:site_name' content='鱼肚的博客' />
-        <meta property='og:image' content={ cover || 'https://banyudu.com/assets/images/logo.png' } />
+        <meta property='og:image' content={realCover} />
         <meta property='og:url' content={HOST + router.asPath} />
+
+        {/* twitter 分享卡片信息 */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@banyudu" />
+        <meta name="twitter:creator" content="@YuduBan" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={extract} />
+        <meta name="twitter:image" content={realCover} />
       </Head>
       <aside className='mb-2 text-sm'>
         <Summary
