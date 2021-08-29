@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.33.0](https://github.com/banyudu/blog/compare/frontend@0.32.0...frontend@0.33.0) (2021-08-29)
+
+
+### Bug Fixes
+
+* fix bug in syncGists ([8079e06](https://github.com/banyudu/blog/commit/8079e06821c368be3bc7f2a356f275910a4d785d))
+* fix cloudfront settings ([f23dd56](https://github.com/banyudu/blog/commit/f23dd56bb705751d547c4a645a93a6b8cf9d3db1))
+
+
+### Features
+
+* support twitter summary card ([7631242](https://github.com/banyudu/blog/commit/76312425c847fbae0d36d93466b63367463f88e8))
+
+
+
+
+
 # [0.32.0](https://github.com/banyudu/blog/compare/frontend@0.31.3...frontend@0.32.0) (2021-08-28)
 
 
