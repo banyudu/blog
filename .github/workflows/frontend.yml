@@ -1,8 +1,8 @@
 on:
   workflow_dispatch:
   push:
-    branches:
-      - master
+    tags:
+      - 'backend@*'
     paths:
       - 'packages/frontend/**'
       - '.github/workflows/frontend.yml'

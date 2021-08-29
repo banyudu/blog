@@ -72,6 +72,7 @@ export const syncGists: APIGatewayProxyHandler = run(async (event, _context) => 
     }
   }
 
+  let shouldBuildFrontend = false
   for (const gist of gists) {
     const id = `gist:${gist.id}`
     let record = await Blog.get(id)
@@ -106,10 +107,12 @@ export const syncGists: APIGatewayProxyHandler = run(async (event, _context) => 
       record.extract = meta.extract || ''
       record.tags = (meta.tags || '').split(/[, ]/).join('|')
       record.cover = meta.cover
+
+      shouldBuildFrontend = true
+      await record.save()
     }
-    await record.save()
   }
-  if (gists.length && !process.env.IS_OFFLINE) {
+  if (shouldBuildFrontend && !process.env.IS_OFFLINE) {
     // 如果有新的gist,触发前端重新构建
     await triggerFrontendBuild()
   }
