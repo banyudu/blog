@@ -2,7 +2,7 @@ on:
   workflow_dispatch:
   push:
     tags:
-      - 'backend@*'
+      - 'frontend@*'
     paths:
       - 'packages/frontend/**'
       - '.github/workflows/frontend.yml'
