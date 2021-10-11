@@ -17,7 +17,7 @@ const Posts: FC<PostsProps> = (props) => {
       {posts.map(post =>
         <article className='mb-12' key={post.id}>
           <Link href={{ pathname: `/posts/${post.url}`, query: { v: process.env.random } }}>
-            <h3 className='text-2xl cursor-pointer'>{post.title}</h3>
+            <h2 className='text-2xl cursor-pointer'>{post.title}</h2>
           </Link>
           <small>{dayjs(post.createdAt).format('YYYY-MM-DD')}</small>
           <p>{post.extract}</p>

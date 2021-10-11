@@ -24,6 +24,10 @@
     @apply text-xl leading-9 my-2;
   }
 
+  h1, h2 {
+    @apply border-b border-gray-300 border-opacity-40;
+  }
+
   h3, h4, h5, h6 {
     @apply mt-1;
   }

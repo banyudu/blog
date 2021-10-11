@@ -3,7 +3,7 @@ import Logo from '../logo'
 
 const Header: FC<{}> = () => {
   return (
-    <header className='mb-12'>
+    <header className='mb-8'>
       <div className='flex flex-row'>
         <div className='mr-4'>
           <Logo />
