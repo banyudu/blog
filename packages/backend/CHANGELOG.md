@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.11](https://github.com/banyudu/blog/compare/backend@0.29.10...backend@0.29.11) (2021-10-17)
+
+
+### Bug Fixes
+
+* link renderer in markdown ([515ef25](https://github.com/banyudu/blog/commit/515ef25e2e860daeeb0e82bc0f323901d1a228ae))
+
+
+
+
+
 ## [0.29.10](https://github.com/banyudu/blog/compare/backend@0.29.9...backend@0.29.10) (2021-08-29)
 
 
