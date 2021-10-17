@@ -50,6 +50,7 @@ export const syncGists: APIGatewayProxyHandler = run(async (event, _context) => 
 
   // 因为同步间隔要小于每次同步时获取的时间范围，所以很有可能会重复获取，需要检查 updatedAt 决定是否需要更新
   // 又因为理论上来说，每次同步的时候只需要取一个较小的时间范围（如一天），所以记录数也不会有很多个（一般是个位数）。所以循环处理即可，比scan要快
+  let shouldBuildFrontend = false
 
   for (const seriesItem of series) {
     const id = `gist:${seriesItem.id}`
@@ -68,11 +69,11 @@ export const syncGists: APIGatewayProxyHandler = run(async (event, _context) => 
         createdAt: seriesItem.createdAt,
         updatedAt: seriesItem.updatedAt
       })
+      shouldBuildFrontend = true
       await seriesRecord.save()
     }
   }
 
-  let shouldBuildFrontend = false
   for (const gist of gists) {
     const id = `gist:${gist.id}`
     let record = await Blog.get(id)

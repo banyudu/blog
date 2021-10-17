@@ -17,7 +17,7 @@ const Markdown: FC<MarkdownProps> = (props) => {
       // source={source}
       components={{
         code: CodeBlock,
-        link: LinkRenderer
+        a: LinkRenderer
       }}
       className='w-full'
     >
