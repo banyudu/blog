@@ -39,12 +39,12 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
   let realCover = cover
   if (!realCover) {
     // 尝试从文章中找到第一张图片
-    const match = content?.match(/!\[[^\]]*\]\((?<filename>.*?)(?=\"|\))(?<optionalpart>\".*\")?\)/)
+    const match = content?.match(/!\[[^\]]*\]\((?<filename>.*?)(?="|\))(?<optionalpart>".*")?\)/)
     if (match?.groups?.filename) {
       realCover = match.groups.filename
     }
   }
-  realCover = realCover || 'https://banyudu.com/assets/images/logo.png'
+  realCover = realCover ?? 'https://banyudu.com/assets/images/logo.png'
 
   return (
     <Layout>

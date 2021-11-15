@@ -16,6 +16,7 @@ module.exports = {
     '@typescript-eslint/require-await': 'off',
     'react/jsx-closing-tag-location': 'off',
     'react/jsx-closing-bracket-location': 'warn',
-    'react/prop-types': 'off'
+    'react/prop-types': 'off',
+    'react/no-unused-prop-types': 'off'
   }
 }

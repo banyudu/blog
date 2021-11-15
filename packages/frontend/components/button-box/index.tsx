@@ -5,7 +5,7 @@ import Link from 'next/link'
 interface ButtonBoxProps {
   buttons: ButtonAttributes[]
   activeKey?: string
-  onSelect?: (key: string) => void
+  // onSelect?: (key: string) => void
 }
 
 const ButtonBox: FC<ButtonBoxProps> = (props) => {

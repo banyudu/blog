@@ -1,6 +1,5 @@
 import React, { FC, useEffect, useState } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { materialDark, materialLight } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import useDarkMode from 'use-dark-mode'
 
 const CodeBlock: FC<any> = ({ node, inline, className, children, ...props }) => {
@@ -10,8 +9,9 @@ const CodeBlock: FC<any> = ({ node, inline, className, children, ...props }) => 
 
   useEffect(() => {
     if (hasWindow) {
+      // eslint-disable-next-line
       const { materialDark, materialLight } = require('react-syntax-highlighter/dist/esm/styles/prism')
-      setStyle(darkMode ? materialDark: materialLight)
+      setStyle(darkMode ? materialDark : materialLight)
     }
   }, [darkMode, hasWindow])
 
