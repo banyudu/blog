@@ -66,7 +66,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         {/* twitter 分享卡片信息 */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@banyudu" />
-        <meta name="twitter:creator" content="@YuduBan" />
+        <meta name="twitter:creator" content="@banyudu" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={extract} />
         <meta name="twitter:image" content={realCover} />
