@@ -21,7 +21,7 @@
     "js-cookie": "^3.0.0",
     "less": "^4.1.1",
     "lodash": "^4.17.15",
-    "nanoid": "^3.1.25",
+    "nanoid": "^3.1.31",
     "next": "^11.1.0",
     "next-cookies": "^2.0.3",
     "next-fonts": "^1.2.0",
