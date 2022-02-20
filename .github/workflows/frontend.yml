@@ -28,7 +28,7 @@ jobs:
           ${{ runner.os }}-build-${{ env.cache-name }}-
           ${{ runner.os }}-build-
           ${{ runner.os }}-
-    - run: npm i -g serverless
+    - run: npm i -g @serverless/cli@1.6.0
     - run: npm ci
       working-directory: ./packages/frontend
     - run: |
@@ -38,5 +38,5 @@ jobs:
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key_id }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_access_key }}
-    - run: sls --debug
+    - run: components-v1
       working-directory: ./packages/frontend

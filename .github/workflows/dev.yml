@@ -27,7 +27,7 @@ jobs:
           ${{ runner.os }}-build-${{ env.cache-name }}-
           ${{ runner.os }}-build-
           ${{ runner.os }}-
-    - run: npm i -g serverless
+    - run: npm i -g serverless @serverless/cli@1.6.0
     - run: npm i
       working-directory: ./packages/backend
     - run: sls deploy
