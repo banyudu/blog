@@ -1,4 +1,4 @@
-import * as Joi from '@hapi/joi'
+import * as Joi from 'joi'
 import { APIGatewayProxyHandler, APIGatewayProxyResult } from 'aws-lambda'
 import axios, { AxiosRequestConfig } from 'axios'
 import { SocksProxyAgent } from 'socks-proxy-agent'

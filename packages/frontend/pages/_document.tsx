@@ -1,7 +1,7 @@
 import React from 'react'
 import Document, { Head, Main, NextScript, Html } from 'next/document'
 
-import { GA_TRACKING_ID } from '../package.json'
+const GA_TRACKING_ID = 'UA-136109877-1'
 
 class MyDocument extends Document {
   render () {

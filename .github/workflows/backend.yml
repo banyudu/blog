@@ -22,7 +22,7 @@ jobs:
         run_install: |
           - recursive: true
             args: [--frozen-lockfile, --strict-peer-dependencies]
-          - args: [--global, serverless]
+          - args: [--global, "serverless@2.72.3"]
     - run: sls deploy --stage prod
       working-directory: ./packages/backend
       env:
