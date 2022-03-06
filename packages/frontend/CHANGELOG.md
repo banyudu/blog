@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.33.9](https://github.com/banyudu/blog/compare/frontend@0.33.8...frontend@0.33.9) (2022-03-06)
+
+**Note:** Version bump only for package frontend
+
+
+
+
+
 ## [0.33.8](https://github.com/banyudu/blog/compare/frontend@0.33.7...frontend@0.33.8) (2022-03-06)
 
 **Note:** Version bump only for package frontend
