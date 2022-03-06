@@ -79,7 +79,7 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
           updatedAt={new Date(updatedAt)}
         />
       </aside>
-      <article>
+      <article className='break-all'>
         <div>
           <Markdown source={content} />
         </div>
