@@ -26,7 +26,7 @@ jobs:
         run_install: |
           - recursive: true
             args: [--frozen-lockfile, --strict-peer-dependencies]
-          - args: [--global, @serverless/cli@1.6.0]
+          - args: [--global, "@serverless/cli@1.6.0"]
     - run: |
         echo AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID >> .env
         echo AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY >> .env
