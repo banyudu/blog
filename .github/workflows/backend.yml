@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - run: echo "node-linker=hoisted" >> .npmrc
     - name: Cache pnpm modules
       uses: actions/cache@v2
       with:
