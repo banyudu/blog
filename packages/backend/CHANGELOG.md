@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.19](https://github.com/banyudu/blog/compare/backend@0.29.18...backend@0.29.19) (2022-03-07)
+
+**Note:** Version bump only for package backend
+
+
+
+
+
 ## [0.29.18](https://github.com/banyudu/blog/compare/backend@0.29.17...backend@0.29.18) (2022-03-07)
 
 **Note:** Version bump only for package backend
