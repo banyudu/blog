@@ -1,7 +1,9 @@
 service: "blog"
 frameworkVersion: "^2.1.0"
+variablesResolutionMode: 20210326
 
 custom:
+  stage: ${opt:stage, "dev"}
   webpack:
     webpackConfig: ./webpack.config.js
     includeModules:
@@ -14,14 +16,14 @@ custom:
     staging: staging-api.banyudu.com
     dev: dev-api.banyudu.com
   customDomain:
-    domainName: ${self:custom.domains.${self:provider.environment.stage}} # Change this to your domain.
+    domainName: ${self:custom.domains.${self:custom.stage}} # Change this to your domain.
     basePath: 'blog' # This will be prefixed to all routes
-    stage: ${self:provider.environment.stage}
+    stage: ${self:custom.stage}
     createRoute53Record: true
   sentry:
     dsn: ${self:provider.environment.sentryDSN}
-  blog_table: '${self:service.name}-${self:provider.environment.stage}'
-  series_table: '${self:service.name}-series-${self:provider.environment.stage}'
+  blogTable: '${self:service}-${self:custom.stage}'
+  seriesTable: '${self:service}-series-${self:custom.stage}'
 
 
 # Add the serverless-webpack plugin
@@ -42,11 +44,11 @@ provider:
   memorySize: 256
   environment:
     stage: ${opt:stage, self:provider.stage}
-    sentryDSN: ${ssm:/${self:service.name}/sentryDSN}
-    githubToken: ${ssm:/${self:service.name}/githubToken}
+    sentryDSN: ${ssm:/${self:service}/sentryDSN}
+    githubToken: ${ssm:/${self:service}/githubToken}
     AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
-    BLOG_TABLE: ${self:custom.blog_table}
-    SERIES_TABLE: ${self:custom.series_table}
+    blogTable: ${self:custom.blogTable}
+    seriesTable: ${self:custom.seriesTable}
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -142,7 +144,7 @@ resources:
           - AttributeName: id
             KeyType: HASH
         BillingMode: PAY_PER_REQUEST
-        TableName: ${self:custom.blog_table}
+        TableName: ${self:custom.blogTable}
         GlobalSecondaryIndexes:
           - IndexName: urlGSI
             KeySchema:
@@ -168,7 +170,7 @@ resources:
           - AttributeName: id
             KeyType: HASH
         BillingMode: PAY_PER_REQUEST
-        TableName: ${self:custom.series_table}
+        TableName: ${self:custom.seriesTable}
         GlobalSecondaryIndexes:
           - IndexName: urlGSI
             KeySchema:
