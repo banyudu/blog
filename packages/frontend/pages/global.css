@@ -43,8 +43,8 @@
   }
 
   ul, ol {
-    list-style-type: auto;
-    @apply mx-8 my-4;
+    /* list-style-type: auto; */
+    @apply mx-8 my-4 list-disc;
   }
 
   p {

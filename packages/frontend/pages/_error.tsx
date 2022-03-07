@@ -14,9 +14,6 @@ const MyError = ({ statusCode, hasGetInitialPropsRun, err }) => {
 }
 
 MyError.getInitialProps = async ({ res, err, asPath }) => {
-  console.log('MyError.getInitialProps')
-  console.log('err is: ', err)
-  console.log('res.statusCode is: ', res?.statusCode)
   const errorInitialProps = await NextErrorComponent.getInitialProps({ res, err } as any)
 
   // Workaround for https://github.com/vercel/next.js/issues/8592, mark when

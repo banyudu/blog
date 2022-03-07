@@ -5,9 +5,9 @@ import Footer from 'components/footer'
 const Layout: FC<{ children: JSX.Element | JSX.Element[]}> = ({ children }) => {
   return (
     <div className='dark:text-gray-300 dark:bg-gray-800 w-full h-full'>
-      <div className='md:mx-auto px-4 py-8 max-w-4xl text-lg box-border'>
+      <div className='md:mx-auto px-4 py-8 max-w-4xl box-border'>
         <Header />
-        <div className='box-border rounded-lg border border-gray-500 p-4 md:p-8 border-opacity-30'>
+        <div className='box-border rounded-lg md:border border-gray-500 p-1 md:p-8 border-opacity-30 list-disc'>
           {children}
         </div>
         <Footer />
