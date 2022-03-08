@@ -2,7 +2,6 @@
 const withImages = require('next-images')
 const withFonts = require('next-fonts')
 const { nanoid } = require('nanoid')
-const withSourceMaps = require('@zeit/next-source-maps')()
 const SentryWebpackPlugin = require('@sentry/webpack-plugin')
 require('dotenv').config()
 
@@ -26,7 +25,7 @@ process.env.SENTRY_DSN = SENTRY_DSN
 
 const basePath = ''
 
-module.exports = withSourceMaps((withFonts(withImages((({
+module.exports = (withFonts(withImages((({
   /* config options here */
   target: 'serverless',
   env: {
@@ -62,4 +61,4 @@ module.exports = withSourceMaps((withFonts(withImages((({
     }
     return config
   }
-}))))))
+})))))

@@ -13,5 +13,6 @@ rest.interceptors.response.use(res => {
   res.data = data
   return res
 }, err => {
+  console.log('rest error: ', err)
   throw err
 })

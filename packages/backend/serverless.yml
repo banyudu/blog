@@ -22,8 +22,8 @@ custom:
     createRoute53Record: true
   sentry:
     dsn: ${self:provider.environment.sentryDSN}
-  blogTable: '${self:service}-${self:custom.stage}'
-  seriesTable: '${self:service}-series-${self:custom.stage}'
+  blog_table: 'blog-${self:custom.stage}'
+  series_table: 'blog-series-${self:custom.stage}'
 
 
 # Add the serverless-webpack plugin
@@ -44,11 +44,11 @@ provider:
   memorySize: 256
   environment:
     stage: ${opt:stage, self:provider.stage}
-    sentryDSN: ${ssm:/${self:service}/sentryDSN}
-    githubToken: ${ssm:/${self:service}/githubToken}
+    sentryDSN: ${ssm:/blog/sentryDSN}
+    githubToken: ${ssm:/blog/githubToken}
     AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
-    blogTable: ${self:custom.blogTable}
-    seriesTable: ${self:custom.seriesTable}
+    BLOG_TABLE: ${self:custom.blog_table}
+    SERIES_TABLE: ${self:custom.series_table}
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -144,7 +144,7 @@ resources:
           - AttributeName: id
             KeyType: HASH
         BillingMode: PAY_PER_REQUEST
-        TableName: ${self:custom.blogTable}
+        TableName: ${self:custom.blog_table}
         GlobalSecondaryIndexes:
           - IndexName: urlGSI
             KeySchema:
@@ -170,7 +170,7 @@ resources:
           - AttributeName: id
             KeyType: HASH
         BillingMode: PAY_PER_REQUEST
-        TableName: ${self:custom.seriesTable}
+        TableName: ${self:custom.series_table}
         GlobalSecondaryIndexes:
           - IndexName: urlGSI
             KeySchema:
