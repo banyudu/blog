@@ -11,7 +11,8 @@ export const getGists = async (since?: Date): Promise<[GistSeries[], GistFile[]]
     since = new Date(new Date().getTime() - ONE_DAY)
   }
   const res = await rest.get('https://api.github.com/users/banyudu/gists', {
-    params: { since: since.toISOString() }
+    // Github 允许的最大 pageSize 是100，超出的需要换 page 参数处理，此处暂时忽略
+    params: { since: since.toISOString(), per_page: 100 }
   })
 
   const files: GistFile[] = []
