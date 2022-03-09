@@ -9,20 +9,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Cache pnpm modules
+    - uses: actions/setup-node@master
+      with:
+        node-version: 14.x
+    - name: Cache node modules
       uses: actions/cache@v2
+      env:
+        cache-name: cache-node-modules
       with:
-        path: ~/.pnpm-store
-        key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+        # npm cache files are stored in `~/.npm` on Linux/macOS
+        path: ~/.npm
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
           ${{ runner.os }}-
-    - uses: pnpm/action-setup@v2.1.0
-      with:
-        version: 6.0.2
-        run_install: |
-          - recursive: true
-            args: [--frozen-lockfile, --strict-peer-dependencies]
-          - args: [--global, "serverless@2.72.3"]
+    - run: npm i -g @serverless/cli serverless
+    - run: npm i
+      working-directory: ./packages/backend
     - run: sls deploy --stage prod
       working-directory: ./packages/backend
       env:
