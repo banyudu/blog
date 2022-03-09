@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "private": true,
-  "version": "0.29.20",
+  "version": "0.29.21",
   "description": "Serverless webpack example using Typescript",
   "main": "handler.js",
   "scripts": {
