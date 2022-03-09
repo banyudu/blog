@@ -20,7 +20,7 @@ specifiers:
   serverless-domain-manager: ^6.0.2
   serverless-offline: ^8.5.0
   serverless-sentry: ^2.4.0
-  serverless-sentry-lib: 2.4.0
+  serverless-sentry-lib: ^2.4.0
   serverless-webpack: ^5.6.1
   sitemap: ^6.1.0
   socks-proxy-agent: ^5.0.0
