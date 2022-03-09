@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.33.15](https://github.com/banyudu/blog/compare/frontend@0.33.14...frontend@0.33.15) (2022-03-09)
+
+
+### Features
+
+* 文章列表页面中显示封面图 ([61dfe7b](https://github.com/banyudu/blog/commit/61dfe7b0c1ad213a4d9982d5950c6e9820cbb8e7))
+
+
+
+
+
 ## [0.33.14](https://github.com/banyudu/blog/compare/frontend@0.33.13...frontend@0.33.14) (2022-03-09)
 
 

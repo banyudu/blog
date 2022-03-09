@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "version": "0.33.14",
+  "version": "0.33.15",
   "private": true,
   "dependencies": {
     "@emmda-design/icons": "^0.0.3",
