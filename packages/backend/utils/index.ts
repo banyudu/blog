@@ -58,14 +58,14 @@ if (process.env.IS_OFFLINE) {
   })
   axiosOptions.httpAgent = httpsAgent
   axiosOptions.httpsAgent = httpsAgent
-  axiosOptions.proxy = false
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = null
+  // axiosOptions.proxy = false
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 }
 
 export const rest = axios.create(axiosOptions)
 rest.interceptors.request.use(req => {
   const requestId: string = session.get('requestId')
-  console.log(`${requestId}: external request ${req.method}: ${req.url}`);
+  debug(`${requestId}: external request ${req.method}: ${req.url}`);
   (req as any).startTime = new Date().getTime()
   return req
 }, err => {
