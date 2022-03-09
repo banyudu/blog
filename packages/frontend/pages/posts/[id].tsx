@@ -10,6 +10,9 @@ import { getPosts } from 'services/post'
 import { useRouter } from 'next/router'
 import Layout from 'components/layout'
 
+// 每页文章数量
+const pageSize = 10
+
 interface PostProps {
   id: string
   title: string
@@ -90,13 +93,11 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getPosts()
+  const pageCount = Math.ceil(posts.length / 10)
+  const pageNums = Array.from(Array(pageCount).keys()).map(e => String(e + 1))
+  const ids = posts.map((post) => post.url)
   const result = {
-    // paths: [ { params: { } } ],
-    paths: posts.map(post => {
-      return {
-        params: { id: post.url }
-      }
-    }),
+    paths: ids.concat(pageNums).map(id => ({ params: { id }})),
     fallback: true
   }
   return result

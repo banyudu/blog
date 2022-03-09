@@ -17,10 +17,10 @@ specifiers:
   lodash: ^4.17.15
   qs: ^6.10.3
   serverless: ^3.7.2
-  serverless-domain-manager: ^3.3.1
+  serverless-domain-manager: ^6.0.2
   serverless-offline: ^8.5.0
   serverless-sentry: ^2.4.0
-  serverless-sentry-lib: '2'
+  serverless-sentry-lib: 2.4.0
   serverless-webpack: ^5.6.1
   sitemap: ^6.1.0
   socks-proxy-agent: ^5.0.0
@@ -56,7 +56,7 @@ devDependencies:
   '@types/qs': registry.nlark.com/@types/qs/6.9.7
   fork-ts-checker-webpack-plugin: 4.1.6
   serverless: 3.7.2_debug@4.3.2
-  serverless-domain-manager: 3.3.2
+  serverless-domain-manager: 6.0.2_serverless@3.7.2
   serverless-offline: 8.5.0_serverless@3.7.2
   serverless-webpack: 5.6.1_5647050baea46bf48f8b1575ea0f22e2
   ts-loader: registry.nlark.com/ts-loader/6.2.2_typescript@3.9.10
@@ -846,22 +846,6 @@ packages:
     engines: {node: '>= 4.0.0'}
     dev: true
 
-  /aws-sdk/2.1012.0:
-    resolution: {integrity: sha1-k2GDIM8f8nQ4nY/MVj1il0VF4fk=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/aws-sdk/download/aws-sdk-2.1012.0.tgz}
-    engines: {node: '>= 0.8.0'}
-    requiresBuild: true
-    dependencies:
-      buffer: registry.nlark.com/buffer/4.9.2
-      events: registry.nlark.com/events/1.1.1
-      ieee754: registry.nlark.com/ieee754/1.1.13
-      jmespath: 0.15.0
-      querystring: registry.nlark.com/querystring/0.2.0
-      sax: registry.nlark.com/sax/1.2.1
-      url: registry.nlark.com/url/0.10.3
-      uuid: 3.3.2
-      xml2js: registry.nlark.com/xml2js/0.4.19
-    dev: true
-
   /aws-sdk/2.1087.0:
     resolution: {integrity: sha512-m5EERT29Fwh2cv3SaSdygeAjJBXnjSaXRRERy70bf6PQ7KgmASJouBxY11g5G7LTEPK/yfB0TGshujKh3hEtPA==}
     engines: {node: '>= 10.0.0'}
@@ -896,15 +880,15 @@ packages:
     resolution: {integrity: sha1-Y35foG1pv7kjsXveJKi9KnTe2rM=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/aws-sdk/download/aws-sdk-2.395.0.tgz}
     engines: {node: '>= 0.8.0'}
     dependencies:
-      buffer: registry.nlark.com/buffer/4.9.1
-      events: registry.nlark.com/events/1.1.1
-      ieee754: registry.nlark.com/ieee754/1.1.8
+      buffer: 4.9.1
+      events: 1.1.1
+      ieee754: 1.1.8
       jmespath: 0.15.0
       querystring: 0.2.0
-      sax: registry.nlark.com/sax/1.2.1
-      url: registry.nlark.com/url/0.10.3
+      sax: 1.2.1
+      url: 0.10.3
       uuid: 3.3.2
-      xml2js: registry.nlark.com/xml2js/0.4.19
+      xml2js: 0.4.19
     dev: false
 
   /axios/0.21.4_debug@4.3.2:
@@ -1030,6 +1014,15 @@ packages:
   /buffer-fill/1.0.0:
     resolution: {integrity: sha512-T7zexNBwiiaCOGDg9xNX9PBmjrubblRkENuptryuI64URkXDFum9il/JGL8Lm8wYfAXpredVXXZz7eMHilimiQ==}
     dev: true
+
+  /buffer/4.9.1:
+    resolution: {integrity: sha512-DNK4ruAqtyHaN8Zne7PkBTO+dD1Lr0YfTduMqlIyjvQIoztBkUxrvL+hKeLW8NXFKHOq/2upkxuoS9znQ9bW9A==}
+    deprecated: This version of 'buffer' is out-of-date. You must update to v4.9.2 or newer
+    dependencies:
+      base64-js: 1.5.1
+      ieee754: 1.2.1
+      isarray: 1.0.0
+    dev: false
 
   /buffer/4.9.2:
     resolution: {integrity: sha512-xq+q3SRMOxGivLhBNaUdC64hDTQwejJ+H0T/NB1XMtTVEwNTrfFF3gAxiyW0Bu/xWEGhjVKgUcMhCrUy2+uCWg==}
@@ -1768,6 +1761,10 @@ packages:
   /events/1.1.1:
     resolution: {integrity: sha512-kEcvvCBByWXGnZy6JUlgAp2gBIUjfCAV6P6TgT1/aaQKcmuAEC4OZTV1I4EWQLz2gxZw76atuVyvHhTxvi0Flw==}
     engines: {node: '>=0.4.x'}
+
+  /events/3.3.0:
+    resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
+    engines: {node: '>=0.8.x'}
     dev: true
 
   /execa/5.1.1:
@@ -2289,6 +2286,10 @@ packages:
     resolution: {integrity: sha512-4vf7I2LYV/HaWerSo3XmlMkp5eZ83i+/CDluXi/IGTs/O1sejBNhTtnxzmRZfvOUqj7lZjqHkeTvpgSFDlWZTg==}
     dev: true
 
+  /ieee754/1.1.8:
+    resolution: {integrity: sha512-/aoyv2Nt7mGLnCAWzE0C1WH9Xd8ZsqR0f4Pjwxputi1JNm01+InyAYQotF4N+ulEIjbEsJo22NOHr+U/XEZ1Pw==}
+    dev: false
+
   /ieee754/1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
 
@@ -2582,7 +2583,6 @@ packages:
 
   /isarray/1.0.0:
     resolution: {integrity: sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ==}
-    dev: true
 
   /isexe/2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
@@ -2602,8 +2602,9 @@ packages:
     dev: true
 
   /jmespath/0.15.0:
-    resolution: {integrity: sha1-o/Iiqarp+Wb10nx5ZRDigJF2Qhc=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/jmespath/download/jmespath-0.15.0.tgz}
+    resolution: {integrity: sha512-+kHj8HXArPfpPEKGLZ+kB5ONRTCiGQXo8RQYL0hH8t6pWXUBBK5KkkQmTNOwKK4LEsd0yTsgtjJVm4UBSZea4w==}
     engines: {node: '>= 0.6.0'}
+    dev: false
 
   /jmespath/0.16.0:
     resolution: {integrity: sha512-9FzQjJ7MATs1tSpnco1K6ayiYE3figslrXA72G2HQ/n76RzvYlofyi5QM+iX4YRs/pu3yzxlVQSST23+dMDknw==}
@@ -3503,6 +3504,9 @@ packages:
 
   /punycode/1.3.2:
     resolution: {integrity: sha512-RofWgt/7fL5wP1Y7fxE7/EmTLzQVnB0ycyibJ0OOHIlJqTNzglYFxVwETOcIoJqJmpDXJ9xImDv+Fq34F/d4Dw==}
+
+  /punycode/1.4.1:
+    resolution: {integrity: sha512-jmYNElW7yvO7TV33CjSmvSiE2yco3bV2czu/OzDKdMNVZQWfxCblURLhf+47syQRBntjfLdd/H0egrzIG+oaFQ==}
     dev: true
 
   /punycode/2.1.1:
@@ -3558,7 +3562,7 @@ packages:
     dependencies:
       core-util-is: registry.nlark.com/core-util-is/1.0.3
       inherits: 2.0.4
-      isarray: registry.nlark.com/isarray/1.0.0
+      isarray: 1.0.0
       process-nextick-args: registry.nlark.com/process-nextick-args/2.0.1
       safe-buffer: 5.1.2
       string_decoder: 1.1.1
@@ -3697,7 +3701,6 @@ packages:
 
   /sax/1.2.1:
     resolution: {integrity: sha512-8I2a3LovHTOpm7NV5yOyO8IHqgVsfK4+UuySrXU8YXkSRX7k6hCV9b3HrkKCr3nMpgj+0bmocaJJWpvp1oc7ZA==}
-    dev: true
 
   /sax/1.2.4:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
@@ -3737,12 +3740,14 @@ packages:
     dependencies:
       lru-cache: 6.0.0
 
-  /serverless-domain-manager/3.3.2:
-    resolution: {integrity: sha1-FD1pVvaO+l+lPlRoHSczqdVWMNU=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/serverless-domain-manager/download/serverless-domain-manager-3.3.2.tgz}
-    engines: {node: '>=4.0'}
+  /serverless-domain-manager/6.0.2_serverless@3.7.2:
+    resolution: {integrity: sha512-57PaNI0/LtFubn5/F0i2eTV6eQ9BFDXn1kk90/eHRKpQql0e/udMEWkJ9rk+Mgzv6lushHo9EPeyGVcl85RF9Q==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      serverless: <4
     dependencies:
-      aws-sdk: 2.1012.0
-      chalk: registry.nlark.com/chalk/2.4.2
+      aws-sdk: 2.1089.0
+      serverless: 3.7.2_debug@4.3.2
     dev: true
 
   /serverless-offline/8.5.0_serverless@3.7.2:
@@ -4420,6 +4425,12 @@ packages:
     dependencies:
       punycode: 1.3.2
       querystring: 0.2.0
+
+  /url/0.11.0:
+    resolution: {integrity: sha512-kbailJa29QrtXnxgq+DdCEGlbTeYM2eJUxsz6vjZavrCYPMIFHMKQmSKYAIuUK2i7hgPm28a8piX5NTUtM/LKQ==}
+    dependencies:
+      punycode: 1.3.2
+      querystring: 0.2.0
     dev: true
 
   /util-deprecate/1.0.2:
@@ -4592,12 +4603,10 @@ packages:
     dependencies:
       sax: 1.2.4
       xmlbuilder: 9.0.7
-    dev: true
 
   /xmlbuilder/9.0.7:
     resolution: {integrity: sha512-7YXTQc3P2l9+0rjaUbLwMKRhtmwg1M1eDf6nag7urC7pIPYLD9W/jmzQ4ptRSUbodw5S0jfoGTflLemQibSpeQ==}
     engines: {node: '>=4.0'}
-    dev: true
 
   /xtend/4.0.2:
     resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}
@@ -5034,12 +5043,6 @@ packages:
       pascalcase: registry.nlark.com/pascalcase/0.1.1
     dev: true
 
-  registry.nlark.com/base64-js/1.5.1:
-    resolution: {integrity: sha1-GxtEAWClv3rUC2UPCVljSBkDkwo=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/base64-js/download/base64-js-1.5.1.tgz}
-    name: base64-js
-    version: 1.5.1
-    dev: true
-
   registry.nlark.com/big.js/5.2.2:
     resolution: {integrity: sha1-ZfCvOC9Xi83HQr2cKB6cstd2gyg=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/big.js/download/big.js-5.2.2.tgz}
     name: big.js
@@ -5185,27 +5188,6 @@ packages:
     resolution: {integrity: sha1-JuYe0UIvtw3ULm42cp7VHYVf6Nk=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/buffer-xor/download/buffer-xor-1.0.3.tgz}
     name: buffer-xor
     version: 1.0.3
-    dev: true
-
-  registry.nlark.com/buffer/4.9.1:
-    resolution: {integrity: sha1-bRu2AbB6TvztlwlBMgkwJ8lbwpg=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/buffer/download/buffer-4.9.1.tgz}
-    name: buffer
-    version: 4.9.1
-    deprecated: This version of 'buffer' is out-of-date. You must update to v4.9.2 or newer
-    dependencies:
-      base64-js: 1.5.1
-      ieee754: 1.2.1
-      isarray: registry.nlark.com/isarray/1.0.0
-    dev: false
-
-  registry.nlark.com/buffer/4.9.2:
-    resolution: {integrity: sha1-Iw6tNEACmIZEhBqwJEr4xEu+Pvg=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/buffer/download/buffer-4.9.2.tgz}
-    name: buffer
-    version: 4.9.2
-    dependencies:
-      base64-js: registry.nlark.com/base64-js/1.5.1
-      ieee754: 1.2.1
-      isarray: registry.nlark.com/isarray/1.0.0
     dev: true
 
   registry.nlark.com/builtin-status-codes/3.0.0:
@@ -5606,19 +5588,6 @@ packages:
     engines: {node: '>=4.0'}
     dev: true
 
-  registry.nlark.com/events/1.1.1:
-    resolution: {integrity: sha1-nr23Y1rQmccNzEwqH1AEKI6L2SQ=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/events/download/events-1.1.1.tgz}
-    name: events
-    version: 1.1.1
-    engines: {node: '>=0.4.x'}
-
-  registry.nlark.com/events/3.3.0:
-    resolution: {integrity: sha1-Mala0Kkk4tLEGagTrrLE6HjqdAA=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/events/download/events-3.3.0.tgz}
-    name: events
-    version: 3.3.0
-    engines: {node: '>=0.8.x'}
-    dev: true
-
   registry.nlark.com/evp_bytestokey/1.0.3:
     resolution: {integrity: sha1-f8vbGY3HGVlDLv4ThCaE4FJaywI=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/evp_bytestokey/download/evp_bytestokey-1.0.3.tgz}
     name: evp_bytestokey
@@ -5856,18 +5825,6 @@ packages:
     version: 1.0.0
     dev: true
 
-  registry.nlark.com/ieee754/1.1.13:
-    resolution: {integrity: sha1-7BaFWOlaoYH9h9N/VcMrvLZwi4Q=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/ieee754/download/ieee754-1.1.13.tgz}
-    name: ieee754
-    version: 1.1.13
-    dev: true
-
-  registry.nlark.com/ieee754/1.1.8:
-    resolution: {integrity: sha1-vjPUCsEO8ZJnAfbwii2G+/0a0+Q=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/ieee754/download/ieee754-1.1.8.tgz}
-    name: ieee754
-    version: 1.1.8
-    dev: false
-
   registry.nlark.com/iferr/0.1.5:
     resolution: {integrity: sha1-xg7taebY/bazEEofy8ocGS3FtQE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/iferr/download/iferr-0.1.5.tgz}
     name: iferr
@@ -6004,11 +5961,6 @@ packages:
     version: 1.1.0
     engines: {node: '>=4'}
     dev: true
-
-  registry.nlark.com/isarray/1.0.0:
-    resolution: {integrity: sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/isarray/download/isarray-1.0.0.tgz}
-    name: isarray
-    version: 1.0.0
 
   registry.nlark.com/isobject/2.1.0:
     resolution: {integrity: sha1-8GVWEJaj8dou9GJy+BXIQNh+DIk=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/isobject/download/isobject-2.1.0.tgz}
@@ -6309,17 +6261,17 @@ packages:
     dependencies:
       assert: registry.nlark.com/assert/1.5.0
       browserify-zlib: registry.nlark.com/browserify-zlib/0.2.0
-      buffer: registry.nlark.com/buffer/4.9.2
+      buffer: 4.9.2
       console-browserify: registry.nlark.com/console-browserify/1.2.0
       constants-browserify: registry.nlark.com/constants-browserify/1.0.0
       crypto-browserify: registry.nlark.com/crypto-browserify/3.12.0
       domain-browser: registry.nlark.com/domain-browser/1.2.0
-      events: registry.nlark.com/events/3.3.0
+      events: 3.3.0
       https-browserify: registry.nlark.com/https-browserify/1.0.0
       os-browserify: registry.nlark.com/os-browserify/0.3.0
       path-browserify: registry.nlark.com/path-browserify/0.0.1
       process: registry.nlark.com/process/0.11.10
-      punycode: registry.nlark.com/punycode/1.4.1
+      punycode: 1.4.1
       querystring-es3: registry.nlark.com/querystring-es3/0.2.1
       readable-stream: 2.3.7
       stream-browserify: registry.nlark.com/stream-browserify/2.0.2
@@ -6327,7 +6279,7 @@ packages:
       string_decoder: 1.3.0
       timers-browserify: registry.nlark.com/timers-browserify/2.0.12
       tty-browserify: registry.nlark.com/tty-browserify/0.0.0
-      url: registry.nlark.com/url/0.11.0
+      url: 0.11.0
       util: registry.nlark.com/util/0.11.1
       vm-browserify: registry.nlark.com/vm-browserify/1.1.2
     dev: true
@@ -6534,17 +6486,6 @@ packages:
       pump: registry.nlark.com/pump/2.0.1
     dev: true
 
-  registry.nlark.com/punycode/1.3.2:
-    resolution: {integrity: sha1-llOgNvt8HuQjQvIyXM7v6jkmxI0=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/punycode/download/punycode-1.3.2.tgz}
-    name: punycode
-    version: 1.3.2
-
-  registry.nlark.com/punycode/1.4.1:
-    resolution: {integrity: sha1-wNWmOycYgArY4esPpSachN1BhF4=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/punycode/download/punycode-1.4.1.tgz}
-    name: punycode
-    version: 1.4.1
-    dev: true
-
   registry.nlark.com/q/1.5.1:
     resolution: {integrity: sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/q/download/q-1.5.1.tgz}
     name: q
@@ -6557,14 +6498,6 @@ packages:
     name: querystring-es3
     version: 0.2.1
     engines: {node: '>=0.4.x'}
-    dev: true
-
-  registry.nlark.com/querystring/0.2.0:
-    resolution: {integrity: sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/querystring/download/querystring-0.2.0.tgz}
-    name: querystring
-    version: 0.2.0
-    engines: {node: '>=0.4.x'}
-    deprecated: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
     dev: true
 
   registry.nlark.com/randombytes/2.1.0:
@@ -6668,11 +6601,6 @@ packages:
     name: safer-buffer
     version: 2.1.2
     dev: true
-
-  registry.nlark.com/sax/1.2.1:
-    resolution: {integrity: sha1-e45lYZCyKOgaZq6nSEgNgozS03o=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/sax/download/sax-1.2.1.tgz}
-    name: sax
-    version: 1.2.1
 
   registry.nlark.com/sax/1.2.4:
     resolution: {integrity: sha1-KBYjTiN4vdxOU1T6tcqold9xANk=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/sax/download/sax-1.2.4.tgz}
@@ -7096,23 +7024,6 @@ packages:
     deprecated: Please see https://github.com/lydell/urix#deprecated
     dev: true
 
-  registry.nlark.com/url/0.10.3:
-    resolution: {integrity: sha1-Ah5NnHcF8hu/N9A861h2dAJ3TGQ=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/url/download/url-0.10.3.tgz}
-    name: url
-    version: 0.10.3
-    dependencies:
-      punycode: registry.nlark.com/punycode/1.3.2
-      querystring: 0.2.0
-
-  registry.nlark.com/url/0.11.0:
-    resolution: {integrity: sha1-ODjpfPxgUh63PFJajlW/3Z4uKPE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/url/download/url-0.11.0.tgz}
-    name: url
-    version: 0.11.0
-    dependencies:
-      punycode: registry.nlark.com/punycode/1.3.2
-      querystring: 0.2.0
-    dev: true
-
   registry.nlark.com/use/3.1.1:
     resolution: {integrity: sha1-1QyMrHmhn7wg8pEfVuuXP04QBw8=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/use/download/use-3.1.1.tgz}
     name: use
@@ -7184,20 +7095,6 @@ packages:
     dependencies:
       microevent.ts: registry.nlark.com/microevent.ts/0.1.1
     dev: true
-
-  registry.nlark.com/xml2js/0.4.19:
-    resolution: {integrity: sha1-aGwg8hMgnpSr8NG88e+qKRx4J6c=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/xml2js/download/xml2js-0.4.19.tgz}
-    name: xml2js
-    version: 0.4.19
-    dependencies:
-      sax: 1.2.4
-      xmlbuilder: registry.nlark.com/xmlbuilder/9.0.7
-
-  registry.nlark.com/xmlbuilder/9.0.7:
-    resolution: {integrity: sha1-Ey7mPS7FVlxVfiD0wi35rKaGsQ0=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/xmlbuilder/download/xmlbuilder-9.0.7.tgz}
-    name: xmlbuilder
-    version: 9.0.7
-    engines: {node: '>=4.0'}
 
   registry.nlark.com/xtend/4.0.2:
     resolution: {integrity: sha1-u3J3n1+kZRhrH0OPZ0+jR/2121Q=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/xtend/download/xtend-4.0.2.tgz}
