@@ -9,6 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@sentry/node": "^6.18.2",
     "axios": "^0.21.2",
     "cls-hooked": "^4.2.2",
     "debug": "^4.1.1",
@@ -16,7 +17,8 @@
     "joi": "^17.6.0",
     "lodash": "^4.17.15",
     "qs": "^6.10.3",
-    "serverless-sentry": "^2.2.0",
+    "serverless-sentry": "^2.4.0",
+    "serverless-sentry-lib": "2",
     "sitemap": "^6.1.0",
     "socks-proxy-agent": "^5.0.0",
     "source-map-support": "^0.5.10",
@@ -30,6 +32,7 @@
     "@types/node": "14",
     "@types/qs": "^6.9.1",
     "fork-ts-checker-webpack-plugin": "^4.0.4",
+    "serverless": "^3.7.2",
     "serverless-domain-manager": "^3.3.1",
     "serverless-offline": "^8.5.0",
     "serverless-webpack": "^5.6.1",
