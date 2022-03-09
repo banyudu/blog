@@ -10,9 +10,6 @@ import { getPosts } from 'services/post'
 import { useRouter } from 'next/router'
 import Layout from 'components/layout'
 
-// 每页文章数量
-const pageSize = 10
-
 interface PostProps {
   id: string
   title: string
@@ -97,7 +94,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const pageNums = Array.from(Array(pageCount).keys()).map(e => String(e + 1))
   const ids = posts.map((post) => post.url)
   const result = {
-    paths: ids.concat(pageNums).map(id => ({ params: { id }})),
+    paths: ids.concat(pageNums).map(id => ({ params: { id } })),
     fallback: true
   }
   return result

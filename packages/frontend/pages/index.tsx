@@ -12,7 +12,7 @@ interface AppInterface {
 const App: NextPage<AppInterface> = ({ posts }) => {
   const router = useRouter()
   useEffect(() => {
-    router.push('/blog/1')
+    router.push('/blog/1').catch(console.error)
   }, [])
   return (
     <Layout>
