@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.22](https://github.com/banyudu/blog/compare/backend@0.29.21...backend@0.29.22) (2022-03-09)
+
+
+### Bug Fixes
+
+* 后端构建失败 ([5938ece](https://github.com/banyudu/blog/commit/5938eceaed2d2a77395ad9dffbc9dc4cceff6622))
+
+
+### Features
+
+* 博客文章列表页面添加分页 ([4957c1d](https://github.com/banyudu/blog/commit/4957c1d6097979e18249c53b0b0756a48bbb920a))
+
+
+
+
+
 ## [0.29.21](https://github.com/banyudu/blog/compare/backend@0.29.20...backend@0.29.21) (2022-03-09)
 
 
