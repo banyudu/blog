@@ -8,6 +8,7 @@ export interface Post {
   id: string
   title: string
   url: string
+  cover: string
   extract: string
   content?: string
   category: string
