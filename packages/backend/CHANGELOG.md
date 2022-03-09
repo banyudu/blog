@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.20](https://github.com/banyudu/blog/compare/backend@0.29.19...backend@0.29.20) (2022-03-09)
+
+
+### Bug Fixes
+
+* 修正series文章创建时间不正确的问题 ([3e2fb66](https://github.com/banyudu/blog/commit/3e2fb66a3f9d15394ca183db30fa91a4c9b23271))
+* 同步gist函数 ([bd64f5a](https://github.com/banyudu/blog/commit/bd64f5a762e2ecb4b3a8d4d702bf0f8140e3756d))
+* 解决后端部署问题 ([da9dea5](https://github.com/banyudu/blog/commit/da9dea5fa513a3644cc46fdbd3b0f78da403960a))
+* 设置Gist拉取pageSize ([2560135](https://github.com/banyudu/blog/commit/25601359783b052ed5720307d24a37752feb5b40))
+
+
+
+
+
 ## [0.29.19](https://github.com/banyudu/blog/compare/backend@0.29.18...backend@0.29.19) (2022-03-07)
 
 **Note:** Version bump only for package backend
