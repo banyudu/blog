@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.33.19](https://github.com/banyudu/blog/compare/frontend@0.33.18...frontend@0.33.19) (2022-03-10)
+
+
+### Features
+
+* 修改主页和代码块样式 ([596f66c](https://github.com/banyudu/blog/commit/596f66c9bdf3920e490a224bc5f2092381cf78a7))
+
+
+
+
+
 ## [0.33.18](https://github.com/banyudu/blog/compare/frontend@0.33.17...frontend@0.33.18) (2022-03-09)
 
 **Note:** Version bump only for package frontend
