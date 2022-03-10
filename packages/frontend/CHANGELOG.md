@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.33.20](https://github.com/banyudu/blog/compare/frontend@0.33.19...frontend@0.33.20) (2022-03-10)
+
+
+### Bug Fixes
+
+* 修正构建错误 ([504e9a6](https://github.com/banyudu/blog/commit/504e9a64c9eee2f888f66ea2054c2e0fd213d237))
+
+
+
+
+
 ## [0.33.19](https://github.com/banyudu/blog/compare/frontend@0.33.18...frontend@0.33.19) (2022-03-10)
 
 
