@@ -58,3 +58,7 @@ typings/
 .next
 
 *.DS_Store
+
+# sitemap
+public/sitemap*
+public/robots.txt

@@ -1,1 +1,0 @@
-sitemap: https://api.banyudu.com/blog/sitemap.xml.gz
