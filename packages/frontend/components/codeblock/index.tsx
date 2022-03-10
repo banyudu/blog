@@ -1,11 +1,14 @@
 import React, { FC, useEffect, useState } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import useDarkMode from 'use-dark-mode'
+import useMobileDetect from 'use-mobile-detect-hook'
 
 const CodeBlock: FC<any> = ({ node, inline, className, children, ...props }) => {
   const darkMode = useDarkMode(false)
   const [style, setStyle] = useState<any>(undefined)
   const hasWindow = typeof window !== 'undefined'
+  const detectModile = useMobileDetect()
+  const isMobile = detectModile.isMobile()
 
   useEffect(() => {
     if (hasWindow) {
@@ -21,7 +24,7 @@ const CodeBlock: FC<any> = ({ node, inline, className, children, ...props }) => 
     ? (
     <SyntaxHighlighter
       language={language === 'react' ? 'javascript' : language}
-      showLineNumbers={!inline}
+      showLineNumbers={!inline && !isMobile}
       style={style}
       {...props}
     >

@@ -33,7 +33,7 @@
   }
 
   code {
-    @apply bg-gray-200 mx-1;
+    @apply bg-gray-200 mx-1 inline-block;
   }
 
   @media (prefers-color-scheme: dark) {
