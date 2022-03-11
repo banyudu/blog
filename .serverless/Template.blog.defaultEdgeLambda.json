@@ -1,10 +1,10 @@
 {
   "name": "0y640hl-fkmuh6q",
-  "hash": "TanY47jWLGzjPp0LKFG0V5rzPOXotGV17tlz8/caO/I=",
+  "hash": "HuZGfZWq3azWO0HRT0JUmtmzjHD3+per4co6PlaZpas=",
   "description": "Default Lambda@Edge for Next CloudFront distribution",
   "memory": 512,
   "timeout": 10,
-  "code": "/Users/yudu/dev/banyudu/blog/packages/frontend/.serverless_nextjs/default-lambda",
+  "code": "/Users/yudu/dev/banyudu/blog/.serverless_nextjs/default-lambda",
   "shims": [],
   "handler": "index.handler",
   "runtime": "nodejs14.x",

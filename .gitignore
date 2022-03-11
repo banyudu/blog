@@ -62,3 +62,7 @@ typings/
 # sitemap
 public/sitemap*
 public/robots.txt
+
+.serverless_nextjs
+.next
+.serverless

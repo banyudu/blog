@@ -26,12 +26,15 @@ const Posts: FC<PostsProps> = props => {
         >
           <article className='mb-12 flex flex-col md:flex-row' key={post.id}>
             <div
-              className='p-2 w-full md:w-64 h-48'
+              className='p-2 w-48 h-48'
             >
               <Image
-                className='h-full mx-auto'
+                className='h-full'
                 src={post.cover ?? '/assets/images/logo.png'}
                 alt='Post Cover'
+                layout='responsive'
+                width={240}
+                height={176}
               />
             </div>
             <div className='ml-4'>

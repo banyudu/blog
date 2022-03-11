@@ -59,5 +59,8 @@ module.exports = withImages((({
       config.resolve.alias['@sentry/node'] = '@sentry/browser'
     }
     return config
-  }
+  },
+  images: {
+    domains: ['banyudu.com', 'banyudu.github.io', 'images.unsplash.com'],
+  },
 })))
