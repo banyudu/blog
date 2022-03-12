@@ -1,8 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { run } from "utils";
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
-  res.status(200).json({
+export default run((req: NextApiRequest, res: NextApiResponse) => {
+  return {
     code: 0,
     data: []
-  });
-}
+  }
+})

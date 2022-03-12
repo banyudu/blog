@@ -12,10 +12,10 @@ const getPost = run(async (req: NextApiRequest, res: NextApiResponse) => {
     post = await Blog.queryOne({ url }).exec()
   }
   res.setHeader('Cache-Control', 'max-age=1800, public')
-    .status(200).json({
-      code: 0,
-      data: post
-    })
+  return {
+    code: 0,
+    data: post
+  }
 })
 
 export default getPost

@@ -126,11 +126,8 @@ export const syncGists = run(async (event, _context) => {
     await triggerFrontendBuild()
   }
   return {
-    statusCode: 200,
-    body: JSON.stringify({
-      code: 0,
-      data: gists
-    })
+    code: 0,
+    data: gists
   }
 })
 

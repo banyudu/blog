@@ -5,10 +5,10 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 const getBlogs = run(async (req: NextApiRequest, res: NextApiResponse) => {
   const blogs = await Blog.scan().exec()
-  return res.status(200).json({
+  return {
     code: 0,
     data: blogs
-  })
+  }
 })
 
 export default getBlogs

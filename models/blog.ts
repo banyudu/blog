@@ -1,4 +1,5 @@
 import * as dynamoose from 'dynamoose'
+import { gen } from './base'
 
 export interface Blog {
   id: string
@@ -56,4 +57,4 @@ export const Schema = new dynamoose.Schema({
   timestamps: true
 })
 
-export default dynamoose.model<Blog, string>(process.env.BLOG_TABLE!, Schema)
+export default gen(process.env.BLOG_TABLE!, Schema)

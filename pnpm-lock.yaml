@@ -23,7 +23,7 @@ specifiers:
   axios: ^0.21.2
   dayjs: ^1.10.8
   dotenv: ^10.0.0
-  dynamoose: 1.11.1
+  dynamoose: 2.8.5
   eslint: ^8.10.0
   eslint-config-next: ^12.1.0
   js-cookie: ^3.0.0
@@ -63,7 +63,7 @@ dependencies:
   axios: 0.21.4
   dayjs: 1.10.8
   dotenv: registry.nlark.com/dotenv/10.0.0
-  dynamoose: 1.11.1
+  dynamoose: 2.8.5
   js-cookie: registry.nlark.com/js-cookie/3.0.1
   lodash: registry.nlark.com/lodash/4.17.21
   nanoid: 3.3.1
@@ -525,10 +525,6 @@ packages:
     resolution: {integrity: sha1-H5YQwkE2H2btBZHTGG4L8+0iEcg=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/@types/mermaid/download/@types/mermaid-8.2.7.tgz}
     dev: true
 
-  /@types/node/11.11.0:
-    resolution: {integrity: sha512-D5Rt+HXgEywr3RQJcGlZUCTCx1qVbCZpVk3/tOOA6spLNZdGm8BU+zRgdRYDoF1pO3RuXLxADzMrF903JlQXqg==}
-    dev: false
-
   /@types/node/16.11.2:
     resolution: {integrity: sha1-McJJwTbD+bNdS2D7jlDgGh8MyaU=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/@types/node/download/@types/node-16.11.2.tgz?cache=0&sync_timestamp=1634820798750&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-16.11.2.tgz}
     dev: false
@@ -818,21 +814,6 @@ packages:
       xml2js: 0.4.19
     dev: false
 
-  /aws-sdk/2.395.0:
-    resolution: {integrity: sha512-ldTTjctniZT4E2lq2z3D8Y2u+vpkp+laoEnDkXgjKXTKbiJ0QEtfWsUdx/IQ7awCt8stoxyqZK47DJOxIbRNoA==}
-    engines: {node: '>= 0.8.0'}
-    dependencies:
-      buffer: 4.9.1
-      events: 1.1.1
-      ieee754: 1.1.8
-      jmespath: 0.15.0
-      querystring: 0.2.0
-      sax: 1.2.1
-      url: 0.10.3
-      uuid: 3.3.2
-      xml2js: 0.4.19
-    dev: false
-
   /axe-core/4.4.1:
     resolution: {integrity: sha512-gd1kmb21kwNuWr6BQz8fv6GNECPBnUasepcoLbekws23NVBLODdsClRZ+bQ8+9Uomf3Sm3+Vwn0oYG9NvwnJCw==}
     engines: {node: '>=4'}
@@ -889,13 +870,8 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /buffer/4.9.1:
-    resolution: {integrity: sha512-DNK4ruAqtyHaN8Zne7PkBTO+dD1Lr0YfTduMqlIyjvQIoztBkUxrvL+hKeLW8NXFKHOq/2upkxuoS9znQ9bW9A==}
-    deprecated: This version of 'buffer' is out-of-date. You must update to v4.9.2 or newer
-    dependencies:
-      base64-js: 1.5.1
-      ieee754: 1.1.13
-      isarray: 1.0.0
+  /buffer-from/1.1.2:
+    resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
     dev: false
 
   /buffer/4.9.2:
@@ -1044,13 +1020,6 @@ packages:
       ms: 2.1.2
     dev: true
 
-  /debug/4.1.1:
-    resolution: {integrity: sha512-pYAIzeRo8J6KPEaJ0VWOh5Pzkbw/RetuzehGM7QRRX5he4fPHx2rdKMB256ehJCkX+XRQm16eZLqLNS8RSZXZw==}
-    deprecated: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
-    dependencies:
-      ms: 2.1.2
-    dev: false
-
   /debug/4.3.2:
     resolution: {integrity: sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==}
     engines: {node: '>=6.0'}
@@ -1061,10 +1030,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
-
-  /deep-equal/1.0.1:
-    resolution: {integrity: sha1-9dJgKStmDghO/0zbyfCK0yR0SLU=, tarball: deep-equal/download/deep-equal-1.0.1.tgz}
-    dev: false
 
   /deep-is/0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
@@ -1125,17 +1090,14 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /dynamoose/1.11.1:
-    resolution: {integrity: sha512-73T0GOeSh2FQDdK5V+cN9yowFU4uVt2OsOvknCB4Xdb+nSL/hBaecPY/meJaWZApVx73Hl1DcBSCGp/VWMvfRA==}
+  /dynamoose/2.8.5:
+    resolution: {integrity: sha512-2Y88TvZKcCYroO3hzMwxYYte8FltVj6SN3HKC4tjm4HiKbNbQbppX8KnsPUIhpFRKc52TXWOvrVhl+PXsHxnTA==}
     engines: {node: '>=8.0.0'}
     dependencies:
-      '@types/node': 11.11.0
-      aws-sdk: 2.395.0
-      debug: 4.1.1
-      deep-equal: 1.0.1
-      hooks: 0.3.2
-      object-path: 0.11.4
-      q: 1.5.1
+      aws-sdk: 2.1090.0
+      js-object-utilities: 2.1.0
+      source-map-support: 0.5.21
+      uuid: 8.3.2
     dev: false
 
   /electron-to-chromium/1.3.876:
@@ -1659,17 +1621,8 @@ packages:
     resolution: {integrity: sha1-aXJy45kTVuQMPKxWanTu9oF1ZTE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/highlight.js/download/highlight.js-10.7.3.tgz}
     dev: false
 
-  /hooks/0.3.2:
-    resolution: {integrity: sha512-TqeFzUf12rSzcbm5lUls81jimUC8TmXZ4ANPxxeeMou09hrjBcHYhAQ0WgyN5YqNCXOzz7L6xVNl/+ctFuSeOw==}
-    engines: {node: '>=0.4.0'}
-    dev: false
-
   /ieee754/1.1.13:
     resolution: {integrity: sha512-4vf7I2LYV/HaWerSo3XmlMkp5eZ83i+/CDluXi/IGTs/O1sejBNhTtnxzmRZfvOUqj7lZjqHkeTvpgSFDlWZTg==}
-    dev: false
-
-  /ieee754/1.1.8:
-    resolution: {integrity: sha512-/aoyv2Nt7mGLnCAWzE0C1WH9Xd8ZsqR0f4Pjwxputi1JNm01+InyAYQotF4N+ulEIjbEsJo22NOHr+U/XEZ1Pw==}
     dev: false
 
   /ignore/4.0.6:
@@ -1859,14 +1812,13 @@ packages:
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dev: false
 
-  /jmespath/0.15.0:
-    resolution: {integrity: sha512-+kHj8HXArPfpPEKGLZ+kB5ONRTCiGQXo8RQYL0hH8t6pWXUBBK5KkkQmTNOwKK4LEsd0yTsgtjJVm4UBSZea4w==}
-    engines: {node: '>= 0.6.0'}
-    dev: false
-
   /jmespath/0.16.0:
     resolution: {integrity: sha512-9FzQjJ7MATs1tSpnco1K6ayiYE3figslrXA72G2HQ/n76RzvYlofyi5QM+iX4YRs/pu3yzxlVQSST23+dMDknw==}
     engines: {node: '>= 0.6.0'}
+    dev: false
+
+  /js-object-utilities/2.1.0:
+    resolution: {integrity: sha512-X62npvVTfyNELV4gPU4jJSzFZbdxk3zH/FxlBrZ6n+AGKpGyhMpsPs00tjtqTLy582zG4bvaG5fuKMm/zA1gng==}
     dev: false
 
   /js-tokens/4.0.0:
@@ -2397,11 +2349,6 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /object-path/0.11.4:
-    resolution: {integrity: sha512-ICbQN+aw/eAASDtaC7+SJXSAruz7fvvNjxMFfS3mTdvZaaiuuw81XXYu+9CSJeUVrS3YpRhTr862YGywMQUOWg==}
-    engines: {node: '>=0.10.0'}
-    dev: false
-
   /object.assign/4.1.2:
     resolution: {integrity: sha512-ixT2L5THXsApyiUPYKmW+2EHpXXe5Ii3M+f4e+aJFAHao5amFRW6J0OO6c/LU8Be47utCx2GL89hxGB6XSmKuQ==}
     engines: {node: '>= 0.4'}
@@ -2639,11 +2586,6 @@ packages:
   /punycode/2.1.1:
     resolution: {integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==}
     engines: {node: '>=6'}
-
-  /q/1.5.1:
-    resolution: {integrity: sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=, tarball: q/download/q-1.5.1.tgz}
-    engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
-    dev: false
 
   /qs/6.10.3:
     resolution: {integrity: sha512-wr7M2E0OFRfIfJZjKGieI8lBKb7fRCH4Fv5KNPEs7gJ8jadvotdsS08PzOKR7opXhZ/Xkjtt3WF9g38drmyRqQ==}
@@ -2907,6 +2849,18 @@ packages:
   /source-map-js/1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
+
+  /source-map-support/0.5.21:
+    resolution: {integrity: sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==}
+    dependencies:
+      buffer-from: 1.1.2
+      source-map: 0.6.1
+    dev: false
+
+  /source-map/0.6.1:
+    resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
+    engines: {node: '>=0.10.0'}
+    dev: false
 
   /sprintf-js/1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
@@ -3211,6 +3165,11 @@ packages:
   /uuid/3.3.2:
     resolution: {integrity: sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==}
     deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+    hasBin: true
+    dev: false
+
+  /uuid/8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
     dev: false
 

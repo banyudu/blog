@@ -1,4 +1,5 @@
 import * as dynamoose from 'dynamoose'
+import { gen } from './base'
 
 export interface Series {
   id: string
@@ -35,4 +36,4 @@ export const Schema = new dynamoose.Schema({
   timestamps: true
 })
 
-export default dynamoose.model<Series, string>(process.env.SERIES_TABLE!, Schema)
+export default gen(process.env.SERIES_TABLE!, Schema)
