@@ -5,7 +5,7 @@ import { NextPage } from 'next'
 const App: NextPage = () => {
   const router = useRouter()
   useEffect(() => {
-    router.push('/blog/1').catch(console.error)
+    router.push('/blog').catch(console.error)
   }, [router])
   return null
 }

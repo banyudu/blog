@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { getComments } from '../services/comment'
 import { Profile, Comment } from '../types'
 import { getProfile } from '../services/auth'
+import { getPosts } from '../services/graph'
 
 export const useProfile = (token: string): [Profile | undefined, boolean] => {
   const [profile, setProfile] = useState<Profile | undefined>()
@@ -39,4 +40,21 @@ export const useComments = (postId: string, refreshKey: string = ''): [Comment[]
     })().catch(console.error)
   }, [postId, refreshKey])
   return [comments, loading]
+}
+
+export const usePosts = () => {
+  const [posts, setPosts] = useState<any[]>([])
+  const [loading, setLoading] = useState<boolean>(true)
+  useEffect(() => {
+    (async () => {
+      try {
+        const posts = await getPosts()
+        setPosts(posts)
+      } catch (error) {
+        console.error(error)
+      }
+      setLoading(false)
+    })().catch(console.error)
+  }, [])
+  return { posts, loading }
 }

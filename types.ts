@@ -17,8 +17,8 @@ export interface Post {
   content?: string
   category: string
   tags: string[]
-  createdAt: Date
-  updatedAt: Date
+  createdTime: Date
+  updatedTime: Date
 }
 
 export interface PostsRes extends Pagination {

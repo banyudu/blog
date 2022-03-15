@@ -1,12 +1,10 @@
 import React from 'react'
-import Error from 'next/error'
 import Head from 'next/head'
 import { NextPage, GetStaticPaths, GetStaticProps } from 'next'
-import { rest } from 'utils'
 import { ErrorProps } from 'types'
 import Markdown from 'components/markdown'
 import Summary from 'components/summary'
-import { getPosts } from 'services/post'
+import { getPost, getPosts } from 'services/graph'
 import { useRouter } from 'next/router'
 import Layout from 'components/layout'
 
@@ -19,17 +17,14 @@ interface PostProps {
   tags: string[]
   category: string
   url: string
-  createdAt: string
-  updatedAt: string
+  createTime: string
+  updateTime: string
 }
 
 const Post: NextPage<PostProps | ErrorProps> = (props) => {
-  const { statusCode } = props as ErrorProps
-  const { title, tags, content, id, category, extract, cover, createdAt, updatedAt } = props as PostProps
+  console.log(props)
+  const { title, tags = [], content, id, category, extract, cover, createTime, updateTime } = props as PostProps
   const router = useRouter()
-  if (statusCode) {
-    return <Error statusCode={statusCode} />
-  }
   if (!id) {
     return <div className='app-loading'><svg className='animate-spin h-5 w-5 mr-3' viewBox='0 0 24 24' /></div>
   }
@@ -75,8 +70,8 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
         <Summary
           category={category}
           tags={tags}
-          createdAt={new Date(createdAt)}
-          updatedAt={new Date(updatedAt)}
+          createdAt={new Date(createTime)}
+          updatedAt={new Date(updateTime)}
         />
       </aside>
       <article className='break-all'>
@@ -90,11 +85,9 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getPosts()
-  const pageCount = Math.ceil(posts.length / 10)
-  const pageNums = Array.from(Array(pageCount).keys()).map(e => String(e + 1))
-  const ids = posts.map((post) => post.url)
+  const ids = posts.map((post) => post.id)
   const result = {
-    paths: ids.concat(pageNums).map(id => ({ params: { id } })),
+    paths: ids.map(id => ({ params: { id } })),
     fallback: true
   }
   return result
@@ -106,17 +99,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // If the route is like /posts/1, then params.id is 1
 
   const { id } = params as any
-  const postRes = await rest.get(`/post/${encodeURIComponent(decodeURIComponent(id as string))}`)
-
-  // 将tags从字符串转成数组
-  const props = postRes.data || {}
-  if (!Array.isArray(props.tags)) {
-    props.tags = (props.tags || '').split(/[\s|,]+/)
-  }
+  const postRes = await getPost(id)
 
   // Pass post data to the page via props
   return {
-    props
+    props: postRes || {}
   }
 }
 

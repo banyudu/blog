@@ -19,8 +19,8 @@ const Posts: FC<PostsProps> = props => {
         <Link
           key={post.id}
           href={{
-            pathname: `/posts/${post.url}`,
-            query: { v: process.env.random }
+            pathname: `/posts/${post.id}`,
+            // query: { v: process.env.random }
           }}
           passHref
         >
@@ -39,7 +39,7 @@ const Posts: FC<PostsProps> = props => {
             </div>
             <div className='ml-4'>
               <h2 className='text-2xl cursor-pointer'>{post.title}</h2>
-              <small>{dayjs(post.createdAt).format('YYYY-MM-DD')}</small>
+              <small>{dayjs(post.createdTime).format('YYYY-MM-DD')}</small>
               <p>{post.extract}</p>
             </div>
           </article>
