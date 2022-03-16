@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { getComments } from '../services/comment'
 import { Profile, Comment } from '../types'
 import { getProfile } from '../services/auth'
-import { getPosts } from '../services/graph'
+import { getPosts, getPost } from '../services/graph'
 
 export const useProfile = (token: string): [Profile | undefined, boolean] => {
   const [profile, setProfile] = useState<Profile | undefined>()
@@ -57,4 +57,21 @@ export const usePosts = () => {
     })().catch(console.error)
   }, [])
   return { posts, loading }
+}
+
+export const usePost = (id: string) => {
+  const [post, setPost] = useState<any>()
+  const [loading, setLoading] = useState<boolean>(true)
+  useEffect(() => {
+    (async () => {
+      try {
+        const post = await getPost(id)
+        setPost(post)
+      } catch (error) {
+        console.error(error)
+      }
+      setLoading(false)
+    })().catch(console.error)
+  }, [id])
+  return { post, loading }
 }

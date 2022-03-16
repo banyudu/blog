@@ -1,12 +1,12 @@
 import React from 'react'
 import Head from 'next/head'
-import { NextPage, GetStaticPaths, GetStaticProps } from 'next'
+import { NextPage } from 'next'
 import { ErrorProps } from 'types'
 import Markdown from 'components/markdown'
 import Summary from 'components/summary'
-import { getPost, getPosts } from 'services/graph'
 import { useRouter } from 'next/router'
 import Layout from 'components/layout'
+import { usePost } from 'hooks'
 
 interface PostProps {
   id: string
@@ -22,12 +22,12 @@ interface PostProps {
 }
 
 const Post: NextPage<PostProps | ErrorProps> = (props) => {
-  console.log(props)
-  const { title, tags = [], content, id, category, extract, cover, createTime, updateTime } = props as PostProps
   const router = useRouter()
-  if (!id) {
+  const { post, loading } = usePost(router.query.id as string)
+  if (loading) {
     return <div className='app-loading'><svg className='animate-spin h-5 w-5 mr-3' viewBox='0 0 24 24' /></div>
   }
+  const { title, tags = [], content, id, category, extract, cover, createTime, updateTime } = post ?? {}
 
   const HOST = 'https://banyudu.com'
 
@@ -81,30 +81,6 @@ const Post: NextPage<PostProps | ErrorProps> = (props) => {
       </article>
     </Layout>
   )
-}
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getPosts()
-  const ids = posts.map((post) => post.id)
-  const result = {
-    paths: ids.map(id => ({ params: { id } })),
-    fallback: true
-  }
-  return result
-}
-
-// This also gets called at build time
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  // params contains the post `id`.
-  // If the route is like /posts/1, then params.id is 1
-
-  const { id } = params as any
-  const postRes = await getPost(id)
-
-  // Pass post data to the page via props
-  return {
-    props: postRes || {}
-  }
 }
 
 export default Post

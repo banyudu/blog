@@ -3,28 +3,15 @@ import { NextPage } from 'next'
 import Posts from 'components/posts'
 import Layout from 'components/layout'
 import { usePosts } from 'hooks'
-import { getPosts } from 'services/graph'
 
-interface BlogProps {
-  posts: any[]
-}
 
-const Blog: NextPage<BlogProps> = ({ posts }) => {
-  const { posts: latestPosts, loading } = usePosts()
+const Blog: NextPage = () => {
+  const { posts, loading } = usePosts()
   return (
-    <Layout>
-      { loading ? null : <Posts posts={loading ? posts : latestPosts} /> }
+    <Layout loading={loading}>
+      { loading ? null : <Posts posts={posts} /> }
     </Layout>
   )
-}
-
-export const getStaticProps = async () => {
-  const posts = await getPosts()
-  return {
-    props: {
-      posts
-    }
-  }
 }
 
 export default Blog
