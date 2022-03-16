@@ -24,20 +24,20 @@ const Posts: FC<PostsProps> = props => {
           }}
           passHref
         >
-          <article className='mb-12 flex flex-col md:flex-row' key={post.id}>
+          <article className='mb-8 md:mb-12 flex flex-col md:flex-row' key={post.id}>
             <div
-              className='p-2 w-48 h-48'
+              className='p-2 w-full md:w-1/4 relative h-48 md:h-auto'
             >
               <Image
-                className='h-full'
                 src={post.cover ?? '/assets/images/logo.png'}
                 alt='Post Cover'
-                layout='responsive'
-                width={240}
-                height={176}
+                layout='fill'
+                objectFit='cover'
+                width='100%'
+                height='100%'
               />
             </div>
-            <div className='ml-4'>
+            <div className='ml-4 w-full md:w-2/3'>
               <h2 className='text-2xl cursor-pointer'>{post.title}</h2>
               <small>{dayjs(post.createTime).format('YYYY-MM-DD')}</small>
               <p>{post.extract}</p>
