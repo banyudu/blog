@@ -14,6 +14,7 @@ const qryGetBlogPosts = gql`
       id,
       title,
       content,
+      url,
       cover,
       category {
         id
@@ -27,12 +28,13 @@ const qryGetBlogPosts = gql`
 `
 
 const qryGetPost = gql`
-query getPost ($id: ID) {
-  getBlogPost(where: { id: $id }) {
+query getPost ($id: String) {
+  getBlogPost(where: { url: $id }) {
     data {
       id,
       title,
       cover,
+      url,
       extract,
       category {
         name

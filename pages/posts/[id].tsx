@@ -21,7 +21,7 @@ interface PostProps {
   updateTime: string
 }
 
-const Post: NextPage<PostProps | ErrorProps> = (props) => {
+const Post: NextPage<PostProps | ErrorProps> = () => {
   const router = useRouter()
   const { post, loading } = usePost(router.query.id as string)
   if (loading) {

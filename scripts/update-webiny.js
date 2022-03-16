@@ -34,6 +34,20 @@ const getBlogPosts = gql`
 }
 `
 
+const publishBlogPostQuery = gql`
+mutation Publish ($revision: ID!) {
+  publishBlogPost(revision: $revision) {
+    data {
+      id,
+      title
+    },
+    error {
+      message
+    }
+  }
+}
+`
+
 const headers = {
   Authorization: process.env.WEBINY_TOKEN
 }
@@ -45,15 +59,7 @@ const sync = async () => {
   const cmsPosts = (await request(graphqlEndpoint, getBlogPosts, {}, headers)).listBlogPosts.data || []
   const postMap = _.keyBy(posts, 'title')
   for (const post of cmsPosts) {
-    if (!post.id.endsWith('#0001')) {
-      continue
-    }
     const postData = postMap[post.title]
-    console.log({
-      revision: post.id,
-      createTime: postData.createdAt,
-      updateTime: postData.updatedAt
-    })
     await request(graphqlEndpoint, updateBlogPostQuery, {
       revision: post.id,
       data: {
@@ -65,9 +71,14 @@ const sync = async () => {
           id: post.category.id,
           modelId: 'category'
         },
+        url: postData.url,
         createTime: postData.createdAt,
         updateTime: postData.updatedAt
       }
+    }, headers)
+
+    await request(graphqlEndpoint, publishBlogPostQuery, {
+      revision: post.id
     }, headers)
   }
 }

@@ -10,6 +10,7 @@ interface PostsProps {
 
 const Posts: FC<PostsProps> = props => {
   const { posts } = props
+  console.log('posts: ', posts)
   if (!posts?.length) {
     return <></>
   }
@@ -19,7 +20,7 @@ const Posts: FC<PostsProps> = props => {
         <Link
           key={post.id}
           href={{
-            pathname: `/posts/${post.id}`,
+            pathname: `/posts/${post.url}`,
             // query: { v: process.env.random }
           }}
           passHref
