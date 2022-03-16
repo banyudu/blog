@@ -27,7 +27,7 @@ const Post: NextPage<PostProps | ErrorProps> = () => {
   if (loading) {
     return <div className='app-loading'><svg className='animate-spin h-5 w-5 mr-3' viewBox='0 0 24 24' /></div>
   }
-  const { title, tags = [], content, id, category, extract, cover, createTime, updateTime } = post ?? {}
+  const { title, content, id, category, extract, cover, createTime, updateTime } = post ?? {}
 
   const HOST = 'https://banyudu.com'
 
@@ -46,7 +46,7 @@ const Post: NextPage<PostProps | ErrorProps> = () => {
       <Head>
         <title>{title}</title>
         <meta name='description' content={extract} />
-        <meta name='keywords' content={tags.join(' ')} />
+        {/* <meta name='keywords' content={tags.join(' ')} /> */}
         <meta name='robots' content='index,follow' />
         <meta name='google' content='index,follow' />
         <meta name='googlebot' content='index,follow' />
@@ -68,15 +68,15 @@ const Post: NextPage<PostProps | ErrorProps> = () => {
       </Head>
       <aside className='mb-2 text-sm'>
         <Summary
-          category={category}
-          tags={tags}
-          createdAt={new Date(createTime)}
-          updatedAt={new Date(updateTime)}
+          category={category?.name ?? ''}
+          tags={[]}
+          createdAt={new Date(createTime ?? new Date())}
+          updatedAt={new Date(updateTime ?? new Date())}
         />
       </aside>
       <article className='break-all'>
         <div>
-          <Markdown source={content} />
+          <Markdown source={content ?? ''} />
         </div>
       </article>
     </Layout>

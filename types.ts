@@ -15,10 +15,11 @@ export interface Post {
   cover: string
   extract: string
   content?: string
-  category: string
-  tags: string[]
-  createdTime: Date
-  updatedTime: Date
+  category: {
+    name: string
+  }
+  createTime: Date
+  updateTime: Date
 }
 
 export interface PostsRes extends Pagination {

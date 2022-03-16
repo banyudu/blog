@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
-import { getComments } from '../services/comment'
-import { Profile, Comment } from '../types'
-import { getProfile } from '../services/auth'
-import { getPosts, getPost } from '../services/graph'
+import { getComments } from 'services/comment'
+import { Profile, Comment } from 'types'
+import { getProfile } from 'services/auth'
+import { getPosts, getPost } from 'services/graph'
+import useSWR from 'swr'
 
 export const useProfile = (token: string): [Profile | undefined, boolean] => {
   const [profile, setProfile] = useState<Profile | undefined>()
@@ -43,35 +44,13 @@ export const useComments = (postId: string, refreshKey: string = ''): [Comment[]
 }
 
 export const usePosts = () => {
-  const [posts, setPosts] = useState<any[]>([])
-  const [loading, setLoading] = useState<boolean>(true)
-  useEffect(() => {
-    (async () => {
-      try {
-        const posts = await getPosts()
-        setPosts(posts)
-      } catch (error) {
-        console.error(error)
-      }
-      setLoading(false)
-    })().catch(console.error)
-  }, [])
-  return { posts, loading }
+  const { data: posts = [], error, isValidating } = useSWR('posts', getPosts)
+  return { posts, error, loading: isValidating && !posts?.length }
 }
 
 export const usePost = (id: string) => {
-  const [post, setPost] = useState<any>()
-  const [loading, setLoading] = useState<boolean>(true)
-  useEffect(() => {
-    (async () => {
-      try {
-        const post = await getPost(id)
-        setPost(post)
-      } catch (error) {
-        console.error(error)
-      }
-      setLoading(false)
-    })().catch(console.error)
-  }, [id])
-  return { post, loading }
+  const { data: post, error, isValidating } = useSWR([id, 'post'], getPost, {
+    revalidateOnFocus: false,
+  })
+  return { post, loading: !post && isValidating, error }
 }

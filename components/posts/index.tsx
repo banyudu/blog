@@ -1,16 +1,15 @@
 import React, { FC } from 'react'
 import Link from 'next/link'
-import { PostWithTimeline } from 'types'
+import { Post } from 'types'
 import dayjs from 'dayjs'
 import Image from 'next/image'
 
 interface PostsProps {
-  posts: PostWithTimeline[]
+  posts: Post[]
 }
 
 const Posts: FC<PostsProps> = props => {
   const { posts } = props
-  console.log('posts: ', posts)
   if (!posts?.length) {
     return <></>
   }
@@ -40,7 +39,7 @@ const Posts: FC<PostsProps> = props => {
             </div>
             <div className='ml-4'>
               <h2 className='text-2xl cursor-pointer'>{post.title}</h2>
-              <small>{dayjs(post.createdTime).format('YYYY-MM-DD')}</small>
+              <small>{dayjs(post.createTime).format('YYYY-MM-DD')}</small>
               <p>{post.extract}</p>
             </div>
           </article>

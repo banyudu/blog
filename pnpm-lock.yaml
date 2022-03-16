@@ -46,6 +46,7 @@ specifiers:
   react-markdown: ^7.0.0
   react-syntax-highlighter: ^15.4.3
   sitemap: ^7.1.1
+  swr: ^1.2.2
   tailwindcss: ^3.0.23
   typescript: ^4.3.5
   use-dark-mode: ^2.3.1
@@ -85,6 +86,7 @@ dependencies:
   react-markdown: 7.0.1_6d27d6abd5fcfff70e832fae7f4b0d02
   react-syntax-highlighter: 15.4.4_react@17.0.2
   sitemap: 7.1.1
+  swr: 1.2.2_react@17.0.2
   use-dark-mode: 2.3.1_react@17.0.2
   use-mobile-detect-hook: 1.0.4_react@17.0.2
 
@@ -3032,6 +3034,14 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /swr/1.2.2_react@17.0.2:
+    resolution: {integrity: sha512-ky0BskS/V47GpW8d6RU7CPsr6J8cr7mQD6+do5eky3bM0IyJaoi3vO8UhvrzJaObuTlGhPl2szodeB2dUd76Xw==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 17.0.2
+    dev: false
 
   /tailwindcss/3.0.23_autoprefixer@10.3.7:
     resolution: {integrity: sha512-+OZOV9ubyQ6oI2BXEhzw4HrqvgcARY38xv3zKcjnWtMIZstEsXdI9xftd1iB7+RbOnj2HOEzkA0OyB5BaSxPQA==}

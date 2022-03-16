@@ -6,7 +6,7 @@ import { usePosts } from 'hooks'
 
 
 const Blog: NextPage = () => {
-  const { posts, loading } = usePosts()
+  const { posts = [], loading } = usePosts()
   return (
     <Layout loading={loading}>
       { loading ? null : <Posts posts={posts} /> }
