@@ -19,6 +19,8 @@ export interface Post {
     name: string
   }
   createdAt: Date
+  savedOn: Date
+  createdOn: Date
 }
 
 export interface PostsRes extends Pagination {

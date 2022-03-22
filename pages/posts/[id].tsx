@@ -26,7 +26,7 @@ const Post: NextPage<PostProps | ErrorProps> = () => {
   if (loading) {
     return <div className='app-loading'><svg className='animate-spin h-5 w-5 mr-3' viewBox='0 0 24 24' /></div>
   }
-  const { title, content, id, category, extract, cover, createdAt, updateTime } = post ?? {}
+  const { title, content, id, category, extract, cover, createdAt, createdOn, savedOn } = post ?? {}
 
   const HOST = 'https://banyudu.com'
 
@@ -69,8 +69,8 @@ const Post: NextPage<PostProps | ErrorProps> = () => {
         <Summary
           category={category?.name ?? ''}
           tags={[]}
-          createdAt={new Date(createdAt ?? new Date())}
-          updatedAt={new Date(updateTime ?? new Date())}
+          createdAt={new Date(createdAt ?? createdOn ?? new Date())}
+          updatedAt={new Date(savedOn ?? new Date())}
         />
       </aside>
       <article className='break-all'>
