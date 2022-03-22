@@ -9,19 +9,15 @@ const graphqlEndpoint = 'https://cmsapi.banyudu.com/cms/read/zh-Hans-CN'
 
 const qryGetBlogPosts = gql`
 {
-  listBlogPosts(where: {}, sort: [createTime_DESC], limit: 10000) {
+  listBlogPosts(where: {}, sort: [createdAt_DESC], limit: 10000) {
     data {
       id,
       title,
       content,
       url,
       cover,
-      category {
-        id
-      },
       extract,
-      createTime,
-      updateTime
+      createdAt
     }
   }
 }
@@ -36,11 +32,7 @@ query getPost ($id: String) {
       cover,
       url,
       extract,
-      category {
-        name
-      },
-      createTime,
-      updateTime,
+      createdAt,
       content
     },
     error {

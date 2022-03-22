@@ -1,5 +1,6 @@
 const { request, gql } = require('graphql-request')
 const axios = require('axios')
+const dayjs = require('dayjs')
 
 const createBlogPostQuery = gql`
 mutation CreateBlogPost($data: BlogPostInput!) {
@@ -45,9 +46,11 @@ const sync = async () => {
         content: post.content,
         cover: post.cover ?? '',
         category: {
-          id: '622c931d98993e000942d88e#0001',
+          id: '6239e4dff3bc4300099e5503#0002',
           modelId: 'category'
-        }
+        },
+        url: post.url,
+        createdAt: dayjs(post.createdAt).format('YYYY-MM-DD'),
       }
     }, headers)
     const id = data?.createBlogPost?.data?.id

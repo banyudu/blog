@@ -18,8 +18,7 @@ export interface Post {
   category: {
     name: string
   }
-  createTime: Date
-  updateTime: Date
+  createdAt: Date
 }
 
 export interface PostsRes extends Pagination {
