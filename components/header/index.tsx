@@ -12,7 +12,7 @@ const Header: FC<{}> = () => {
         <div className='flex flex-col justify-center flex-grow'>
           <div className='flex flex-row justify-between'>
             <Link href='/' passHref><p>鱼肚的博客</p></Link>
-            <p>技术宅改变世界</p>
+            <p>Don&apos;t Repeat Yourself</p>
           </div>
         </div>
       </div>

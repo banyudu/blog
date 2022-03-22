@@ -33,7 +33,9 @@ query getPost ($id: String) {
       url,
       extract,
       createdAt,
-      content
+      content,
+      createdOn,
+      savedOn
     },
     error {
       message
