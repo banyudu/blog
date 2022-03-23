@@ -99,7 +99,7 @@ const Post: NextPage<PostProps | ErrorProps> = () => {
           </div>
         </article>
       </Layout>
-      <div className='comments'>
+      <div className='comments md:mx-auto px-4 py-8 max-w-4xl lg:max-w-5xl'>
         <GitalkComponent
           options={{
             clientID: '8d0a2ddcd61c65c4d22f',
@@ -107,7 +107,7 @@ const Post: NextPage<PostProps | ErrorProps> = () => {
             repo: 'blog-comments',
             owner: 'banyudu',
             admin: ['banyudu'],
-            id: (router.query.id as string ?? location.href)?.substring(0, 50),
+            id: (router.query.id as string ?? location.href)?.substring(0, 45),
             distractionFreeMode: false
           }}
         />
