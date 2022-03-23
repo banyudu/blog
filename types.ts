@@ -32,28 +32,6 @@ export interface ErrorProps {
   error?: string
 }
 
-export interface Profile {
-  name: string
-  avatar: string
-  email?: string
-  userId?: string
-}
-
-export interface Comment {
-  author: {
-    id: string
-    name: string
-    avatar: string
-  }
-  id: string
-  entity: string
-  refId?: string
-  content: string
-  createdAt: Date
-  updatedAt: Date
-  children?: Comment[]
-}
-
 export interface PostWithTimeline extends Post {
   timeline?: string
 }

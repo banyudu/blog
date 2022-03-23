@@ -29,7 +29,7 @@ const Post: NextPage<PostProps | ErrorProps> = () => {
   const { post, loading } = usePost(router.query.id as string)
   if (loading) {
     return (
-      <div className='app-loading'>
+      <div className='app-loading dark:text-white dark:bg-slate-900'>
         <svg className='animate-spin h-5 w-5 mr-3' viewBox='0 0 24 24' />
       </div>
     )
@@ -61,7 +61,7 @@ const Post: NextPage<PostProps | ErrorProps> = () => {
   realCover = realCover ?? 'https://banyudu.com/assets/images/logo.png'
 
   return (
-    <div>
+    <div className='dark:text-white dark:bg-slate-900'>
       <Layout>
         <Head>
           <title>{title}</title>
@@ -100,7 +100,7 @@ const Post: NextPage<PostProps | ErrorProps> = () => {
           </div>
         </article>
       </Layout>
-      <div className='comments md:mx-auto px-4 py-8 max-w-4xl lg:max-w-5xl'>
+      <div className='comments dark:text-white dark:bg-slate-900 md:mx-auto px-4 py-8 max-w-4xl lg:max-w-5xl'>
         <GitalkComponent
           options={{
             clientID: '8d0a2ddcd61c65c4d22f',

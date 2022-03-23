@@ -13,7 +13,7 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children, title, loading }) => {
   return (
-    <div className='dark:text-white dark:bg-gray-800 w-full h-full'>
+    <div className='dark:text-white dark:bg-slate-900 w-full h-full'>
       <Head>
         <title>{title ?? defaultTitle}</title>
       </Head>

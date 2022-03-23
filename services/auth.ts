@@ -1,19 +1,18 @@
-import { rest } from '../utils'
-import { AxiosResponse } from 'axios'
-import { Profile } from '../types'
+// import { rest } from '../utils'
+// import { AxiosResponse } from 'axios'
 import * as Cookies from 'js-cookie'
 
-const DEFAULT_AUTH_API = 'https://api.banyudu.com/auth'
-const AUTH_API = process.env.COMMENTS_API ?? DEFAULT_AUTH_API
+// const DEFAULT_AUTH_API = 'https://api.banyudu.com/auth'
+// const AUTH_API = process.env.COMMENTS_API ?? DEFAULT_AUTH_API
 
 const GITHUB_AUTH_PAGE = 'https://auth.banyudu.com/github'
 
-export const getProfile = async (token: string): Promise<Profile> => {
-  const res: AxiosResponse<Profile> = await rest.get(`${AUTH_API}/profile`, {
-    headers: { Authorization: token }
-  })
-  return res.data
-}
+// export const getProfile = async (token: string): Promise<Profile> => {
+//   const res: AxiosResponse<Profile> = await rest.get(`${AUTH_API}/profile`, {
+//     headers: { Authorization: token }
+//   })
+//   return res.data
+// }
 
 export const login = (callback?: Function) => {
   const width = 600
