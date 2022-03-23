@@ -109,7 +109,8 @@ const Post: NextPage<PostProps | ErrorProps> = () => {
             owner: 'banyudu',
             admin: ['banyudu'],
             id: md5(router.query.id as string ?? location.href),
-            distractionFreeMode: false
+            distractionFreeMode: false,
+            title
           }}
         />
       </div>
