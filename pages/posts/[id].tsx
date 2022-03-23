@@ -107,7 +107,7 @@ const Post: NextPage<PostProps | ErrorProps> = () => {
             repo: 'blog-comments',
             owner: 'banyudu',
             admin: ['banyudu'],
-            id: (router.query.id as string).substring(0, 50),
+            id: (router.query.id as string ?? location.href)?.substring(0, 50),
             distractionFreeMode: false
           }}
         />
