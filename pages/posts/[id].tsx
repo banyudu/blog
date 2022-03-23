@@ -10,6 +10,7 @@ import { usePost } from 'hooks'
 import 'gitalk/dist/gitalk.css'
 import Gitalk from 'gitalk'
 import GitalkComponent from 'gitalk/dist/gitalk-component'
+import md5 from 'md5'
 
 interface PostProps {
   id: string
@@ -107,7 +108,7 @@ const Post: NextPage<PostProps | ErrorProps> = () => {
             repo: 'blog-comments',
             owner: 'banyudu',
             admin: ['banyudu'],
-            id: (router.query.id as string ?? location.href)?.substring(0, 45),
+            id: md5(router.query.id as string ?? location.href),
             distractionFreeMode: false
           }}
         />
