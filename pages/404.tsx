@@ -1,5 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Layout from 'components/layout'
+import { useRouter } from 'next/router'
 
 export default function Custom404 () {
-  return <h1>404 - Page Not Found</h1>
+  const router = useRouter()
+  useEffect(() => {
+    setTimeout(() => {
+      router.push('/')
+    }, 300);
+  }, [])
+  return (
+    <Layout title='404 Not Found'>
+      <h1>404 Not Found</h1>
+
+      <p>
+        Redirecting to home page...
+      </p>
+    </Layout>
+  )
 }
