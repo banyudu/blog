@@ -3250,7 +3250,6 @@ packages:
 
   /regenerator-runtime/0.13.9:
     resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
-    dev: true
 
   /regexp.prototype.flags/1.4.1:
     resolution: {integrity: sha512-pMR7hBVUUGI7PMA37m2ofIdQCsomVnas+Jn5UPGAHQ+/LlwKm/aTLJHdasmHRzlfeZwHiAOaRSo2rbBDm3nNUQ==}
@@ -4081,7 +4080,7 @@ packages:
     version: 7.15.4
     engines: {node: '>=6.9.0'}
     dependencies:
-      regenerator-runtime: registry.nlark.com/regenerator-runtime/0.13.9
+      regenerator-runtime: 0.13.9
     dev: false
 
   registry.nlark.com/@babel/template/7.15.4:
@@ -4575,12 +4574,6 @@ packages:
       safe-buffer: registry.nlark.com/safe-buffer/5.1.2
       string_decoder: registry.nlark.com/string_decoder/1.1.1
       util-deprecate: 1.0.2
-    dev: false
-
-  registry.nlark.com/regenerator-runtime/0.13.9:
-    resolution: {integrity: sha1-iSV0Kpj/2QgUmI11Zq0wyjsmO1I=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/regenerator-runtime/download/regenerator-runtime-0.13.9.tgz}
-    name: regenerator-runtime
-    version: 0.13.9
     dev: false
 
   registry.nlark.com/safe-buffer/5.1.2:

@@ -1,33 +1,23 @@
 import React from 'react'
 import Head from 'next/head'
-import { NextPage } from 'next'
-import { ErrorProps } from 'types'
+import { NextPage, GetStaticPaths, GetStaticProps } from 'next'
 import Markdown from 'components/markdown'
 import Summary from 'components/summary'
 import { useRouter } from 'next/router'
 import Layout from 'components/layout'
 import { usePost } from 'hooks'
-import 'gitalk/dist/gitalk.css'
-import Gitalk from 'gitalk'
-import GitalkComponent from 'gitalk/dist/gitalk-component'
+import GitalkComponent from 'components/gitalk'
 import md5 from 'md5'
+import { getPost, getPosts } from 'services/graph'
 
 interface PostProps {
-  id: string
-  title: string
-  extract: string
-  cover?: string
-  content: string
-  tags: string[]
-  category: string
-  url: string
-  createdAt: string
+  post: any
 }
 
-const Post: NextPage<PostProps | ErrorProps> = () => {
+const Post: NextPage<PostProps> = ({ post: staticPost }) => {
   const router = useRouter()
   const { post, loading } = usePost(router.query.id as string)
-  if (loading) {
+  if (loading && !staticPost) {
     return (
       <div className='app-loading dark:text-white dark:bg-slate-900'>
         <svg className='animate-spin h-5 w-5 mr-3' viewBox='0 0 24 24' />
@@ -37,14 +27,13 @@ const Post: NextPage<PostProps | ErrorProps> = () => {
   const {
     title,
     content,
-    id,
     category,
     extract,
     cover,
     createdAt,
     createdOn,
     savedOn
-  } = post ?? {}
+  } = post ?? staticPost ?? {}
 
   const HOST = 'https://banyudu.com'
 
@@ -117,5 +106,22 @@ const Post: NextPage<PostProps | ErrorProps> = () => {
     </div>
   )
 }
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getPosts()
+  return {
+    fallback: true,
+    paths: posts.map(e => ({ params: { id: e.url } })),
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const post = await getPost(params?.id as string)
+  return {
+    props: {
+      post
+    },
+  };
+};
 
 export default Post
