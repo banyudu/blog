@@ -39,7 +39,7 @@ const Posts: FC<PostsProps> = props => {
             </div>
             <div className='ml-4 w-full md:w-2/3'>
               <h2 className='text-2xl cursor-pointer'>{post.title}</h2>
-              <small>{dayjs(post.createdAt).format('YYYY-MM-DD')}</small>
+              <small>{dayjs(post.createdAt ?? post.createdOn).format('YYYY-MM-DD')}</small>
               <p>{post.extract}</p>
             </div>
           </article>
