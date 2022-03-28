@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import ReactMarkdown from 'react-markdown'
 import CodeBlock from '../codeblock'
+import gfm from "remark-gfm";
 
 interface MarkdownProps {
   source: string
@@ -14,7 +15,7 @@ const Markdown: FC<MarkdownProps> = (props) => {
   const { source } = props
   return (
     <ReactMarkdown
-      // source={source}
+      remarkPlugins={[gfm]}
       components={{
         code: CodeBlock,
         a: LinkRenderer
