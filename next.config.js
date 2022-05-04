@@ -1,5 +1,4 @@
 // next.config.js
-const withImages = require('next-images')
 const { nanoid } = require('nanoid')
 const SentryWebpackPlugin = require('@sentry/webpack-plugin')
 require('dotenv').config()
@@ -24,7 +23,7 @@ process.env.SENTRY_DSN = SENTRY_DSN
 
 const basePath = ''
 
-module.exports = withImages((({
+module.exports = (({
   /* config options here */
   target: 'serverless',
   env: {
@@ -61,6 +60,6 @@ module.exports = withImages((({
     return config
   },
   images: {
-    domains: ['banyudu.com', 'banyudu.github.io', 'images.unsplash.com'],
+    domains: ['banyudu.com', 'banyudu.github.io', 'images.unsplash.com', 'picsum.photos'],
   },
-})))
+}))

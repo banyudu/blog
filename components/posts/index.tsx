@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Post } from 'types'
 import dayjs from 'dayjs'
 import Image from 'next/image'
+import Loading from './loading.gif'
 
 interface PostsProps {
   posts: Post[]
@@ -13,6 +14,23 @@ const Posts: FC<PostsProps> = props => {
   if (!posts?.length) {
     return <></>
   }
+
+  const renderCover = (post: Post) => {
+    const randomCover = `https://picsum.photos/232/129/?random&${Math.random()}`
+    return (
+      <Image
+        src={post.cover ?? randomCover}
+        alt='Post Cover'
+        layout='fill'
+        objectFit='cover'
+        width='100%'
+        height='100%'
+        placeholder='blur'
+        blurDataURL='/assets/images/loading.gif'
+      />
+      )
+  }
+
   return (
     <>
       {posts.map(post => (
@@ -28,14 +46,7 @@ const Posts: FC<PostsProps> = props => {
             <div
               className='p-2 w-full md:w-1/4 relative h-48 md:h-auto'
             >
-              <Image
-                src={post.cover ?? '/assets/images/logo.png'}
-                alt='Post Cover'
-                layout='fill'
-                objectFit='cover'
-                width='100%'
-                height='100%'
-              />
+              {renderCover(post)}
             </div>
             <div className='ml-4 w-full md:w-2/3'>
               <h2 className='text-2xl cursor-pointer'>{post.title}</h2>

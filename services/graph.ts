@@ -13,7 +13,6 @@ const qryGetBlogPosts = gql`
     data {
       id,
       title,
-      content,
       url,
       cover,
       extract,
