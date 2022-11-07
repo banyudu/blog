@@ -16,7 +16,9 @@ const qryGetBlogPosts = gql`
       url,
       cover,
       extract,
-      createdAt
+      createdAt,
+      createdOn,
+      savedOn
     }
   }
 }

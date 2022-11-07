@@ -2,7 +2,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - 'master'
+      - 'backup/master'
 name: Deploy
 jobs:
   deploy:
