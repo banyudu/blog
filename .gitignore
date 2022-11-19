@@ -66,3 +66,6 @@ public/robots.txt
 .serverless_nextjs
 .next
 .serverless
+
+public/sw.js
+public/workbox-*.js

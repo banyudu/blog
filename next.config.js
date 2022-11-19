@@ -2,6 +2,9 @@
 const { nanoid } = require('nanoid')
 const SentryWebpackPlugin = require('@sentry/webpack-plugin')
 require('dotenv').config()
+const withPWA = require('next-pwa')({
+  dest: 'public'
+})
 
 const {
   NEXT_PUBLIC_SENTRY_DSN: SENTRY_DSN,
@@ -23,7 +26,7 @@ process.env.SENTRY_DSN = SENTRY_DSN
 
 const basePath = ''
 
-module.exports = (({
+module.exports = withPWA(({
   /* config options here */
   target: 'serverless',
   env: {
