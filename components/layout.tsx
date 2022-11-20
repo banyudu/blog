@@ -16,6 +16,7 @@ const Layout: FC<LayoutProps> = ({ children, title, loading }) => {
     <div className='dark:text-white dark:bg-slate-900 w-full h-full'>
       <Head>
         <title>{title ?? defaultTitle}</title>
+        <link rel="manifest" href="/manifest.json" />
       </Head>
       <div className='md:mx-auto px-4 py-8 max-w-4xl lg:max-w-5xl box-border'>
         <Header />
