@@ -28,7 +28,6 @@ const basePath = ''
 
 module.exports = withPWA(({
   /* config options here */
-  target: 'serverless',
   env: {
     API: process.env.API,
     random: nanoid(6)
