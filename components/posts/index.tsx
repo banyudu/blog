@@ -19,6 +19,7 @@ const Posts: FC<PostsProps> = props => {
     const randomCover = `https://picsum.photos/232/129/?random&${Math.random()}`
     return (
       <Image
+        unoptimized
         src={post.cover ?? randomCover}
         alt='Post Cover'
         layout='fill'
