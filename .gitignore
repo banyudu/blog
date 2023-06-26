@@ -69,3 +69,4 @@ public/robots.txt
 
 public/sw.js
 public/workbox-*.js
+public/*.map

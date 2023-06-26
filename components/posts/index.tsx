@@ -2,8 +2,8 @@ import React, { FC } from 'react'
 import Link from 'next/link'
 import { Post } from 'types'
 import dayjs from 'dayjs'
-import Image from 'next/image'
-import Loading from './loading.gif'
+// import Image from 'next/image'
+// import Loading from './loading.gif'
 
 interface PostsProps {
   posts: Post[]
@@ -16,20 +16,21 @@ const Posts: FC<PostsProps> = props => {
   }
 
   const renderCover = (post: Post) => {
-    const randomCover = `https://picsum.photos/232/129/?random&${Math.random()}`
-    return (
-      <Image
-        unoptimized
-        src={post.cover ?? randomCover}
-        alt='Post Cover'
-        layout='fill'
-        objectFit='cover'
-        width='100%'
-        height='100%'
-        placeholder='blur'
-        blurDataURL='/assets/images/loading.gif'
-      />
-      )
+    return null
+    // const randomCover = `https://picsum.photos/232/129/?random&${Math.random()}`
+    // return (
+    //   <Image
+    //     unoptimized
+    //     src={post.cover ?? randomCover}
+    //     alt='Post Cover'
+    //     layout='fill'
+    //     objectFit='cover'
+    //     width='100%'
+    //     height='100%'
+    //     placeholder='blur'
+    //     blurDataURL='/assets/images/loading.gif'
+    //   />
+    //   )
   }
 
   return (
@@ -44,12 +45,12 @@ const Posts: FC<PostsProps> = props => {
           passHref
         >
           <article className='mb-8 md:mb-12 flex flex-col md:flex-row' key={post.id}>
-            <div
+            {/* <div
               className='p-2 w-full md:w-1/4 relative h-48 md:h-auto'
             >
               {renderCover(post)}
-            </div>
-            <div className='ml-4 w-full md:w-2/3'>
+            </div> */}
+            <div className='ml-4 w-full'>
               <h2 className='text-2xl cursor-pointer'>{post.title}</h2>
               <small>{dayjs(post.createdAt ?? post.createdOn).format('YYYY-MM-DD')}</small>
               <p>{post.extract}</p>
