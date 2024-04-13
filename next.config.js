@@ -3,7 +3,8 @@ const { nanoid } = require('nanoid')
 const SentryWebpackPlugin = require('@sentry/webpack-plugin')
 require('dotenv').config()
 const withPWA = require('next-pwa')({
-  dest: 'public'
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'production' ? false : true
 })
 
 const {
