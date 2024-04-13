@@ -54,7 +54,7 @@ class MyDocument extends Document {
           <link rel='shortcut icon' href='/favicon.ico' />
           <link
             rel='stylesheet'
-            href='https://fonts.googleapis.com/css?family=Roboto:300,400,500'
+            href='https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=optional'
           />
 
           {/* Global Site Tag (gtag.js) - Google Analytics */}
@@ -75,8 +75,6 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          {/* <script src='//unpkg.com/mermaid@8.4.8/dist/mermaid.min.js' /> */}
-          {/* <script>mermaid.initialize({'{startOnLoad: true}'});</script> */}
         </body>
       </Html>
     )

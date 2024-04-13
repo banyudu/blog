@@ -1,3 +1,5 @@
+'use client'
+
 import React, { FC, useEffect, useState } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import useDarkMode from 'use-dark-mode'

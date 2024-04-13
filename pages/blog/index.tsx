@@ -1,5 +1,5 @@
 import React from 'react'
-import { NextPage, GetStaticPaths, GetStaticProps } from 'next'
+import { NextPage, GetStaticProps } from 'next'
 import Posts from 'components/posts'
 import Layout from 'components/layout'
 import { usePosts } from 'hooks'
