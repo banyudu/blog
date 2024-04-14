@@ -17,7 +17,7 @@ const Markdown: FC<MarkdownProps> = (props) => {
     <ReactMarkdown
       remarkPlugins={[gfm]}
       components={{
-        code: CodeBlock,
+        code: CodeBlock as any,
         a: LinkRenderer
       }}
       className='w-full'

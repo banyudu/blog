@@ -46,11 +46,11 @@ query getPost ($id: String) {
 
 
 export const getPosts = async (): Promise<Post[]> => {
-  const cmsPosts = (await request(graphqlEndpoint, qryGetBlogPosts, {}, headers)).listBlogPosts.data || []
+  const cmsPosts = (await request(graphqlEndpoint, qryGetBlogPosts, {}, headers) as any).listBlogPosts.data || []
   return cmsPosts
 }
 
 export const getPost = async (id: string): Promise<Post | undefined> => {
-  const post = (await request(graphqlEndpoint, qryGetPost, { id }, headers)).getBlogPost.data
+  const post = (await request(graphqlEndpoint, qryGetPost, { id }, headers) as any).getBlogPost.data
   return post
 }
