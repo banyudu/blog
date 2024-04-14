@@ -28,7 +28,7 @@ const Layout: FC<LayoutProps> = ({ children, title, loading }) => {
           </svg>
       </div>
         ):
-          <div className='box-border rounded-lg md:border border-gray-500 p-1 md:p-8 border-opacity-30 list-disc'>
+          <div className='box-border rounded-lg p-1 md:p-8 list-disc'>
             {children}
           </div>
         }
