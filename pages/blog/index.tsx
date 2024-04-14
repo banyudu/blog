@@ -7,7 +7,7 @@ import { getPosts } from 'services/graph'
 import { Post } from 'types'
 
 const Blog: NextPage<{posts: Post[]}> = ({ posts: staticPosts }) => {
-  const { posts = [] } = usePosts()
+  const { posts } = usePosts()
   return (
     <Layout>
       <Posts posts={posts ?? staticPosts} />
